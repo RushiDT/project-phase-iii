@@ -6679,5 +6679,2385 @@
       "wifi_signal": -60
     },
     "server_received_at": 1770581937368
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770581944,
+    "sequence_number": 652,
+    "sensors": {
+      "temperature": 24.5,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770581947388
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770581949,
+    "sequence_number": 653,
+    "sensors": {
+      "temperature": 24.6,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770581947388
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770581954,
+    "sequence_number": 654,
+    "sensors": {
+      "temperature": 24.9,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770581957413
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770581959,
+    "sequence_number": 655,
+    "sensors": {
+      "temperature": 24.5,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770581957413
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770581964,
+    "sequence_number": 656,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770581967445
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770581969,
+    "sequence_number": 657,
+    "sensors": {
+      "temperature": 24.4,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770581967445
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770581974,
+    "sequence_number": 658,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770581977485
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770581979,
+    "sequence_number": 659,
+    "sensors": {
+      "temperature": 24.2,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -65
+    },
+    "server_received_at": 1770581977485
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770581984,
+    "sequence_number": 660,
+    "sensors": {
+      "temperature": 24.7,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770581987525
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770581989,
+    "sequence_number": 661,
+    "sensors": {
+      "temperature": 24.1,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770581987525
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770581994,
+    "sequence_number": 662,
+    "sensors": {
+      "temperature": 24.4,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -66
+    },
+    "server_received_at": 1770581997548
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770581999,
+    "sequence_number": 663,
+    "sensors": {
+      "temperature": 24.8,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770581997548
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582004,
+    "sequence_number": 664,
+    "sensors": {
+      "temperature": 24.3,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582007568
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582009,
+    "sequence_number": 665,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582007568
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582014,
+    "sequence_number": 666,
+    "sensors": {
+      "temperature": 24.3,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -63
+    },
+    "server_received_at": 1770582017593
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582019,
+    "sequence_number": 667,
+    "sensors": {
+      "temperature": 24.2,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582017593
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582024,
+    "sequence_number": 668,
+    "sensors": {
+      "temperature": 24.4,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582027627
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582029,
+    "sequence_number": 669,
+    "sensors": {
+      "temperature": 24.1,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -64
+    },
+    "server_received_at": 1770582027627
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582034,
+    "sequence_number": 670,
+    "sensors": {
+      "temperature": 24.3,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582037648
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582039,
+    "sequence_number": 671,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -64
+    },
+    "server_received_at": 1770582037648
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582044,
+    "sequence_number": 672,
+    "sensors": {
+      "temperature": 24.2,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770582047670
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582049,
+    "sequence_number": 673,
+    "sensors": {
+      "temperature": 24.8,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582047670
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582054,
+    "sequence_number": 674,
+    "sensors": {
+      "temperature": 24.8,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582057706
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582059,
+    "sequence_number": 675,
+    "sensors": {
+      "temperature": 24.2,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582057706
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582064,
+    "sequence_number": 676,
+    "sensors": {
+      "temperature": 24.9,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582067749
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582069,
+    "sequence_number": 677,
+    "sensors": {
+      "temperature": 24.9,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -53
+    },
+    "server_received_at": 1770582067749
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582074,
+    "sequence_number": 678,
+    "sensors": {
+      "temperature": 24.9,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582077779
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582079,
+    "sequence_number": 679,
+    "sensors": {
+      "temperature": 24.5,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582077779
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582084,
+    "sequence_number": 680,
+    "sensors": {
+      "temperature": 24.2,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582087826
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582089,
+    "sequence_number": 681,
+    "sensors": {
+      "temperature": 24.1,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582087826
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582094,
+    "sequence_number": 682,
+    "sensors": {
+      "temperature": 24.7,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582097849
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582099,
+    "sequence_number": 683,
+    "sensors": {
+      "temperature": 24.1,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582097849
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582104,
+    "sequence_number": 684,
+    "sensors": {
+      "temperature": 24.7,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -55
+    },
+    "server_received_at": 1770582107887
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582109,
+    "sequence_number": 685,
+    "sensors": {
+      "temperature": 24.8,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -65
+    },
+    "server_received_at": 1770582107887
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582114,
+    "sequence_number": 686,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770582117929
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582119,
+    "sequence_number": 687,
+    "sensors": {
+      "temperature": 24.6,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582117929
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582124,
+    "sequence_number": 688,
+    "sensors": {
+      "temperature": 24.9,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582127985
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582129,
+    "sequence_number": 689,
+    "sensors": {
+      "temperature": 24.8,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582127985
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582134,
+    "sequence_number": 690,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582138017
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582139,
+    "sequence_number": 691,
+    "sensors": {
+      "temperature": 24.6,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -64
+    },
+    "server_received_at": 1770582138017
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582144,
+    "sequence_number": 692,
+    "sensors": {
+      "temperature": 24.5,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -63
+    },
+    "server_received_at": 1770582148028
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582149,
+    "sequence_number": 693,
+    "sensors": {
+      "temperature": 24.1,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582148028
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582154,
+    "sequence_number": 694,
+    "sensors": {
+      "temperature": 24.2,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582158076
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582159,
+    "sequence_number": 695,
+    "sensors": {
+      "temperature": 24.9,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770582158076
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582164,
+    "sequence_number": 696,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582168126
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582169,
+    "sequence_number": 697,
+    "sensors": {
+      "temperature": 24.7,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582168126
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582174,
+    "sequence_number": 698,
+    "sensors": {
+      "temperature": 24.8,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582178149
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582179,
+    "sequence_number": 699,
+    "sensors": {
+      "temperature": 24.4,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -64
+    },
+    "server_received_at": 1770582178149
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582184,
+    "sequence_number": 700,
+    "sensors": {
+      "temperature": 24.9,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582188186
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582189,
+    "sequence_number": 701,
+    "sensors": {
+      "temperature": 24.8,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770582188186
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582194,
+    "sequence_number": 702,
+    "sensors": {
+      "temperature": 24.8,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582198200
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582199,
+    "sequence_number": 703,
+    "sensors": {
+      "temperature": 24.9,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582198200
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582204,
+    "sequence_number": 704,
+    "sensors": {
+      "temperature": 24.3,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -65
+    },
+    "server_received_at": 1770582208236
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582209,
+    "sequence_number": 705,
+    "sensors": {
+      "temperature": 24.3,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582208236
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582214,
+    "sequence_number": 706,
+    "sensors": {
+      "temperature": 24.8,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -63
+    },
+    "server_received_at": 1770582218266
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582219,
+    "sequence_number": 707,
+    "sensors": {
+      "temperature": 24.1,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582218266
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582224,
+    "sequence_number": 708,
+    "sensors": {
+      "temperature": 24.7,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582228326
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582229,
+    "sequence_number": 709,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770582228326
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582234,
+    "sequence_number": 710,
+    "sensors": {
+      "temperature": 24.3,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582238349
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582239,
+    "sequence_number": 711,
+    "sensors": {
+      "temperature": 24.3,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582238349
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582244,
+    "sequence_number": 712,
+    "sensors": {
+      "temperature": 24.6,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -62
+    },
+    "server_received_at": 1770582248386
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582249,
+    "sequence_number": 713,
+    "sensors": {
+      "temperature": 24.7,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582248386
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582254,
+    "sequence_number": 714,
+    "sensors": {
+      "temperature": 24.9,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582258422
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582259,
+    "sequence_number": 715,
+    "sensors": {
+      "temperature": 24.6,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -54
+    },
+    "server_received_at": 1770582258422
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582264,
+    "sequence_number": 716,
+    "sensors": {
+      "temperature": 24.5,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -55
+    },
+    "server_received_at": 1770582268458
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582269,
+    "sequence_number": 717,
+    "sensors": {
+      "temperature": 24.4,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582268458
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582274,
+    "sequence_number": 718,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -52
+    },
+    "server_received_at": 1770582278506
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582279,
+    "sequence_number": 719,
+    "sensors": {
+      "temperature": 24.1,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582278506
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582284,
+    "sequence_number": 720,
+    "sensors": {
+      "temperature": 24.6,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -55
+    },
+    "server_received_at": 1770582288529
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582289,
+    "sequence_number": 721,
+    "sensors": {
+      "temperature": 24.4,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -61
+    },
+    "server_received_at": 1770582288529
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582294,
+    "sequence_number": 722,
+    "sensors": {
+      "temperature": 24.2,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770582298577
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582299,
+    "sequence_number": 723,
+    "sensors": {
+      "temperature": 24.7,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770582298577
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582304,
+    "sequence_number": 724,
+    "sensors": {
+      "temperature": 24.7,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582308627
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582309,
+    "sequence_number": 725,
+    "sensors": {
+      "temperature": 24.1,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582308627
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582314,
+    "sequence_number": 726,
+    "sensors": {
+      "temperature": 24.2,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582318667
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582319,
+    "sequence_number": 727,
+    "sensors": {
+      "temperature": 24.3,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582318667
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582324,
+    "sequence_number": 728,
+    "sensors": {
+      "temperature": 24.2,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -62
+    },
+    "server_received_at": 1770582328688
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582329,
+    "sequence_number": 729,
+    "sensors": {
+      "temperature": 24.5,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -61
+    },
+    "server_received_at": 1770582328688
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582334,
+    "sequence_number": 730,
+    "sensors": {
+      "temperature": 24.3,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582338727
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582339,
+    "sequence_number": 731,
+    "sensors": {
+      "temperature": 24.8,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582338727
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582344,
+    "sequence_number": 732,
+    "sensors": {
+      "temperature": 24.6,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582348767
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582349,
+    "sequence_number": 733,
+    "sensors": {
+      "temperature": 24.4,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -54
+    },
+    "server_received_at": 1770582348767
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582354,
+    "sequence_number": 734,
+    "sensors": {
+      "temperature": 24.9,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -55
+    },
+    "server_received_at": 1770582358816
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582359,
+    "sequence_number": 735,
+    "sensors": {
+      "temperature": 24.7,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582358816
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582364,
+    "sequence_number": 736,
+    "sensors": {
+      "temperature": 24.9,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -65
+    },
+    "server_received_at": 1770582368856
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582369,
+    "sequence_number": 737,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582368856
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582374,
+    "sequence_number": 738,
+    "sensors": {
+      "temperature": 24.4,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -53
+    },
+    "server_received_at": 1770582378896
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582379,
+    "sequence_number": 739,
+    "sensors": {
+      "temperature": 24.9,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582378896
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582384,
+    "sequence_number": 740,
+    "sensors": {
+      "temperature": 24.9,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582388936
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582389,
+    "sequence_number": 741,
+    "sensors": {
+      "temperature": 24.9,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582388936
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582394,
+    "sequence_number": 742,
+    "sensors": {
+      "temperature": 24.1,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582398959
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582399,
+    "sequence_number": 743,
+    "sensors": {
+      "temperature": 24.4,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582398959
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582404,
+    "sequence_number": 744,
+    "sensors": {
+      "temperature": 24.6,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582409006
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582409,
+    "sequence_number": 745,
+    "sensors": {
+      "temperature": 24.3,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582409006
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582414,
+    "sequence_number": 746,
+    "sensors": {
+      "temperature": 24.2,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582419057
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582419,
+    "sequence_number": 747,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582419057
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582424,
+    "sequence_number": 748,
+    "sensors": {
+      "temperature": 24.6,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -63
+    },
+    "server_received_at": 1770582429096
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582429,
+    "sequence_number": 749,
+    "sensors": {
+      "temperature": 24.6,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582429096
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582434,
+    "sequence_number": 750,
+    "sensors": {
+      "temperature": 24.1,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770582439119
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582439,
+    "sequence_number": 751,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -55
+    },
+    "server_received_at": 1770582439119
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582444,
+    "sequence_number": 752,
+    "sensors": {
+      "temperature": 24.7,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -65
+    },
+    "server_received_at": 1770582449148
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582449,
+    "sequence_number": 753,
+    "sensors": {
+      "temperature": 24.3,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582449148
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582454,
+    "sequence_number": 754,
+    "sensors": {
+      "temperature": 24.6,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582459186
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582459,
+    "sequence_number": 755,
+    "sensors": {
+      "temperature": 24.1,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -63
+    },
+    "server_received_at": 1770582459186
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582464,
+    "sequence_number": 756,
+    "sensors": {
+      "temperature": 24.1,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582469225
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582469,
+    "sequence_number": 757,
+    "sensors": {
+      "temperature": 24.5,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -55
+    },
+    "server_received_at": 1770582469225
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582474,
+    "sequence_number": 758,
+    "sensors": {
+      "temperature": 24.3,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582479249
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582479,
+    "sequence_number": 759,
+    "sensors": {
+      "temperature": 24.5,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -55
+    },
+    "server_received_at": 1770582479249
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582484,
+    "sequence_number": 760,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -54
+    },
+    "server_received_at": 1770582489280
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582489,
+    "sequence_number": 761,
+    "sensors": {
+      "temperature": 24.8,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -63
+    },
+    "server_received_at": 1770582489280
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582494,
+    "sequence_number": 762,
+    "sensors": {
+      "temperature": 24.4,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582499315
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582499,
+    "sequence_number": 763,
+    "sensors": {
+      "temperature": 24.4,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582499315
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582504,
+    "sequence_number": 764,
+    "sensors": {
+      "temperature": 24.3,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -55
+    },
+    "server_received_at": 1770582509358
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582509,
+    "sequence_number": 765,
+    "sensors": {
+      "temperature": 24.5,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -55
+    },
+    "server_received_at": 1770582509358
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582514,
+    "sequence_number": 766,
+    "sensors": {
+      "temperature": 24.7,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582519407
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582519,
+    "sequence_number": 767,
+    "sensors": {
+      "temperature": 24.1,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582519407
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582524,
+    "sequence_number": 768,
+    "sensors": {
+      "temperature": 24.7,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770582529439
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582529,
+    "sequence_number": 769,
+    "sensors": {
+      "temperature": 24.4,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -55
+    },
+    "server_received_at": 1770582529439
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582534,
+    "sequence_number": 770,
+    "sensors": {
+      "temperature": 24.6,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -53
+    },
+    "server_received_at": 1770582539487
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582539,
+    "sequence_number": 771,
+    "sensors": {
+      "temperature": 24.9,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -53
+    },
+    "server_received_at": 1770582539487
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582544,
+    "sequence_number": 772,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -53
+    },
+    "server_received_at": 1770582549509
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582549,
+    "sequence_number": 773,
+    "sensors": {
+      "temperature": 24.3,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -54
+    },
+    "server_received_at": 1770582549509
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582554,
+    "sequence_number": 774,
+    "sensors": {
+      "temperature": 24.7,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770582559556
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582559,
+    "sequence_number": 775,
+    "sensors": {
+      "temperature": 24.4,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582559557
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582564,
+    "sequence_number": 776,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -57
+    },
+    "server_received_at": 1770582569607
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582569,
+    "sequence_number": 777,
+    "sensors": {
+      "temperature": 24.4,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582569607
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582574,
+    "sequence_number": 778,
+    "sensors": {
+      "temperature": 24.8,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582579657
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582579,
+    "sequence_number": 779,
+    "sensors": {
+      "temperature": 24.4,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770582579657
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582584,
+    "sequence_number": 780,
+    "sensors": {
+      "temperature": 24.5,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770582589696
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582589,
+    "sequence_number": 781,
+    "sensors": {
+      "temperature": 24.3,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582589696
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582594,
+    "sequence_number": 782,
+    "sensors": {
+      "temperature": 24.2,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -63
+    },
+    "server_received_at": 1770582599746
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582599,
+    "sequence_number": 783,
+    "sensors": {
+      "temperature": 24.3,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582599746
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582604,
+    "sequence_number": 784,
+    "sensors": {
+      "temperature": 24.2,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582609769
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582609,
+    "sequence_number": 785,
+    "sensors": {
+      "temperature": 24.5,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -56
+    },
+    "server_received_at": 1770582609769
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582614,
+    "sequence_number": 786,
+    "sensors": {
+      "temperature": 24.7,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582619806
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582619,
+    "sequence_number": 787,
+    "sensors": {
+      "temperature": 24.7,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "server_received_at": 1770582619806
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582624,
+    "sequence_number": 788,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582629838
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582629,
+    "sequence_number": 789,
+    "sensors": {
+      "temperature": 24,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "server_received_at": 1770582629838
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582634,
+    "sequence_number": 790,
+    "sensors": {
+      "temperature": 24.6,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -59
+    },
+    "server_received_at": 1770582639909
+  },
+  {
+    "device_id": "esp8266_env_01_621c",
+    "user_id": "user_789",
+    "timestamp": 1770582639,
+    "sequence_number": 791,
+    "sensors": {
+      "temperature": 24.1,
+      "humidity": 55,
+      "vibration": 0.05
+    },
+    "system": {
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -55
+    },
+    "server_received_at": 1770582639909
   }
 ]

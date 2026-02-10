@@ -1,0 +1,16 @@
+[
+  {
+    "date": "2026-02-10",
+    "time": "13:42:27",
+    "device_id": "device_test_001",
+    "score": 0.99,
+    "values": {
+      "temperature": 22.5,
+      "humidity": 45,
+      "cpu_usage": 12,
+      "battery_level": 98
+    },
+    "gateway_id": "test_gateway",
+    "batch_hash": "ABC123DEF456"
+  }
+]

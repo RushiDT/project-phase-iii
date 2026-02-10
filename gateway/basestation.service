@@ -1,0 +1,17 @@
+[Unit]
+Description=IoT Security Base Station Gateway
+After=network.target
+
+[Service]
+# Adjust the path to your project directory
+WorkingDirectory=/home/pi/iot-security/gateway
+ExecStart=/home/pi/iot-security/gateway/.venv/bin/python gateway_service.py
+Restart=always
+RestartSec=5
+User=pi
+
+# Load environment variables
+EnvironmentFile=/home/pi/iot-security/gateway/.env
+
+[Install]
+WantedBy=multi-user.target

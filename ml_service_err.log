@@ -1,0 +1,152 @@
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.121:5001
+Press CTRL+C to quit
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+127.0.0.1 - - [11/Feb/2026 01:38:04] "POST /predict/comprehensive HTTP/1.1" 200 -
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+127.0.0.1 - - [11/Feb/2026 01:38:05] "POST /predict/comprehensive HTTP/1.1" 200 -
+127.0.0.1 - - [11/Feb/2026 01:38:05] "POST /predict/comprehensive HTTP/1.1" 200 -
+127.0.0.1 - - [11/Feb/2026 01:38:05] "POST /predict/comprehensive HTTP/1.1" 200 -
+Event (SENSOR_ANOMALY) for esp8266_env_01 logged to Blockchain! Tx: ce2f3a6725bdbff4d6ff578cf466ddfb89163b906c961817973eb8441a4fae98
+127.0.0.1 - - [11/Feb/2026 01:38:06] "POST /predict/comprehensive HTTP/1.1" 200 -
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+Event (SENSOR_ANOMALY) for esp32_sec_01 logged to Blockchain! Tx: fa7cbe3f5e46cb4c3a9d1fe7dc71c3a1affb2bfe7b26548d0354c1b784469c44
+127.0.0.1 - - [11/Feb/2026 01:38:13] "POST /predict/comprehensive HTTP/1.1" 200 -
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+127.0.0.1 - - [11/Feb/2026 01:38:14] "POST /predict/comprehensive HTTP/1.1" 200 -
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+127.0.0.1 - - [11/Feb/2026 01:38:15] "POST /predict/comprehensive HTTP/1.1" 200 -
+127.0.0.1 - - [11/Feb/2026 01:38:15] "POST /predict/comprehensive HTTP/1.1" 200 -
+127.0.0.1 - - [11/Feb/2026 01:38:15] "POST /predict/comprehensive HTTP/1.1" 200 -
+127.0.0.1 - - [11/Feb/2026 01:38:15] "POST /predict/comprehensive HTTP/1.1" 200 -
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+127.0.0.1 - - [11/Feb/2026 01:38:25] "POST /predict/comprehensive HTTP/1.1" 200 -
+127.0.0.1 - - [11/Feb/2026 01:38:25] "POST /predict/comprehensive HTTP/1.1" 200 -
+127.0.0.1 - - [11/Feb/2026 01:38:25] "POST /predict/comprehensive HTTP/1.1" 200 -
+127.0.0.1 - - [11/Feb/2026 01:38:25] "POST /predict/comprehensive HTTP/1.1" 200 -
+127.0.0.1 - - [11/Feb/2026 01:38:25] "POST /predict/comprehensive HTTP/1.1" 200 -
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+127.0.0.1 - - [11/Feb/2026 01:38:35] "POST /predict/comprehensive HTTP/1.1" 200 -
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+127.0.0.1 - - [11/Feb/2026 01:38:35] "POST /predict/comprehensive HTTP/1.1" 200 -
+127.0.0.1 - - [11/Feb/2026 01:38:35] "POST /predict/comprehensive HTTP/1.1" 200 -
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\parallel.py:144: UserWarning: `sklearn.utils.parallel.delayed` should be used with `sklearn.utils.parallel.Parallel` to make it possible to propagate the scikit-learn configuration of the current thread to the joblib workers.
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+127.0.0.1 - - [11/Feb/2026 01:38:35] "POST /predict/comprehensive HTTP/1.1" 200 -
+Event (SYSTEM_ANOMALY) for esp8266_env_01 logged to Blockchain! Tx: 93b2f6d2e33b277df417da321fe9b07c6c98485c73b934c7d21244073ebb610b
+127.0.0.1 - - [11/Feb/2026 01:38:35] "POST /predict/comprehensive HTTP/1.1" 200 -
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+127.0.0.1 - - [11/Feb/2026 01:38:45] "POST /predict/comprehensive HTTP/1.1" 200 -
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+127.0.0.1 - - [11/Feb/2026 01:38:45] "POST /predict/comprehensive HTTP/1.1" 200 -
+C:\Users\Rushikesh\AppData\Roaming\Python\Python314\site-packages\sklearn\utils\validation.py:2691: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+127.0.0.1 - - [11/Feb/2026 01:38:45] "POST /predict/comprehensive HTTP/1.1" 200 -
+127.0.0.1 - - [11/Feb/2026 01:38:45] "POST /predict/comprehensive HTTP/1.1" 200 -
+127.0.0.1 - - [11/Feb/2026 01:38:45] "POST /predict/comprehensive HTTP/1.1" 200 -

@@ -71,3 +71,51 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Alarm System */
+.alarm-banner {
+  background: #7f1d1d;
+  color: #fecaca;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 4px solid #ef4444;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  animation: pulse-red 2s infinite;
+}
+
+.alarm-text {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.siren-icon {
+  animation: rotate-siren 0.5s infinite linear;
+  color: #ef4444;
+}
+
+@keyframes pulse-red {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 20px rgba(239, 68, 68, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+@keyframes rotate-siren {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

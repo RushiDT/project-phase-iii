@@ -1,0 +1,38 @@
+[ML] Config loaded: {
+  "temperature_max": 50,
+  "temperature_min": 10,
+  "humidity_max": 80,
+  "humidity_min": 20,
+  "cpu_usage_high": 70,
+  "wifi_signal_low": -80,
+  "trust_score_min": 30
+}
+==================================================
+Enhanced ML Anomaly Detection Service
+Python 3.14 Compatible (sklearn-only)
+==================================================
+[ML] Loading data from: C:\Users\Rushikesh\Desktop\program\Iot Device\server\server_logs.jsonl
+[ML] Read 1000 lines from file.
+[ML] Successfully parsed 1000 records.
+[ML] Training sensor model on 1000 records...
+[ML] Sensor model trained successfully.
+[ML] Loading data from: C:\Users\Rushikesh\Desktop\program\Iot Device\server\server_logs.jsonl
+[ML] Read 1000 lines from file.
+[ML] Successfully parsed 1000 records.
+[ML] Training power profiler model...
+[ML] Power model trained successfully.
+[ML] Loading data from: C:\Users\Rushikesh\Desktop\program\Iot Device\server\server_logs.jsonl
+[ML] Read 1000 lines from file.
+[ML] Successfully parsed 1000 records.
+[ML] Training behavior predictor model...
+[ML] Behavior model trained successfully.
+
+Threat Detection Available:
+  [OK] Sensor anomaly (Isolation Forest)
+  [OK] Access anomaly (Rule-based)
+  [OK] Power anomaly (Crypto mining, Botnet, DDoS)
+  [OK] Behavior anomaly (Pattern rules)
+
+Starting server on port 5001...
+ * Serving Flask app 'anomaly_detector'
+ * Debug mode: off

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "esp8266_env_01",
+    "type": "esp8266",
+    "user_id": "user_789",
+    "location": "balcony",
+    "status": "active"
+  },
+  {
+    "id": "esp32_sec_01",
+    "type": "esp32",
+    "user_id": "user_456",
+    "location": "entrance",
+    "status": "active"
+  }
+]

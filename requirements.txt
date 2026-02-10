@@ -1,2 +1,10 @@
 py-solc-x
 web3
+scikit-learn
+numpy
+pandas
+flask
+flask-cors
+requests
+paho-mqtt
+python-dotenv

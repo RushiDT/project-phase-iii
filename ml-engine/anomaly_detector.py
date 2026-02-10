@@ -5,6 +5,8 @@ Provides multiple threat detection methods without TensorFlow dependency.
 """
 
 import json
+import time
+from typing import Any, cast
 import os
 import sys
 import hashlib
@@ -15,12 +17,66 @@ from sklearn.ensemble import IsolationForest, RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
 from flask_cors import CORS
 from datetime import datetime
+import threading
+import requests
 
 app = Flask(__name__)
 CORS(app)
 
 # Configuration
-SERVER_LOGS_PATH = os.path.join("..", "server", "server_logs.json")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CONFIG_PATH = os.path.join(BASE_DIR, "config.json")
+PREDICTIONS_PATH = os.path.join(BASE_DIR, "anomaly_results.json")
+SERVER_LOGS_PATH = os.path.join(BASE_DIR, "..", "server", "server_logs.jsonl")
+
+# Load configuration
+def load_config():
+    """Load configuration from config.json."""
+    if os.path.exists(CONFIG_PATH):
+        try:
+            with open(CONFIG_PATH, 'r') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"[ML] Error loading config: {e}")
+    return {
+        "thresholds": {"temperature_max": 45, "cpu_usage_high": 90},
+        "logging": {"save_predictions": True, "max_predictions": 1000}
+    }
+
+CONFIG = load_config()
+print(f"[ML] Config loaded: {json.dumps(CONFIG.get('thresholds', {}), indent=2)}")
+
+# Prediction history lock
+predictions_lock = threading.Lock()
+
+def save_prediction(prediction_data):
+    """Save prediction to anomaly_results.json."""
+    if not CONFIG.get("logging", {}).get("save_predictions", True):
+        return
+    
+    with predictions_lock:
+        try:
+            predictions: list[dict[str, Any]] = []
+            if os.path.exists(PREDICTIONS_PATH):
+                with open(PREDICTIONS_PATH, 'r') as f:
+                    loaded = json.load(f)
+                    if isinstance(loaded, list):
+                        predictions = list(loaded)  # Explicit cast for type checker
+            
+            predictions.append({
+                **prediction_data,
+                "timestamp": datetime.now().isoformat()
+            })
+            
+            # Prune if needed
+            max_preds: int = int(CONFIG.get("logging", {}).get("max_predictions", 1000))
+            if len(predictions) > max_preds:
+                predictions = list(predictions)[-max_preds:]  # type: ignore[index]
+            
+            with open(PREDICTIONS_PATH, 'w') as f:
+                json.dump(predictions, f, indent=2)
+        except Exception as e:
+            print(f"[ML] Error saving prediction: {e}")
 
 # Model instances
 SENSOR_MODEL = None  # Isolation Forest for sensor anomalies
@@ -38,24 +94,47 @@ POWER_ANOMALY_TYPES = {
 
 def load_data():
     """Loads logs from the server storage."""
-    if not os.path.exists(SERVER_LOGS_PATH):
-        return pd.DataFrame()
-    
     try:
-        with open(SERVER_LOGS_PATH, 'r') as f:
-            data = json.load(f)
+        abs_logs_path = os.path.abspath(SERVER_LOGS_PATH)
+        print(f"[ML] Loading data from: {abs_logs_path}")
         
+        if not os.path.exists(abs_logs_path):
+            print(f"[ML] Log file NOT FOUND at {abs_logs_path}")
+            return pd.DataFrame()
+            
+        with open(abs_logs_path, 'r') as f:
+            lines = f.readlines()
+            print(f"[ML] Read {len(lines)} lines from file.")
+            data = []
+            for i, line in enumerate(lines):
+                if line.strip():
+                    try:
+                        data.append(json.loads(line))
+                    except Exception as je:
+                        if i < 5: print(f"[ML] JSON parse error on line {i+1}: {je}")
+                        continue
+        
+        print(f"[ML] Successfully parsed {len(data)} records.")
         if not data:
             return pd.DataFrame()
 
         flattened_data = []
         for entry in data:
+            # Safely get values with defaults
+            sensors = entry.get("sensors", {})
+            system = entry.get("system", {})
+            ts = entry.get("timestamp", datetime.now().timestamp())
+            dt = datetime.fromtimestamp(ts)
+            
             flat = {
-                "temperature": entry["sensors"]["temperature"],
-                "humidity": entry["sensors"]["humidity"],
-                "vibration": entry["sensors"]["vibration"],
-                "cpu_usage": entry["system"]["cpu_usage"],
-                "battery_level": entry["system"]["battery_level"]
+                "temperature": sensors.get("temperature", sensors.get("light_level", 25)),
+                "humidity": sensors.get("humidity", 50),
+                "vibration": sensors.get("vibration", 0.05),
+                "cpu_usage": system.get("cpu_usage", 20),
+                "battery_level": system.get("battery_level", 100),
+                "power_watts": system.get("power_watts", 10),
+                "network_activity": system.get("network_activity", 20),
+                "hour": dt.hour
             }
             flattened_data.append(flat)
             
@@ -69,52 +148,85 @@ def train_sensor_model():
     global SENSOR_MODEL
     df = load_data()
     
-    if df.empty or len(df) < 10:
-        print("[ML] Not enough data to train sensor model yet.")
+    min_samples = CONFIG.get("model", {}).get("min_training_samples", 10)
+    if df.empty or len(df) < min_samples:
+        print(f"[ML] Not enough data to train sensor model (need {min_samples}).")
         return False
         
     print(f"[ML] Training sensor model on {len(df)} records...")
-    SENSOR_MODEL = IsolationForest(contamination=0.05, random_state=42)
+    contamination = CONFIG.get("model", {}).get("contamination", 0.01)
+    random_state = CONFIG.get("model", {}).get("random_state", 42)
+    SENSOR_MODEL = IsolationForest(contamination=contamination, random_state=random_state)
     SENSOR_MODEL.fit(df)
     print("[ML] Sensor model trained successfully.")
     return True
 
 def train_power_model():
-    """Initialize power anomaly classifier with predefined rules."""
+    """Trains Isolation Forest specifically for power/system anomalies."""
     global POWER_MODEL
-    # Since we don't have labeled power data, use rule-based detection
-    print("[ML] Power model initialized (rule-based detection)")
-    POWER_MODEL = "rule_based"
+    df = load_data()
+    
+    if df.empty or len(df) < 10:
+        print("[ML] Not enough data to train power model.")
+        return False
+        
+    print("[ML] Training power profiler model...")
+    # Features focused on power and network
+    power_df = df[["cpu_usage", "power_watts", "network_activity", "temperature"]]
+    POWER_MODEL = IsolationForest(contamination=0.04, random_state=42)
+    POWER_MODEL.fit(power_df)
+    print("[ML] Power model trained successfully.")
     return True
 
 def train_behavior_model():
-    """Initialize behavior prediction model."""
+    """Trains Isolation Forest for behavioral patterns (time-based)."""
     global BEHAVIOR_MODEL
-    # Since we don't have labeled behavior data, use rule-based detection
-    print("[ML] Behavior model initialized (rule-based detection)")
-    BEHAVIOR_MODEL = "rule_based"
+    df = load_data()
+    
+    if df.empty or len(df) < 10:
+        print("[ML] Not enough data to train behavior model.")
+        return False
+        
+    print("[ML] Training behavior predictor model...")
+    # Basic behavior: what hours are device states changing?
+    # In this simplified model, we look at hour and cpu/power as proxy for activity
+    behavior_df = df[["hour", "cpu_usage", "power_watts"]]
+    BEHAVIOR_MODEL = IsolationForest(contamination=0.03, random_state=42)
+    BEHAVIOR_MODEL.fit(behavior_df)
+    print("[ML] Behavior model trained successfully.")
     return True
 
 def classify_power_anomaly(data):
-    """Rule-based power anomaly classification."""
-    cpu_usage = data.get("cpu_usage", data.get("system", {}).get("cpu_usage", 0))
-    power_watts = data.get("power_watts", 0)
-    network_activity = data.get("network_activity", 0)
-    temperature = data.get("temperature", data.get("sensors", {}).get("temperature", 25))
+    """Detect power anomalies using the trained Isolation Forest."""
+    global POWER_MODEL
     
-    # Detection rules
-    if cpu_usage > 90 and power_watts > 100:
-        return "crypto_mining", 0.9
-    elif network_activity > 150 and cpu_usage > 70:
-        return "botnet", 0.85
-    elif network_activity > 200:
-        return "ddos", 0.8
-    elif temperature > 60:
-        return "hardware_issue", 0.75
-    elif power_watts > 80 and cpu_usage < 20:
-        return "hardware_issue", 0.6
-    else:
-        return "normal", 0.0
+    system = data.get("system", {})
+    cpu = system.get("cpu_usage", 20)
+    power = system.get("power_watts", 10)
+    network = system.get("network_activity", 20)
+    temp = data.get("sensors", {}).get("temperature", 25)
+
+    if POWER_MODEL is not None and not isinstance(POWER_MODEL, str):
+        features = [[cpu, power, network, temp]]
+        score = POWER_MODEL.decision_function(features)[0]
+        is_anomaly = POWER_MODEL.predict(features)[0] == -1
+        
+        if is_anomaly:
+            # Heuristic to name the threat
+            if cpu > 80 and power > 80: return "crypto_mining", 0.95
+            if network > 400: return "botnet", 0.9
+            
+            # Filter out minor statistical anomalies (sanity check)
+            if cpu < 60 and power < 60:
+                return "normal", 0.0
+
+            return "system_anomaly", 0.7
+            
+    # Fallback to rules if model not ready
+    if cpu > 90 and power > 100: return "crypto_mining", 0.9
+    if network > 500: return "botnet", 0.85
+    
+    return "normal", 0.0
 
 def check_behavior_anomaly(context, actual_state):
     """Rule-based behavior anomaly detection."""
@@ -140,14 +252,22 @@ def check_behavior_anomaly(context, actual_state):
     
     return is_unusual, confidence
 
-def log_to_blockchain(device_id, score, data_hash, batch_hash="NONE", event_type="ANOMALY"):
+def log_to_blockchain(device_id, score, data_hash, batch_hash="NONE", event_type="ANOMALY", gateway_id="unknown"):
     """Log anomaly to blockchain with batch verification hash."""
     try:
+        # Pre-emptive sleep to reduce collision probability with server logs
+        import random
+        time.sleep(random.uniform(0.1, 0.5))
+        
         blockchain_path = os.path.join(os.path.dirname(__file__), '..', 'blockchain')
         sys.path.insert(0, blockchain_path)
-        from deploy_and_interact import log_anomaly
-        log_anomaly(device_id, score, data_hash, batch_hash, event_type)
-        print(f"[ML] Logged to blockchain: {event_type} for {device_id} (Batch: {batch_hash[:8]})")
+        from deploy_and_interact import log_event  # type: ignore[import-not-found]
+        
+        result = log_event(device_id, score, data_hash, batch_hash, event_type, gateway_id)
+        if "error" in result:
+            print(f"[ML] Blockchain log failed: {result['error']}")
+        else:
+            print(f"[ML] Logged to blockchain: {event_type} for {device_id} (Batch: {batch_hash[:8]})")
     except Exception as e:
         print(f"[ML] Failed to log to Blockchain: {e}")
 
@@ -157,14 +277,25 @@ def log_to_blockchain(device_id, score, data_hash, batch_hash="NONE", event_type
 @app.route('/train', methods=['POST'])
 def trigger_train():
     """Train all models."""
+    print("[ML] Training trigger received...")
     sensor_ok = train_sensor_model()
-    train_power_model()
-    train_behavior_model()
+    power_ok = train_power_model()
+    behavior_ok = train_behavior_model()
     
-    if sensor_ok:
-        return jsonify({"status": "trained", "models": ["sensor", "power", "behavior"]}), 200
-    else:
-        return jsonify({"status": "partial", "reason": "Not enough sensor data"}), 200
+    return jsonify({
+        "status": "success" if sensor_ok else "partial",
+        "models": {
+            "sensor": "trained" if sensor_ok else "skipped",
+            "power": "trained" if power_ok else "skipped",
+            "behavior": "trained" if behavior_ok else "skipped"
+        },
+        "timestamp": datetime.now().isoformat()
+    }), 200
+
+@app.route('/health', methods=['GET'])
+def health_check():
+    """Compatibility endpoint for start_system.py."""
+    return jsonify({"status": "healthy", "service": "ml-engine"}), 200
 
 @app.route('/predict', methods=['POST'])
 def predict_basic():
@@ -179,33 +310,88 @@ def predict_basic():
             is_anomaly = temp > 45
             if is_anomaly:
                 data_hash = hashlib.sha256(json.dumps(data).encode()).hexdigest()
-                log_to_blockchain(data.get("device_id", "unknown"), -1.0, data_hash, batch_hash, "TEMP_SPIKE")
+                log_to_blockchain(data.get("device_id", "unknown"), 1.0, data_hash, batch_hash, "TEMP_SPIKE", data.get("gateway_id", "unknown"))
             
             return jsonify({
                 "is_anomaly": is_anomaly,
-                "score": -1.0 if is_anomaly else 1.0, 
+                "score": 1.0 if is_anomaly else 0.0, 
                 "method": "fallback_threshold"
             })
 
     try:
         entry = request.json
-        features = [[
-            entry["sensors"]["temperature"],
-            entry["sensors"]["humidity"],
-            entry["sensors"]["vibration"],
-            entry["system"]["cpu_usage"],
-            entry["system"]["battery_level"]
+        sensors = entry.get("sensors", {})
+        system = entry.get("system", {})
+        
+        # Consistent 8-feature vector to match trained model
+        feature_names = ["temperature", "humidity", "vibration", "cpu_usage", "battery_level", "power_watts", "network_activity", "hour"]
+        features_list = [[
+            sensors.get("temperature", sensors.get("light_level", 25)),
+            sensors.get("humidity", 50),
+            sensors.get("vibration", 0.05),
+            system.get("cpu_usage", 20),
+            system.get("battery_level", 100),
+            system.get("power_watts", 10),
+            system.get("network_activity", 20),
+            datetime.now().hour
         ]]
+        features = pd.DataFrame(features_list, columns=feature_names)
+        
+        # Safety check: ensure model is ready before prediction
+        if SENSOR_MODEL is None:
+            return jsonify({
+                "is_anomaly": False,
+                "score": 0.0,
+                "method": "model_not_ready",
+                "error": "Sensor model not initialized"
+            }), 503
         
         prediction = SENSOR_MODEL.predict(features)[0]
         score = SENSOR_MODEL.decision_function(features)[0]
-        is_anomaly = prediction == -1
+        
+        # Only consider it an anomaly if prediction is -1 AND score is below a safe threshold
+        # High scores (near 0) often mean the point is on the boundary
+        threshold = CONFIG.get("model", {}).get("score_threshold", -0.1)
+        is_anomaly = prediction == -1 and score < threshold
         
         if is_anomaly:
-            print(f"[ML] ANOMALY DETECTED! Score: {score:.4f}")
-            data_hash = hashlib.sha256(json.dumps(features).encode()).hexdigest()
+            print(f"[ML] ANOMALY DETECTED! Score: {score:.4f} (Threshold: {threshold})")
+            print(f"      Features: {features}")
+            # Use raw list for hash to avoid DataFrame serialization error
+            data_hash = hashlib.sha256(json.dumps(features_list).encode()).hexdigest()
             batch_hash = entry.get("batch_hash", "NONE")
-            log_to_blockchain(entry.get("device_id", "unknown"), score, data_hash, batch_hash)
+            log_to_blockchain(entry.get("device_id", "unknown"), score, data_hash, batch_hash, "ANOMALY", entry.get("gateway_id", "unknown"))
+            
+            # Save to local JSON file for dashboard/debugging
+            save_prediction({
+                "device_id": entry.get("device_id", "unknown"),
+                "score": float(score),
+                "is_anomaly": True,
+                "features": features_list[0],
+                "threat_type": "sensor_anomaly",
+                "batch_hash": batch_hash
+            })
+
+            # Forward as security alert to server for dashboard
+            try:
+                server_host = os.getenv("SERVER_HOST", "localhost")
+                alert_payload = {
+                    "device_id": entry.get("device_id", "unknown"),
+                    "event_type": "SECURITY_ALERT",
+                    "reason": f"ML Anomaly Detected (Score: {score:.4f})",
+                    "anomaly_score": float(score),
+                    "timestamp": int(datetime.now().timestamp()),
+                    "batch_hash": batch_hash
+                }
+                requests.post(f"http://{server_host}:5002/api/alerts", json=alert_payload, timeout=2)
+                
+                # If score is very low, trigger the Base Station Alarm
+                if score < -0.1:
+                    requests.post(f"http://{server_host}:5002/api/alarm/trigger", 
+                                 json={"reason": f"High Priority Anomaly: {score:.4f}"}, 
+                                 timeout=2)
+            except Exception as e:
+                print(f"[ML] Failed to forward alert/alarm to server: {e}")
         
         return jsonify({
             "is_anomaly": bool(is_anomaly),
@@ -265,7 +451,7 @@ def predict_access():
             data_hash = hashlib.sha256(json.dumps(access_log).encode()).hexdigest()
             batch_hash = access_log.get("batch_hash", "NONE")
             log_to_blockchain(access_log.get("device_id", "unknown"), 
-                            confidence, data_hash, batch_hash, "ACCESS_ANOMALY")
+                            confidence, data_hash, batch_hash, "ACCESS_ANOMALY", access_log.get("gateway_id", "unknown"))
         
         return jsonify({
             "is_anomaly": is_anomaly,
@@ -291,7 +477,7 @@ def predict_power():
         if is_anomaly:
             data_hash = hashlib.sha256(json.dumps(power_log).encode()).hexdigest()
             batch_hash = power_log.get("batch_hash", "NONE")
-            log_to_blockchain(device_id, confidence, data_hash, batch_hash, anomaly_type.upper())
+            log_to_blockchain(device_id, confidence, data_hash, batch_hash, anomaly_type.upper(), power_log.get("gateway_id", "unknown"))
         
         return jsonify({
             "is_anomaly": is_anomaly,
@@ -337,10 +523,13 @@ def predict_comprehensive():
     data = request.json
     device_id = data.get("device_id", "unknown")
     
+    # Use a local list to avoid type inference issues with dict value types
+    detections: list[dict[str, float | str]] = []
+    
     results = {
         "device_id": device_id,
         "timestamp": datetime.now().isoformat(),
-        "detections": [],
+        "detections": detections,
         "overall_threat_level": "normal",
         "is_anomaly": False
     }
@@ -353,11 +542,14 @@ def predict_comprehensive():
                 data.get("sensors", {}).get("humidity", 50),
                 data.get("sensors", {}).get("vibration", 0),
                 data.get("system", {}).get("cpu_usage", 20),
-                data.get("system", {}).get("battery_level", 100)
+                data.get("system", {}).get("battery_level", 100),
+                data.get("system", {}).get("power_watts", 10),
+                data.get("system", {}).get("network_activity", 20),
+                datetime.now().hour
             ]]
             prediction = SENSOR_MODEL.predict(features)[0]
             if prediction == -1:
-                results["detections"].append({
+                detections.append({
                     "type": "sensor_anomaly",
                     "method": "isolation_forest",
                     "confidence": 0.8
@@ -369,7 +561,7 @@ def predict_comprehensive():
     try:
         anomaly_type, confidence = classify_power_anomaly(data)
         if anomaly_type != "normal":
-            results["detections"].append({
+            detections.append({
                 "type": anomaly_type,
                 "method": "power_profiler",
                 "confidence": confidence
@@ -382,7 +574,7 @@ def predict_comprehensive():
         actual_state = data.get('device_state', 'unknown')
         is_unusual, confidence = check_behavior_anomaly(data, actual_state)
         if is_unusual:
-            results["detections"].append({
+            detections.append({
                 "type": "behavior_anomaly",
                 "method": "behavior_rules",
                 "confidence": confidence
@@ -391,24 +583,59 @@ def predict_comprehensive():
         print(f"[ML] Behavior check error: {e}")
     
     # Determine overall threat level
-    if len(results["detections"]) > 0:
+    if len(detections) > 0:
         results["is_anomaly"] = True
-        max_confidence = max([d["confidence"] for d in results["detections"]])
+        max_confidence = float(max([d["confidence"] for d in detections]))
         
         if max_confidence > 0.8:
             results["overall_threat_level"] = "critical"
         elif max_confidence > 0.6:
             results["overall_threat_level"] = "high"
-        elif max_confidence > 0.4:
-            results["overall_threat_level"] = "medium"
-        else:
-            results["overall_threat_level"] = "low"
+        
+        # Primary threat type for blockchain
+        first_detection = detections[0]
+        main_threat = str(first_detection.get("type", "unknown"))
         
         # Log to blockchain
         data_hash = hashlib.sha256(json.dumps(data).encode()).hexdigest()
         batch_hash = data.get("batch_hash", "NONE")
-        threat_type = results["detections"][0]["type"].upper()
-        log_to_blockchain(device_id, max_confidence, data_hash, batch_hash, threat_type)
+        log_to_blockchain(device_id, max_confidence, data_hash, batch_hash, main_threat.upper(), data.get("gateway_id", "unknown"))
+        
+        # Save detailed prediction locally
+        save_prediction({
+            "device_id": device_id,
+            "score": float(max_confidence),
+            "is_anomaly": True,
+            "threat_type": main_threat,
+            "confidence": max_confidence,
+            "features": data,
+            "batch_hash": batch_hash,
+            "method": "comprehensive"
+        })
+
+        # Forward as security alert to server (for Dashboard/Alarm)
+        try:
+            server_host = os.getenv("SERVER_HOST", "localhost")
+            # 1. Send Alert
+            alert_payload = {
+                "device_id": device_id,
+                "event_type": "SECURITY_ALERT",
+                "reason": f"{main_threat} (Conf: {max_confidence:.2f})",
+                "anomaly_score": float(max_confidence),
+                "timestamp": int(datetime.now().timestamp()),
+                "batch_hash": batch_hash,
+                "threat_type": main_threat
+            }
+            requests.post(f"http://{server_host}:5002/api/alerts", json=alert_payload, timeout=1)
+
+            # 2. Trigger Alarm if Critical
+            if max_confidence > 0.8:
+                requests.post(f"http://{server_host}:5002/api/alarm/trigger", 
+                             json={"reason": f"CRITICAL: {main_threat} detected!"}, 
+                             timeout=1)
+
+        except Exception as e:
+            print(f"[ML] Failed to forward alert/alarm to server: {e}")
     
     return jsonify(results)
 
@@ -454,10 +681,10 @@ if __name__ == '__main__':
     train_behavior_model()
     
     print("\nThreat Detection Available:")
-    print("  ✓ Sensor anomaly (Isolation Forest)")
-    print("  ✓ Access anomaly (Rule-based)")
-    print("  ✓ Power anomaly (Crypto mining, Botnet, DDoS)")
-    print("  ✓ Behavior anomaly (Pattern rules)")
+    print("  [OK] Sensor anomaly (Isolation Forest)")
+    print("  [OK] Access anomaly (Rule-based)")
+    print("  [OK] Power anomaly (Crypto mining, Botnet, DDoS)")
+    print("  [OK] Behavior anomaly (Pattern rules)")
     
     print(f"\nStarting server on port 5001...")
     app.run(host='0.0.0.0', port=5001)

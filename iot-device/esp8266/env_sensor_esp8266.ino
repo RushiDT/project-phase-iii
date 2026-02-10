@@ -1,7 +1,7 @@
 #include <ArduinoJson.h>
 #include <DHT.h>
+#include <ESP8266WiFi.h>
 #include <PubSubClient.h>
-#include <WiFi.h>
 
 // WiFi Configuration
 const char *ssid = "YOUR_WIFI_SSID";         // <-- CHANGE THIS
@@ -10,13 +10,13 @@ const char *password = "YOUR_WIFI_PASSWORD"; // <-- CHANGE THIS
 // MQTT Configuration
 const char *mqtt_server = "192.168.1.133"; // Local machine's IP
 const int mqtt_port = 1883;
-const char *device_id = "esp32_env_01";
+const char *device_id = "esp8266_env_01";
 const char *user_id = "user_789";
-const char *topic_data = "iot/devices/esp32_env_01/data";
+const char *topic_data = "iot/devices/esp8266_env_01/data";
 
 // Sensor Configuration
-#define DHTPIN 4
-#define DHTTYPE DHT11 // or DHT22
+#define DHTPIN D4     // Digital pin connected to the DHT sensor
+#define DHTTYPE DHT11 // DHT 11
 DHT dht(DHTPIN, DHTTYPE);
 
 WiFiClient espClient;
@@ -85,8 +85,7 @@ void loop() {
     StaticJsonDocument<512> doc;
     doc["device_id"] = device_id;
     doc["user_id"] = user_id;
-    doc["timestamp"] =
-        time(nullptr); // Requires NTP setup for accuracy, or use gateway time
+    doc["timestamp"] = 0; // Gateway will timestamp if NTP not set
     doc["sequence_number"] = seq_num++;
 
     JsonObject sensors = doc.createNestedObject("sensors");
@@ -95,7 +94,7 @@ void loop() {
     sensors["vibration"] = 0.0;
 
     JsonObject system = doc.createNestedObject("system");
-    system["battery_level"] = 100; // Simulated or measured
+    system["battery_level"] = 100;
     system["cpu_usage"] = random(10, 30);
     system["wifi_signal"] = WiFi.RSSI();
 
@@ -103,7 +102,7 @@ void loop() {
     serializeJson(doc, buffer);
     client.publish(topic_data, buffer);
 
-    Serial.print("Published: ");
+    Serial.print("Published (ESP8266): ");
     Serial.println(buffer);
   }
 }

@@ -1,0 +1,5 @@
+description = "Run the Ralph autonomous agent loop"
+prompt = "Execute the ralph script from .gemini/ralph/ralph.ps1 with any provided arguments."
+
+[execution]
+command = "powershell -ExecutionPolicy Bypass -File .gemini/ralph/ralph.ps1"

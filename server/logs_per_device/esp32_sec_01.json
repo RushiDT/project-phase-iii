@@ -1,3528 +1,6 @@
 [
   {
     "date": "2026-02-10",
-    "time": "01:52:02",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -72
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "4c015ec91964aa15e7834cb98c7156b170a9d63ef83429e670082febd993591d"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:02",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "4c015ec91964aa15e7834cb98c7156b170a9d63ef83429e670082febd993591d"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:04",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "64558091c83e42506020cb8aa85aed1558da0142ddc2c37cb64fca7f47baf883"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:04",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "64558091c83e42506020cb8aa85aed1558da0142ddc2c37cb64fca7f47baf883"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:04",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -75
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "64558091c83e42506020cb8aa85aed1558da0142ddc2c37cb64fca7f47baf883"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:06",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -73
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "38c84c586a1b16bdf0b7f1c610657c037aa3fa5285e36df4f5aea48f35d5b40b"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:06",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -76
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "38c84c586a1b16bdf0b7f1c610657c037aa3fa5285e36df4f5aea48f35d5b40b"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:08",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -79
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "e5f2f48741953b64a2f053151060ef04fb0b29a44e3c53b2998eafd537a4f016"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:08",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -79
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "e5f2f48741953b64a2f053151060ef04fb0b29a44e3c53b2998eafd537a4f016"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:08",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -76
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "e5f2f48741953b64a2f053151060ef04fb0b29a44e3c53b2998eafd537a4f016"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:10",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "8500f479c119562fe1839ac26e6d58ca6bdb6322f828fe7264df0ffe14ba7e2e"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:10",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "8500f479c119562fe1839ac26e6d58ca6bdb6322f828fe7264df0ffe14ba7e2e"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:10",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "8500f479c119562fe1839ac26e6d58ca6bdb6322f828fe7264df0ffe14ba7e2e"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:10",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "8500f479c119562fe1839ac26e6d58ca6bdb6322f828fe7264df0ffe14ba7e2e"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:10",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -73
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "f8399cff39a259e7ead990f0e898db4abfda78aaf42ae6a9b198b1019dc113bd"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:10",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -77
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "f8399cff39a259e7ead990f0e898db4abfda78aaf42ae6a9b198b1019dc113bd"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:12",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -76
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "606a3305abc83ccb3ad2fed76105bc732deca96f930650a647e95c74da377b7d"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:12",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -73
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "606a3305abc83ccb3ad2fed76105bc732deca96f930650a647e95c74da377b7d"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:12",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -81
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "606a3305abc83ccb3ad2fed76105bc732deca96f930650a647e95c74da377b7d"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:14",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 11,
-      "wifi_signal": -78
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "97bcb3dc1e77eaecfa67f557b179e2e95854c6f0399035e7f158060af1eb8760"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:14",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 11,
-      "wifi_signal": -75
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "97bcb3dc1e77eaecfa67f557b179e2e95854c6f0399035e7f158060af1eb8760"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:16",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -78
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "97a3976929bc5a7358d4ce176db6fa367c5df905d59874e6167053b89cc60d0e"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:16",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -79
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "97a3976929bc5a7358d4ce176db6fa367c5df905d59874e6167053b89cc60d0e"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:16",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -76
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "97a3976929bc5a7358d4ce176db6fa367c5df905d59874e6167053b89cc60d0e"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:18",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -76
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "ed6fde9dff8dacb4762a7a94d8be490553fb81001144343665d27cb33a0ed268"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:18",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -71
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "ed6fde9dff8dacb4762a7a94d8be490553fb81001144343665d27cb33a0ed268"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:20",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "cf2d4e401b05e5fca9de5fd26990ab2279f7c9ea01584ff6a8296c00ed8e4309"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:20",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "cf2d4e401b05e5fca9de5fd26990ab2279f7c9ea01584ff6a8296c00ed8e4309"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:20",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "cf2d4e401b05e5fca9de5fd26990ab2279f7c9ea01584ff6a8296c00ed8e4309"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:20",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "cf2d4e401b05e5fca9de5fd26990ab2279f7c9ea01584ff6a8296c00ed8e4309"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:20",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "bc6628134fbc31cb70286998ffc75060be84bdf906c1807876a3012e3e4e2ccf"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:20",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -78
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "bc6628134fbc31cb70286998ffc75060be84bdf906c1807876a3012e3e4e2ccf"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:20",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "bc6628134fbc31cb70286998ffc75060be84bdf906c1807876a3012e3e4e2ccf"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:22",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 11,
-      "wifi_signal": -73
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "ece4fbe9e57471dd7e25b56a5aa3d6819e3b2f80bd72d2a42fa9a04f9bafc0f1"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:22",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -81
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "ece4fbe9e57471dd7e25b56a5aa3d6819e3b2f80bd72d2a42fa9a04f9bafc0f1"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:24",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -73
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "9886a46873845a245b70a6d708c8a46adda00fe7ad142235681487e445b9c835"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:24",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "9886a46873845a245b70a6d708c8a46adda00fe7ad142235681487e445b9c835"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:24",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -70
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "9886a46873845a245b70a6d708c8a46adda00fe7ad142235681487e445b9c835"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:26",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "c4069c88f980a20531eb09959b78907d564d21760782ce38a17c042fc464a1a0"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:26",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "c4069c88f980a20531eb09959b78907d564d21760782ce38a17c042fc464a1a0"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:28",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "b5cc199d84ee90d09745885e68d07eee2fceca70868d4c85e959e7cacd31aa20"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:28",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "b5cc199d84ee90d09745885e68d07eee2fceca70868d4c85e959e7cacd31aa20"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:28",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "b5cc199d84ee90d09745885e68d07eee2fceca70868d4c85e959e7cacd31aa20"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:30",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "e7d7d0238ffc522420cdc075862f0d17e411f258459cafa2f1d6bf2698231b36"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:30",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "e7d7d0238ffc522420cdc075862f0d17e411f258459cafa2f1d6bf2698231b36"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:30",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 11,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "e7d7d0238ffc522420cdc075862f0d17e411f258459cafa2f1d6bf2698231b36"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:30",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "e7d7d0238ffc522420cdc075862f0d17e411f258459cafa2f1d6bf2698231b36"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:30",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "e7d7d0238ffc522420cdc075862f0d17e411f258459cafa2f1d6bf2698231b36"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:30",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "9864b3871ca6ce1a70752db76493086bf29a2a648a3591ff63eb657c96706c5e"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:30",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "9864b3871ca6ce1a70752db76493086bf29a2a648a3591ff63eb657c96706c5e"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:32",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "679377b07e041bf1bfc05f818e3c4264a04a661076047aa0c42092ef4b60813a"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:32",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "679377b07e041bf1bfc05f818e3c4264a04a661076047aa0c42092ef4b60813a"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:32",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -73
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "679377b07e041bf1bfc05f818e3c4264a04a661076047aa0c42092ef4b60813a"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:34",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -70
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "8d89066cf49999d0beb14a14a795750c5427f18a333dda915634819145d92e86"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:34",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "8d89066cf49999d0beb14a14a795750c5427f18a333dda915634819145d92e86"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:36",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "5e50e82835c5d28b3eb211b3b71ae65030deaf080a298a5e003adec0a3cebc21"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:36",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "5e50e82835c5d28b3eb211b3b71ae65030deaf080a298a5e003adec0a3cebc21"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:36",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "5e50e82835c5d28b3eb211b3b71ae65030deaf080a298a5e003adec0a3cebc21"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:38",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "3361ebaabf371935dc9e895747c2c5aeb321988df73bcdf2cff6a7c7237858b2"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:38",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "3361ebaabf371935dc9e895747c2c5aeb321988df73bcdf2cff6a7c7237858b2"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:40",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "e0bd43ffd258d98e600275c71ee9b22d6755317076e45fb806d24b33846ef9e5"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:40",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "e0bd43ffd258d98e600275c71ee9b22d6755317076e45fb806d24b33846ef9e5"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:40",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "e0bd43ffd258d98e600275c71ee9b22d6755317076e45fb806d24b33846ef9e5"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:40",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "e0bd43ffd258d98e600275c71ee9b22d6755317076e45fb806d24b33846ef9e5"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:40",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "2917333987da5204992c2b76d3ac66036f2fdc062f7b27caea928631ea97d9c1"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:40",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "2917333987da5204992c2b76d3ac66036f2fdc062f7b27caea928631ea97d9c1"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:40",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "2917333987da5204992c2b76d3ac66036f2fdc062f7b27caea928631ea97d9c1"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:42",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "d6d5756e38f636451a7dd15a57fcf34d1e87117662836dfda9b0ee0071216bf0"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:42",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "d6d5756e38f636451a7dd15a57fcf34d1e87117662836dfda9b0ee0071216bf0"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:42",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "d6d5756e38f636451a7dd15a57fcf34d1e87117662836dfda9b0ee0071216bf0"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:44",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "e04fa06a0aba6a8bae44f92f031411b0116bab7710b08721a33941d0810ae033"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:44",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -70
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "e04fa06a0aba6a8bae44f92f031411b0116bab7710b08721a33941d0810ae033"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:46",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "a5b9b196ea82233963174a64f553cc50d8e2c817c26c85602db958adece62db0"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:46",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "a5b9b196ea82233963174a64f553cc50d8e2c817c26c85602db958adece62db0"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:46",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -61
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "a5b9b196ea82233963174a64f553cc50d8e2c817c26c85602db958adece62db0"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:48",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "38e9cf0205c9950fc447c33b442220fe43f290b89b95beac04c925cfc9a8ce8e"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:48",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "38e9cf0205c9950fc447c33b442220fe43f290b89b95beac04c925cfc9a8ce8e"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:50",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "72767dee69174566fd8fa735db34e6f999f29c3ee7b093e390f91ff843541713"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:50",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -61
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "72767dee69174566fd8fa735db34e6f999f29c3ee7b093e390f91ff843541713"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:50",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "72767dee69174566fd8fa735db34e6f999f29c3ee7b093e390f91ff843541713"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:50",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "72767dee69174566fd8fa735db34e6f999f29c3ee7b093e390f91ff843541713"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:50",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "7128d5a6e8bf62dd646629b5b7d2a944eda85143a62e1546d11b6164dd5e805d"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:50",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "7128d5a6e8bf62dd646629b5b7d2a944eda85143a62e1546d11b6164dd5e805d"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:50",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "7128d5a6e8bf62dd646629b5b7d2a944eda85143a62e1546d11b6164dd5e805d"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:53",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "0cc320931c9f5515c4069b8c3c1568a86c49455c19fc0fead4c97fb9b40e6072"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:53",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "0cc320931c9f5515c4069b8c3c1568a86c49455c19fc0fead4c97fb9b40e6072"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:55",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 11,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "cc467cadf48e27dca48c9f7d67e183de97bf959cd93a130bd07611d94219fced"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:55",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "cc467cadf48e27dca48c9f7d67e183de97bf959cd93a130bd07611d94219fced"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:55",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "cc467cadf48e27dca48c9f7d67e183de97bf959cd93a130bd07611d94219fced"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:57",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "c1a656c2f535d895f7bffcd9fae4c7cdb979b7f37b5d3f17c8166db1b4091995"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:57",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "c1a656c2f535d895f7bffcd9fae4c7cdb979b7f37b5d3f17c8166db1b4091995"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:59",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "d1816de15bd5cefade7ceaacd4a635e31c3a8b96cefff9a5ef42a6a6ce85169c"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:59",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -70
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "d1816de15bd5cefade7ceaacd4a635e31c3a8b96cefff9a5ef42a6a6ce85169c"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:52:59",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "d1816de15bd5cefade7ceaacd4a635e31c3a8b96cefff9a5ef42a6a6ce85169c"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:00",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "fdf1cc06abdfcd9a936e4989e48cabb757c87e722579ca9c0e441faa16f234fa"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:00",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "fdf1cc06abdfcd9a936e4989e48cabb757c87e722579ca9c0e441faa16f234fa"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:00",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "fdf1cc06abdfcd9a936e4989e48cabb757c87e722579ca9c0e441faa16f234fa"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:00",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "fdf1cc06abdfcd9a936e4989e48cabb757c87e722579ca9c0e441faa16f234fa"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:00",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "fdf1cc06abdfcd9a936e4989e48cabb757c87e722579ca9c0e441faa16f234fa"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:01",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "1131632db2c428101b1697772aed239103215832a177a58a9ab95bd2069ad56a"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:01",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 11,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "1131632db2c428101b1697772aed239103215832a177a58a9ab95bd2069ad56a"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:03",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -70
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "9dd142ac05acc78b658a1bc73449e4c511a85ea0df3fcdfd8b9ab78b47d007fe"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:03",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 11,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "9dd142ac05acc78b658a1bc73449e4c511a85ea0df3fcdfd8b9ab78b47d007fe"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:03",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "9dd142ac05acc78b658a1bc73449e4c511a85ea0df3fcdfd8b9ab78b47d007fe"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:05",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "dbd69d1ab0e0e8a94acb8b0508dd0a59923b961021f0d0f711283a61bf6c6718"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:05",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "dbd69d1ab0e0e8a94acb8b0508dd0a59923b961021f0d0f711283a61bf6c6718"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:07",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "51206da114a627e198638632735dd09b87e2165b52b26fa7fd2247ce29c5148f"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:07",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "51206da114a627e198638632735dd09b87e2165b52b26fa7fd2247ce29c5148f"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:07",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "51206da114a627e198638632735dd09b87e2165b52b26fa7fd2247ce29c5148f"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:08",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "temperature": 75,
-      "vibration": 0.05,
-      "cpu_usage": 98,
-      "power_watts": 120,
-      "battery_level": 40,
-      "network_activity": 50,
-      "firmware_version": "v1.2.0"
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "4ead2422a83e64dabd78b53c9e10ab2cb859c3c5854654f06dad95bdcb82e0eb"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:09",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -71
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "7ed2bad709d89a721a6ad5f2d24725fd0a51d8c3c90bb72d80a6412911e79646"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:09",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "7ed2bad709d89a721a6ad5f2d24725fd0a51d8c3c90bb72d80a6412911e79646"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:10",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "a83554a96290ac7a9cda7bd06230c970273fa6ddc29faf4fc1344b5a0c183f77"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:10",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "a83554a96290ac7a9cda7bd06230c970273fa6ddc29faf4fc1344b5a0c183f77"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:10",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "a83554a96290ac7a9cda7bd06230c970273fa6ddc29faf4fc1344b5a0c183f77"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:10",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "a83554a96290ac7a9cda7bd06230c970273fa6ddc29faf4fc1344b5a0c183f77"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:11",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "4964d833784bc75338fa441b191b4b26ce0392389179dc1fd6fce9aa0f176b6b"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:11",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "4964d833784bc75338fa441b191b4b26ce0392389179dc1fd6fce9aa0f176b6b"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:11",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -71
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "4964d833784bc75338fa441b191b4b26ce0392389179dc1fd6fce9aa0f176b6b"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:13",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "e77a838666f385d2d0aa3b4490e653e49eca557878dcc0b456a2d03e791f2dd5"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:13",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "e77a838666f385d2d0aa3b4490e653e49eca557878dcc0b456a2d03e791f2dd5"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:15",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -74
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "c9ea292612f182c4bedb74a8d9f801a08c195ed6bfe361fe7b1836965b6e6a6a"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:15",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -70
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "c9ea292612f182c4bedb74a8d9f801a08c195ed6bfe361fe7b1836965b6e6a6a"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:15",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "c9ea292612f182c4bedb74a8d9f801a08c195ed6bfe361fe7b1836965b6e6a6a"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:17",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -72
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "80db7efa6d25bd7a7848863f393aa6f22c5ce719d84576443f0ca542efd7f3c4"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:17",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "80db7efa6d25bd7a7848863f393aa6f22c5ce719d84576443f0ca542efd7f3c4"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:19",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "0a13c1c0bc37621afceed32d1fd0ec10319c28592e0c4b6316069a9b2de386a9"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:19",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "0a13c1c0bc37621afceed32d1fd0ec10319c28592e0c4b6316069a9b2de386a9"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:19",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -70
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "0a13c1c0bc37621afceed32d1fd0ec10319c28592e0c4b6316069a9b2de386a9"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:20",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "cf00c027936d008b9b7e26db889570a847bd687237ea32263b3fd8352569b55b"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:20",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "cf00c027936d008b9b7e26db889570a847bd687237ea32263b3fd8352569b55b"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:20",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "cf00c027936d008b9b7e26db889570a847bd687237ea32263b3fd8352569b55b"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:20",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "cf00c027936d008b9b7e26db889570a847bd687237ea32263b3fd8352569b55b"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:21",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "316769121edaee61b9a3963ef7840e6ab0ee494dfbb61a42cfd4158be638153e"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:21",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "316769121edaee61b9a3963ef7840e6ab0ee494dfbb61a42cfd4158be638153e"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:23",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "02edbb8bac7cae70acd7f1dcb222e388f611bf8b2926deec9260c23b5cd15a6c"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:23",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "02edbb8bac7cae70acd7f1dcb222e388f611bf8b2926deec9260c23b5cd15a6c"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:23",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "02edbb8bac7cae70acd7f1dcb222e388f611bf8b2926deec9260c23b5cd15a6c"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:25",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -70
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "bb7b16b382e62965ff9291acf87f4a3bd439b48fe50b4f97a705ec1e521975b7"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:25",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "bb7b16b382e62965ff9291acf87f4a3bd439b48fe50b4f97a705ec1e521975b7"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:27",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "ad381849e6ad2e76f1a2702d8788eb26284209a23d6afe803c3fbad60badcc5d"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:27",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "ad381849e6ad2e76f1a2702d8788eb26284209a23d6afe803c3fbad60badcc5d"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:27",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "ad381849e6ad2e76f1a2702d8788eb26284209a23d6afe803c3fbad60badcc5d"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:29",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "70b6c417eae60b522473db1add46bd9269383a00bcd88d11f71c7a84b3013c6f"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:29",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "70b6c417eae60b522473db1add46bd9269383a00bcd88d11f71c7a84b3013c6f"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:30",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "53e7ff178a90e30f73f79491be405b44b396f6785736ec157565fcd5f1dc7f39"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:30",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "53e7ff178a90e30f73f79491be405b44b396f6785736ec157565fcd5f1dc7f39"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:30",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "53e7ff178a90e30f73f79491be405b44b396f6785736ec157565fcd5f1dc7f39"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:30",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "53e7ff178a90e30f73f79491be405b44b396f6785736ec157565fcd5f1dc7f39"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:30",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "53e7ff178a90e30f73f79491be405b44b396f6785736ec157565fcd5f1dc7f39"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:31",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "bef666e309b7a8d925cec248198d46d4fc589d42d0357627cf4168cdca7a4089"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:31",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "bef666e309b7a8d925cec248198d46d4fc589d42d0357627cf4168cdca7a4089"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:31",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "bef666e309b7a8d925cec248198d46d4fc589d42d0357627cf4168cdca7a4089"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:33",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "6b478effeb7e03b95068a2ea8f2b07246cd776de6ea456a4f0486d8043a7f773"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:33",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "6b478effeb7e03b95068a2ea8f2b07246cd776de6ea456a4f0486d8043a7f773"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:35",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "6dc4646a66f62ef2d2fad461515535b9147d1ed0dedda4218883d80a744d25d5"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:35",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "6dc4646a66f62ef2d2fad461515535b9147d1ed0dedda4218883d80a744d25d5"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:35",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "6dc4646a66f62ef2d2fad461515535b9147d1ed0dedda4218883d80a744d25d5"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:37",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "4c8b82d6274f17ed047f550ea0f0b88e350ab518c4622c935ccc54e511fd0126"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:37",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "4c8b82d6274f17ed047f550ea0f0b88e350ab518c4622c935ccc54e511fd0126"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:37",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "4c8b82d6274f17ed047f550ea0f0b88e350ab518c4622c935ccc54e511fd0126"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:39",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "8d2089272b4b378a55d18045e9b9273b2bf40953c786d3688f44a257a562e249"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:39",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "8d2089272b4b378a55d18045e9b9273b2bf40953c786d3688f44a257a562e249"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:40",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 11,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "18bee8ab90d8477811920c2d6d1b2c5f23155e0d33548238bdb2c9d7f8f70081"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:40",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "18bee8ab90d8477811920c2d6d1b2c5f23155e0d33548238bdb2c9d7f8f70081"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:40",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "18bee8ab90d8477811920c2d6d1b2c5f23155e0d33548238bdb2c9d7f8f70081"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:40",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 11,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "18bee8ab90d8477811920c2d6d1b2c5f23155e0d33548238bdb2c9d7f8f70081"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:41",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "7bd26dd01bd293eabc1312eb3469dfc8ccd91540fea3d70df23ca36795503fa8"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:41",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "7bd26dd01bd293eabc1312eb3469dfc8ccd91540fea3d70df23ca36795503fa8"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:41",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "7bd26dd01bd293eabc1312eb3469dfc8ccd91540fea3d70df23ca36795503fa8"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:43",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "61ab2eee42d397bc89eef73fed27e45ba1a3ba7472fc1f2df7e4a36ac54851d5"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:43",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "61ab2eee42d397bc89eef73fed27e45ba1a3ba7472fc1f2df7e4a36ac54851d5"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:45",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "b44850d7bb2921389ba859ad96fdd740c3343c463cbc4469f914b5f23cbdc2b2"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:45",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 11,
-      "wifi_signal": -71
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "b44850d7bb2921389ba859ad96fdd740c3343c463cbc4469f914b5f23cbdc2b2"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:45",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "b44850d7bb2921389ba859ad96fdd740c3343c463cbc4469f914b5f23cbdc2b2"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:47",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "ca30bb743db3fddcfaecbbf9270f784c00025ce6ad214fd2a2b322c162614f2b"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:47",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "ca30bb743db3fddcfaecbbf9270f784c00025ce6ad214fd2a2b322c162614f2b"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:49",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "018fcc2cadc37289996a3654a70bcfb6eaa1f0041f8fe75ec94f08fea6ee68cd"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:49",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "018fcc2cadc37289996a3654a70bcfb6eaa1f0041f8fe75ec94f08fea6ee68cd"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:49",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "018fcc2cadc37289996a3654a70bcfb6eaa1f0041f8fe75ec94f08fea6ee68cd"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:50",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "072f7c07ac6cad8fb7ad74565e7833ecd0ad965c435ded117e331fcda5c3b3aa"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:50",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 11,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "072f7c07ac6cad8fb7ad74565e7833ecd0ad965c435ded117e331fcda5c3b3aa"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:50",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "072f7c07ac6cad8fb7ad74565e7833ecd0ad965c435ded117e331fcda5c3b3aa"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:50",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "072f7c07ac6cad8fb7ad74565e7833ecd0ad965c435ded117e331fcda5c3b3aa"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:51",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "572584ddcfbbc73149b0cc6b2e59fa67b0d4ab3472d2a68746e909edec9f000d"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:51",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "572584ddcfbbc73149b0cc6b2e59fa67b0d4ab3472d2a68746e909edec9f000d"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:53",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "41f9f08f244bab37e8d9c9d08c6c481505f9fbfca8e9cd805a6d724f549d2568"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:53",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "41f9f08f244bab37e8d9c9d08c6c481505f9fbfca8e9cd805a6d724f549d2568"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:53",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "41f9f08f244bab37e8d9c9d08c6c481505f9fbfca8e9cd805a6d724f549d2568"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:55",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "74907d2cd958b8f1103f60463f7b9ca1aedf516da5330a6e0bf6ca8329177a64"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:55",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "74907d2cd958b8f1103f60463f7b9ca1aedf516da5330a6e0bf6ca8329177a64"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:57",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "7544ccfe5962f628160d11390a869bbf7f567d9f473f52730dda5829a69613c3"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:57",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -61
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "7544ccfe5962f628160d11390a869bbf7f567d9f473f52730dda5829a69613c3"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:57",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "7544ccfe5962f628160d11390a869bbf7f567d9f473f52730dda5829a69613c3"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:59",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.03,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "322c202126370d749d90e775792a4c128575e87b34ee3acb03ad5b716726db97"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:53:59",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "322c202126370d749d90e775792a4c128575e87b34ee3acb03ad5b716726db97"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:00",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "585a1f1b02e7c614a56acf8786bdee677df2b23efc4ba0b13bb06051fa3d12b6"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:00",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -70
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "585a1f1b02e7c614a56acf8786bdee677df2b23efc4ba0b13bb06051fa3d12b6"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:00",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "585a1f1b02e7c614a56acf8786bdee677df2b23efc4ba0b13bb06051fa3d12b6"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:00",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.01,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "585a1f1b02e7c614a56acf8786bdee677df2b23efc4ba0b13bb06051fa3d12b6"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:00",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.04,
-      "battery_level": 100,
-      "cpu_usage": 7,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "585a1f1b02e7c614a56acf8786bdee677df2b23efc4ba0b13bb06051fa3d12b6"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:01",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "07728864c5e2492c6174747786780f9daf0a15f2040ef5ef666aacbeb054c5f7"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:01",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "07728864c5e2492c6174747786780f9daf0a15f2040ef5ef666aacbeb054c5f7"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:01",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "07728864c5e2492c6174747786780f9daf0a15f2040ef5ef666aacbeb054c5f7"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:03",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "a1dda15d78381b811bc2a9274ade93207231fb38fd556be174bb86894ce40140"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:03",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.08,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "a1dda15d78381b811bc2a9274ade93207231fb38fd556be174bb86894ce40140"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:05",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "25283eb38868da4952e4d92e7bd38609505172416cbbc9ecfab8ccab03143207"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:05",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "25283eb38868da4952e4d92e7bd38609505172416cbbc9ecfab8ccab03143207"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:05",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 8,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "25283eb38868da4952e4d92e7bd38609505172416cbbc9ecfab8ccab03143207"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:07",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "1b5a235f46a130b793bd1c738087e00f28f128a044272da76c94b505f06f12de"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:07",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 5,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "1b5a235f46a130b793bd1c738087e00f28f128a044272da76c94b505f06f12de"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:09",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.05,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -69
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "bcc143a79ce3ce29b2d8766ebefbf39823318e9d7e05dd1e5c36409d222cebeb"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:09",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "bcc143a79ce3ce29b2d8766ebefbf39823318e9d7e05dd1e5c36409d222cebeb"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:09",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "bcc143a79ce3ce29b2d8766ebefbf39823318e9d7e05dd1e5c36409d222cebeb"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:11",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -68
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "70115833000b31a22ff4378b846beb28d4f0a9f2f0d43624dc91dad9cb7b219a"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:11",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.07,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "70115833000b31a22ff4378b846beb28d4f0a9f2f0d43624dc91dad9cb7b219a"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:11",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -66
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "70115833000b31a22ff4378b846beb28d4f0a9f2f0d43624dc91dad9cb7b219a"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:11",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": true,
-      "vibration": 0.06,
-      "battery_level": 100,
-      "cpu_usage": 9,
-      "wifi_signal": -71
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "70115833000b31a22ff4378b846beb28d4f0a9f2f0d43624dc91dad9cb7b219a"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:11",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.09,
-      "battery_level": 100,
-      "cpu_usage": 11,
-      "wifi_signal": -65
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "af0261514ce7b56b94a62e847b782bce8e54d13571d7890d7afcc7744cf121b7"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:54:11",
-    "device_id": "esp32_sec_01",
-    "score": 1,
-    "values": {
-      "motion": true,
-      "light_state": false,
-      "vibration": 0.02,
-      "battery_level": 100,
-      "cpu_usage": 6,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "af0261514ce7b56b94a62e847b782bce8e54d13571d7890d7afcc7744cf121b7"
-  },
-  {
-    "date": "2026-02-10",
     "time": "01:54:13",
     "device_id": "esp32_sec_01",
     "score": 1,
@@ -8000,5 +4478,3525 @@
     },
     "gateway_id": "gateway_001",
     "batch_hash": "c2803972675844558577c2279a766d9c9ab811d756d4db1a5521f1fb0f958021"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:19",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "2f4c35ece791a305a64e1172f173c62736e6c113ddeceed6f8fb9486f79f2b0b"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:19",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.02,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -75
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "2f4c35ece791a305a64e1172f173c62736e6c113ddeceed6f8fb9486f79f2b0b"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:21",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -75
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "f1965330a1e661af3aa5d5ee51750e8778917ba425d411225a6cbb0ae928b993"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:21",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "f1965330a1e661af3aa5d5ee51750e8778917ba425d411225a6cbb0ae928b993"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:21",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "f1965330a1e661af3aa5d5ee51750e8778917ba425d411225a6cbb0ae928b993"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:23",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "63992e16b3ec19e347375b06f8f87aacd376fa31dcdf1fff59ba60167713a600"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:23",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "63992e16b3ec19e347375b06f8f87aacd376fa31dcdf1fff59ba60167713a600"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:25",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "2ba262c8845b8ac61b0abc2120a5a0fe4da90e409b7a31a95b561ba2823d2da6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:25",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "2ba262c8845b8ac61b0abc2120a5a0fe4da90e409b7a31a95b561ba2823d2da6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:25",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -72
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "2ba262c8845b8ac61b0abc2120a5a0fe4da90e409b7a31a95b561ba2823d2da6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:27",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "55308af28f85abcaf730e9387381abaa175fe987b3c2946a4eee0d2d0f61b19a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:27",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "55308af28f85abcaf730e9387381abaa175fe987b3c2946a4eee0d2d0f61b19a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:29",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "02678710faff7348501b7056524f5bd1986546161f6128c529f05d557695da2a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:29",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "02678710faff7348501b7056524f5bd1986546161f6128c529f05d557695da2a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:29",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "02678710faff7348501b7056524f5bd1986546161f6128c529f05d557695da2a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:31",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "f5ac5a53244783d805a47e77690ad694bfafbc98ab28a1437aa6a42eb4d6552b"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:31",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -74
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "f5ac5a53244783d805a47e77690ad694bfafbc98ab28a1437aa6a42eb4d6552b"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:33",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "cda5cc71285957ee6da40dd440d755918edfb1ad5f7d31cc96a8c525e0fc2b26"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:33",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.02,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "cda5cc71285957ee6da40dd440d755918edfb1ad5f7d31cc96a8c525e0fc2b26"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:33",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "cda5cc71285957ee6da40dd440d755918edfb1ad5f7d31cc96a8c525e0fc2b26"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:35",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4139dd1b7ca517c95dc2b6066f496f81e06b488fee5c626515dbace257f79810"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:35",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 9,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4139dd1b7ca517c95dc2b6066f496f81e06b488fee5c626515dbace257f79810"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:37",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -73
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "adf9b0797d6f008085cd20af34a8a6d086ba87a4bb993576695bbf34b58e151e"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:37",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.09,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -72
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "adf9b0797d6f008085cd20af34a8a6d086ba87a4bb993576695bbf34b58e151e"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:37",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "adf9b0797d6f008085cd20af34a8a6d086ba87a4bb993576695bbf34b58e151e"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:39",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "7d64f5a45002f5999d23277dca009120ad0d148a05a533a00628457d6a2604f1"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:39",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 9,
+      "wifi_signal": -72
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "7d64f5a45002f5999d23277dca009120ad0d148a05a533a00628457d6a2604f1"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:41",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -72
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "89214565fad4898cb2ab3d836622ac2fc7c85725cb29f9302da8b44fb4eacc28"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:41",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.09,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "89214565fad4898cb2ab3d836622ac2fc7c85725cb29f9302da8b44fb4eacc28"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:41",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "89214565fad4898cb2ab3d836622ac2fc7c85725cb29f9302da8b44fb4eacc28"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:43",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4f0d5c22f6962c59b9906bf5874b225e48a564b7e2a172894863b5017a8b351a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:43",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -74
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4f0d5c22f6962c59b9906bf5874b225e48a564b7e2a172894863b5017a8b351a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:45",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.02,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -72
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "d84a195d093f95e58bfd901bb61783d2babb741fbb2ed866cf842384a17bc5e6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:45",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.09,
+      "battery_level": 100,
+      "cpu_usage": 9,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "d84a195d093f95e58bfd901bb61783d2babb741fbb2ed866cf842384a17bc5e6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:45",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "d84a195d093f95e58bfd901bb61783d2babb741fbb2ed866cf842384a17bc5e6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:47",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4b67cbd66e21ddda911ea1efa42ed1f78ddeebba03646ef8dcaca50019b583d8"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:47",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -72
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4b67cbd66e21ddda911ea1efa42ed1f78ddeebba03646ef8dcaca50019b583d8"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:50",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 9,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "9d17eaaa4056e4c92367f7c8a9f63bd2ffd44d463763ea40b9013f5a3d354b7a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:50",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "9d17eaaa4056e4c92367f7c8a9f63bd2ffd44d463763ea40b9013f5a3d354b7a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:50",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -72
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "9d17eaaa4056e4c92367f7c8a9f63bd2ffd44d463763ea40b9013f5a3d354b7a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:52",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -77
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "ad3c36174cb09471ab72d3e0741b1c6150f8d636342be44ceb2b3884dd97ef5a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:52",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -75
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "ad3c36174cb09471ab72d3e0741b1c6150f8d636342be44ceb2b3884dd97ef5a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:54",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -81
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "daa67e26891e1eac1916aef3ee35b00341fd27cf06421de9ed1796952685626d"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:54",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -73
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "daa67e26891e1eac1916aef3ee35b00341fd27cf06421de9ed1796952685626d"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:54",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -75
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "daa67e26891e1eac1916aef3ee35b00341fd27cf06421de9ed1796952685626d"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:56",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -76
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "515b796c39a01b2526c996604ac4ce041d363877b79e34570615d3e394210a2b"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:56",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 9,
+      "wifi_signal": -72
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "515b796c39a01b2526c996604ac4ce041d363877b79e34570615d3e394210a2b"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:58",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "9af080542898cd90f3dc74f491e5b2dfaa50cf2730cea8a532503a6f23593fbb"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:58",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -74
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "9af080542898cd90f3dc74f491e5b2dfaa50cf2730cea8a532503a6f23593fbb"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:58",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -64
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "9af080542898cd90f3dc74f491e5b2dfaa50cf2730cea8a532503a6f23593fbb"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:00",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "7d42234154eca3e4f93eb44acc5f42f9d94adea6af3c2e1f165f3acd406fb550"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:00",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "7d42234154eca3e4f93eb44acc5f42f9d94adea6af3c2e1f165f3acd406fb550"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:02",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -73
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "acae7475386ad4dc74d924b8ec1f29f29a9f41f8831ce41a9edd0368342ea98a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:02",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": true,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "acae7475386ad4dc74d924b8ec1f29f29a9f41f8831ce41a9edd0368342ea98a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:02",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "acae7475386ad4dc74d924b8ec1f29f29a9f41f8831ce41a9edd0368342ea98a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:04",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "2710abb2a8ce3d0840c9a9009902769675338b898492122a9e19931f057d1135"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:04",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.02,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "2710abb2a8ce3d0840c9a9009902769675338b898492122a9e19931f057d1135"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:04",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -75
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "2710abb2a8ce3d0840c9a9009902769675338b898492122a9e19931f057d1135"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:06",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -79
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "7cd66fa5fcb5d44039ae7ffa02b23404c40a01156fa7da5b0bfcadf1ea5b45c0"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:06",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -77
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "7cd66fa5fcb5d44039ae7ffa02b23404c40a01156fa7da5b0bfcadf1ea5b45c0"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:08",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -80
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "38de909c4b3c74b658a93050b8c3ba612ba1128ffca277cda91aa77871cbd649"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:08",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -73
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "38de909c4b3c74b658a93050b8c3ba612ba1128ffca277cda91aa77871cbd649"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:08",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -74
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "38de909c4b3c74b658a93050b8c3ba612ba1128ffca277cda91aa77871cbd649"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:10",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -76
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a952c1b4e3af610147de1eac0d4a825a7d52761fafdf0035dcc3ec64eb1acf63"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:10",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -74
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a952c1b4e3af610147de1eac0d4a825a7d52761fafdf0035dcc3ec64eb1acf63"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:12",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -72
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "ea4007fafa7a542a9af51f08a3b8186e0ae887dd0979f17678fd51cf5357332f"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:12",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "ea4007fafa7a542a9af51f08a3b8186e0ae887dd0979f17678fd51cf5357332f"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:12",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.09,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -73
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "ea4007fafa7a542a9af51f08a3b8186e0ae887dd0979f17678fd51cf5357332f"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:14",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.09,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -75
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "21a1fffae145381afcdb603945bc1b26d1e0305c476614b7886769a98afe621d"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:14",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -76
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "21a1fffae145381afcdb603945bc1b26d1e0305c476614b7886769a98afe621d"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:16",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -74
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "e9f5a41a7f1f2b6f1222d17d7b7f8d447adfbab6a2a58b0e0eaea1a9e0a9fa96"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:16",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 9,
+      "wifi_signal": -76
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "e9f5a41a7f1f2b6f1222d17d7b7f8d447adfbab6a2a58b0e0eaea1a9e0a9fa96"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:16",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -78
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "e9f5a41a7f1f2b6f1222d17d7b7f8d447adfbab6a2a58b0e0eaea1a9e0a9fa96"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:18",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -72
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "3a170eea37d0a4e55278fc79227f5c883864d712eff9cc8b3a957553a544de54"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:18",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -73
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "3a170eea37d0a4e55278fc79227f5c883864d712eff9cc8b3a957553a544de54"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:20",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.09,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -82
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "59b27b1cf0a31d90030e7e3e255e8f1525816b1f0875ef16b64d6536b42ffa64"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:20",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "59b27b1cf0a31d90030e7e3e255e8f1525816b1f0875ef16b64d6536b42ffa64"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:20",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.09,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -77
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "59b27b1cf0a31d90030e7e3e255e8f1525816b1f0875ef16b64d6536b42ffa64"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:22",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -74
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "5deaae37c2cb373f1e2356fa0bebb0c7fcc45d1101bec27ab6b54d0fa651e6fa"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:22",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -76
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "5deaae37c2cb373f1e2356fa0bebb0c7fcc45d1101bec27ab6b54d0fa651e6fa"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:24",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -73
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "877339af8faa22d43fc02ef1801ee09357c7fe2ec496bb410c7ba5dcf1e9011a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:24",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.02,
+      "battery_level": 100,
+      "cpu_usage": 9,
+      "wifi_signal": -76
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "877339af8faa22d43fc02ef1801ee09357c7fe2ec496bb410c7ba5dcf1e9011a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:24",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -74
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "877339af8faa22d43fc02ef1801ee09357c7fe2ec496bb410c7ba5dcf1e9011a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:26",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -76
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "cd053c217a8db3362cff8cc6074db83bb66d3dcf312b4dbddf0eb3a194b460ea"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:26",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -74
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "cd053c217a8db3362cff8cc6074db83bb66d3dcf312b4dbddf0eb3a194b460ea"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:28",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -81
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "e1f04a15713bca92321e217ad907eac44ad3ad72277d9b609031c1411e1e5c5f"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:28",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -74
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "e1f04a15713bca92321e217ad907eac44ad3ad72277d9b609031c1411e1e5c5f"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:28",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -75
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "e1f04a15713bca92321e217ad907eac44ad3ad72277d9b609031c1411e1e5c5f"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:30",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -72
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "5fb7acc48cfb435e0d2e27ccf142f07b91323ad768d4ec20e5c353ffa6e27705"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:30",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "5fb7acc48cfb435e0d2e27ccf142f07b91323ad768d4ec20e5c353ffa6e27705"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:32",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -74
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "55f388d94afd4264bdb58e8e8824b730a6806a1b8ec0f3ba96e6769b0d094804"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:32",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -83
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "55f388d94afd4264bdb58e8e8824b730a6806a1b8ec0f3ba96e6769b0d094804"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:32",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -72
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "55f388d94afd4264bdb58e8e8824b730a6806a1b8ec0f3ba96e6769b0d094804"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:34",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -74
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "e5ce9decd7e6820fb3920e37bfd81fb543d45652e772add6e330c15052fbbdaa"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:34",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -79
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "e5ce9decd7e6820fb3920e37bfd81fb543d45652e772add6e330c15052fbbdaa"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:36",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "659908f929c1c33ea133dbb065ff4b406de11ca72ba9a08a2a58772e2420c7e1"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:36",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "659908f929c1c33ea133dbb065ff4b406de11ca72ba9a08a2a58772e2420c7e1"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:36",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -74
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "659908f929c1c33ea133dbb065ff4b406de11ca72ba9a08a2a58772e2420c7e1"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:38",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "1bb43184f7fd35e55bcffbcb5e02b5b9d600ded7d8cba8a56b68c84d3928587c"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:38",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 9,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "1bb43184f7fd35e55bcffbcb5e02b5b9d600ded7d8cba8a56b68c84d3928587c"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:40",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -75
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "3b2d599bf943fccb3921755c7ff2d843b0a1202bd19caced2b646e2e39793ec6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:40",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -80
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "3b2d599bf943fccb3921755c7ff2d843b0a1202bd19caced2b646e2e39793ec6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:40",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 9,
+      "wifi_signal": -73
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "3b2d599bf943fccb3921755c7ff2d843b0a1202bd19caced2b646e2e39793ec6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:42",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -73
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "28d3578313b51dd14244a72d6b0f1e486c8126d02da574e4169476f9052ccf47"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:42",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -79
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "28d3578313b51dd14244a72d6b0f1e486c8126d02da574e4169476f9052ccf47"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:44",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -75
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "7a768931405aa91a114538b14044950b7c49e4d654e4f202d582b28d6abebaf6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:44",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -75
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "7a768931405aa91a114538b14044950b7c49e4d654e4f202d582b28d6abebaf6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:44",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -82
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "7a768931405aa91a114538b14044950b7c49e4d654e4f202d582b28d6abebaf6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:46",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -76
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "1c7a274f0d00dbf859c6fa34cbf79ec3671b644edcd940c2d13a86e24d0c363d"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:46",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -77
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "1c7a274f0d00dbf859c6fa34cbf79ec3671b644edcd940c2d13a86e24d0c363d"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:46",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -78
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "1c7a274f0d00dbf859c6fa34cbf79ec3671b644edcd940c2d13a86e24d0c363d"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:48",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -77
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "d0ae49a77c7f2d9d1fc487b6b22041ec10f20336731207f42f77711b8ba8ecb2"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:48",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -77
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "d0ae49a77c7f2d9d1fc487b6b22041ec10f20336731207f42f77711b8ba8ecb2"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:50",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -76
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "762ee6ef9a40151c064257ea348123189bfa9b43214438504f8ead59fefce9e3"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:50",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -73
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "762ee6ef9a40151c064257ea348123189bfa9b43214438504f8ead59fefce9e3"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:50",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "762ee6ef9a40151c064257ea348123189bfa9b43214438504f8ead59fefce9e3"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:52",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -66
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4820dc28f2d6d51071f99d44353733ae6f8a69fcadf1f4b9f252addbb1e6088a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:52",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -65
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4820dc28f2d6d51071f99d44353733ae6f8a69fcadf1f4b9f252addbb1e6088a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:54",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.02,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -63
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "277f893b93fec10bef43af12e153c167471b3c3375c74d50887d138ae7d6998c"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:54",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.09,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -62
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "277f893b93fec10bef43af12e153c167471b3c3375c74d50887d138ae7d6998c"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:54",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -67
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "277f893b93fec10bef43af12e153c167471b3c3375c74d50887d138ae7d6998c"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:56",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.02,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -64
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "2de6bc0cec3d1b7471ef1a9ddec96a5f66ac506258e447f4ac164881adac6807"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:56",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -62
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "2de6bc0cec3d1b7471ef1a9ddec96a5f66ac506258e447f4ac164881adac6807"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:58",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -64
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4b9beebaa233ef07c91880564bc27692db82ff484459204e1ce37456736a000b"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:58",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -61
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4b9beebaa233ef07c91880564bc27692db82ff484459204e1ce37456736a000b"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:58",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.02,
+      "battery_level": 100,
+      "cpu_usage": 9,
+      "wifi_signal": -61
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4b9beebaa233ef07c91880564bc27692db82ff484459204e1ce37456736a000b"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:00",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -63
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a7816c9fbea3da7ad7f28820ee04432d0b26b87f0f2f667e8c143050f919ab23"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:00",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -62
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a7816c9fbea3da7ad7f28820ee04432d0b26b87f0f2f667e8c143050f919ab23"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:02",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -66
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "17d39dbc7a0089a3b6ac3ebbe50bce71a6ea046198d3573660cfade2c8b229ab"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:02",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -76
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "17d39dbc7a0089a3b6ac3ebbe50bce71a6ea046198d3573660cfade2c8b229ab"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:02",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -61
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "17d39dbc7a0089a3b6ac3ebbe50bce71a6ea046198d3573660cfade2c8b229ab"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:04",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -62
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "abf1f34119353d8d5ee06ecc4f5c1f2662f6d602960da2a3e9f8903fff6641a7"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:04",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -63
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "abf1f34119353d8d5ee06ecc4f5c1f2662f6d602960da2a3e9f8903fff6641a7"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:06",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -62
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "47761bc00e6708df754d25a17e52295d1a27372a5d57e182f84b9e10fd3d66b6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:06",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -63
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "47761bc00e6708df754d25a17e52295d1a27372a5d57e182f84b9e10fd3d66b6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:06",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -63
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "47761bc00e6708df754d25a17e52295d1a27372a5d57e182f84b9e10fd3d66b6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:08",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.09,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -65
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "608f70c9c25f00a9c42171e329c643679c3e417bdc6abc6377f038b737fd43d9"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:08",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -65
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "608f70c9c25f00a9c42171e329c643679c3e417bdc6abc6377f038b737fd43d9"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:10",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -66
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "d74c958d3644252afd5351b18d620c5c0357032d963acdacb8d5d421fa4d7a1b"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:10",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -65
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "d74c958d3644252afd5351b18d620c5c0357032d963acdacb8d5d421fa4d7a1b"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:10",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -64
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "d74c958d3644252afd5351b18d620c5c0357032d963acdacb8d5d421fa4d7a1b"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:12",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -66
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "496c1b91d483c85908c94b889f76e692bcd4b6b1acdb2ae92f08e94b8bb616e9"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:12",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.02,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -64
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "496c1b91d483c85908c94b889f76e692bcd4b6b1acdb2ae92f08e94b8bb616e9"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:14",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -63
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "8dc8d221848226b27ed1770fd1a2ac9b8c7e7f7269705d274fa79efd06bc2bf6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:14",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -65
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "8dc8d221848226b27ed1770fd1a2ac9b8c7e7f7269705d274fa79efd06bc2bf6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:14",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -66
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "8dc8d221848226b27ed1770fd1a2ac9b8c7e7f7269705d274fa79efd06bc2bf6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:16",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -64
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "3a96a8b7668969edf58de9f73487a8de90fef9f985391d26553878fac8f9e593"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:16",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -67
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "3a96a8b7668969edf58de9f73487a8de90fef9f985391d26553878fac8f9e593"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:18",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.02,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -65
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4d933b93e9f2d2a9c8907c3ba3effe82147e5e15d90c6f85521052bb227b5198"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:18",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4d933b93e9f2d2a9c8907c3ba3effe82147e5e15d90c6f85521052bb227b5198"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:18",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -65
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4d933b93e9f2d2a9c8907c3ba3effe82147e5e15d90c6f85521052bb227b5198"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:20",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -67
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a6c553279adf3ed69847395ec4a1fcce112d11e658cbff265fb275006845abdc"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:20",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.09,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -73
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a6c553279adf3ed69847395ec4a1fcce112d11e658cbff265fb275006845abdc"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:22",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -67
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "ce02f38863f7971ab4dc22c6dfd5fb25d1abccbfbbd7f689657a9526543dd41a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:22",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "ce02f38863f7971ab4dc22c6dfd5fb25d1abccbfbbd7f689657a9526543dd41a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:22",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.02,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "ce02f38863f7971ab4dc22c6dfd5fb25d1abccbfbbd7f689657a9526543dd41a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:25",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -67
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "04797d7262d145503fe214c9a305aa3f97595906d5eb8ec29f9548e91f896d53"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:25",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -67
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "04797d7262d145503fe214c9a305aa3f97595906d5eb8ec29f9548e91f896d53"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:25",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "04797d7262d145503fe214c9a305aa3f97595906d5eb8ec29f9548e91f896d53"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:27",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 9,
+      "wifi_signal": -74
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "5ba79cdb587e1a8253370a54cb6f7d2182d2d88c14a566b6708c2091953e5e1d"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:27",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "5ba79cdb587e1a8253370a54cb6f7d2182d2d88c14a566b6708c2091953e5e1d"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:29",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "02ca31239a3a4046ac220d42af62c8413b985fa9f681a2f8696e8eb8b92b68dc"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:29",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -79
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "02ca31239a3a4046ac220d42af62c8413b985fa9f681a2f8696e8eb8b92b68dc"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:29",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "02ca31239a3a4046ac220d42af62c8413b985fa9f681a2f8696e8eb8b92b68dc"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:31",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "b34b251316e8b953029046621aeab931c545a6e2dd71598eae640c10c53db3b6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:31",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.09,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -72
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "b34b251316e8b953029046621aeab931c545a6e2dd71598eae640c10c53db3b6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:33",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "b9181a98a48f518aea19ff44f3ce8e7b5e2951cb05aa9198bf2f26c6ca2e4cdb"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:33",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.02,
+      "battery_level": 100,
+      "cpu_usage": 9,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "b9181a98a48f518aea19ff44f3ce8e7b5e2951cb05aa9198bf2f26c6ca2e4cdb"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:33",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -72
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "b9181a98a48f518aea19ff44f3ce8e7b5e2951cb05aa9198bf2f26c6ca2e4cdb"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:35",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.02,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "8ead0c71344e7f37368edaf309d212889555264abd83d55928a5c132b748792f"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:35",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.09,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "8ead0c71344e7f37368edaf309d212889555264abd83d55928a5c132b748792f"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:37",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "72bc919e8af781380d842a77c579853b9165c0c3abe11751cb2d864a2fdcdb25"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:37",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "72bc919e8af781380d842a77c579853b9165c0c3abe11751cb2d864a2fdcdb25"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:37",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "72bc919e8af781380d842a77c579853b9165c0c3abe11751cb2d864a2fdcdb25"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:39",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "73f27db33a034a3873303170d82f3900db9143c09823150f980acb16a9bddba0"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:39",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -75
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "73f27db33a034a3873303170d82f3900db9143c09823150f980acb16a9bddba0"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:41",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a5acc0e621773b23bcca7ef0322d8114efb6a90642f7bde54a54d8a74ad9afb1"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:41",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a5acc0e621773b23bcca7ef0322d8114efb6a90642f7bde54a54d8a74ad9afb1"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:41",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a5acc0e621773b23bcca7ef0322d8114efb6a90642f7bde54a54d8a74ad9afb1"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:43",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 9,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "8d42b3c1a994c5a1b276b1218f3e0c7a32d31aee2065bcdf463ff649fa9436ff"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:43",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "8d42b3c1a994c5a1b276b1218f3e0c7a32d31aee2065bcdf463ff649fa9436ff"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:45",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "11a2277a4f80d65821e4f6db6c84e9a7902a49f269f5ec42be1a091fbf180040"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:45",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "11a2277a4f80d65821e4f6db6c84e9a7902a49f269f5ec42be1a091fbf180040"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:45",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 9,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "11a2277a4f80d65821e4f6db6c84e9a7902a49f269f5ec42be1a091fbf180040"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:47",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "92d382ef91a6242a78f56e80b3bc1f4a503919a844f8cc12744205bc4f73cf70"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:47",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "92d382ef91a6242a78f56e80b3bc1f4a503919a844f8cc12744205bc4f73cf70"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:49",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "2c11edc74779f69b1f3bd32fe17e1a365d5c6e6815b564bf72f6f279acd65913"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:49",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "2c11edc74779f69b1f3bd32fe17e1a365d5c6e6815b564bf72f6f279acd65913"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:49",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "2c11edc74779f69b1f3bd32fe17e1a365d5c6e6815b564bf72f6f279acd65913"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:51",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 9,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "d45f4f9081a81ad9449b77b8794fec72aeae61531561f928d8dd11f1b8a0dfc9"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:51",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "d45f4f9081a81ad9449b77b8794fec72aeae61531561f928d8dd11f1b8a0dfc9"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:53",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.02,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "8675f2d82682badb4b6190ceb3370249c0d5c1551cab10cf3edd78a62f39244e"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:53",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -69
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "8675f2d82682badb4b6190ceb3370249c0d5c1551cab10cf3edd78a62f39244e"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:53",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.02,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "8675f2d82682badb4b6190ceb3370249c0d5c1551cab10cf3edd78a62f39244e"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:55",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "dfe0f2ec54167a7650db07f0b8eb65c9421ec00ff4b59d4690e87f23bc61f495"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:55",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 9,
+      "wifi_signal": -67
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "dfe0f2ec54167a7650db07f0b8eb65c9421ec00ff4b59d4690e87f23bc61f495"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:57",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -67
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "60ea54eefb40d78de5da7e16027f1649b55542205b4f1c63fcd84dbb5ed7a289"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:57",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -68
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "60ea54eefb40d78de5da7e16027f1649b55542205b4f1c63fcd84dbb5ed7a289"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:57",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -65
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "60ea54eefb40d78de5da7e16027f1649b55542205b4f1c63fcd84dbb5ed7a289"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:59",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.02,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -66
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "57c9eb66c61fee162014266fe6ffb882ea11d9a30e730d9938539c92fb3fa5cd"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:59",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -63
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "57c9eb66c61fee162014266fe6ffb882ea11d9a30e730d9938539c92fb3fa5cd"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:01",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -63
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a607e6d063d1793708d3e2c6214e623f240b799480400ec2d49d4f87d3a1aa03"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:01",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -63
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a607e6d063d1793708d3e2c6214e623f240b799480400ec2d49d4f87d3a1aa03"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:01",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -63
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a607e6d063d1793708d3e2c6214e623f240b799480400ec2d49d4f87d3a1aa03"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:03",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -64
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "6e0430aff84670239e903befc411465831ea159b512fe8c1f85b2c8f14087c1c"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:03",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -62
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "6e0430aff84670239e903befc411465831ea159b512fe8c1f85b2c8f14087c1c"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:03",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.08,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -61
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "6e0430aff84670239e903befc411465831ea159b512fe8c1f85b2c8f14087c1c"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:05",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.07,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -63
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "36af6dcd3e01a1ef2ff70781f0dee29d5bc0e9bb98c40c3bbb8a58005cd44bf7"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:05",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -63
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "36af6dcd3e01a1ef2ff70781f0dee29d5bc0e9bb98c40c3bbb8a58005cd44bf7"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:07",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -71
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "aa567628686d71bca2e694678948dd042e2998967a370a9ebeecd4ec287c1ec3"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:07",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -72
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "aa567628686d71bca2e694678948dd042e2998967a370a9ebeecd4ec287c1ec3"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:07",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 6,
+      "wifi_signal": -70
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "aa567628686d71bca2e694678948dd042e2998967a370a9ebeecd4ec287c1ec3"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:09",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.05,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -73
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4d4f51903f4b465de3408900153bb2064c72e4d57ca55f3a3b6724b5666c8afd"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:09",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -76
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4d4f51903f4b465de3408900153bb2064c72e4d57ca55f3a3b6724b5666c8afd"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:11",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.03,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -64
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "179480738555bc4fd76a620a1a100b0bb385e9da5035e3986559be56e4659de0"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:11",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -62
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "179480738555bc4fd76a620a1a100b0bb385e9da5035e3986559be56e4659de0"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:11",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.06,
+      "battery_level": 100,
+      "cpu_usage": 8,
+      "wifi_signal": -64
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "179480738555bc4fd76a620a1a100b0bb385e9da5035e3986559be56e4659de0"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:13",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.04,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -62
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "079753868775e6f9ad92a88015608fa6c3e8d6b965b0b98e98800f1972a1533e"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:13",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0.01,
+      "battery_level": 100,
+      "cpu_usage": 7,
+      "wifi_signal": -62
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "079753868775e6f9ad92a88015608fa6c3e8d6b965b0b98e98800f1972a1533e"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:15",
+    "device_id": "esp32_sec_01",
+    "score": 1,
+    "values": {
+      "motion": false,
+      "light_state": false,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 5,
+      "wifi_signal": -63
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "b6f5875ea4787dcd3dd7bb5031860e1bc10ddb0ef39a98e9e1652920a94c23b5"
   }
 ]

@@ -1,566 +1,6 @@
 [
   {
     "date": "2026-02-10",
-    "time": "01:18:59",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.3,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 22,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "8286adce77e273cc1a786c155d5503224f69e50033fa9b15e1be20b9282c64d7"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:19:01",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.7,
-      "humidity": 13,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 29,
-      "wifi_signal": -61
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "2c1d8c550b19b84f15e58dca106fcecf969a3d36c53d86be3341d16015dd2b4b"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:19:05",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.8,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 25,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "fbc41b0a8decba999268f1d255a1c4d7d1f5bd93d993e05a59f181db000e7c79"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:19:09",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -60
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "6acede090c8ab0f238aad0a37a50d64e59fda4ea78182d100a2cea3c7dc3d6a8"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:19:11",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.1,
-      "humidity": 13,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 21,
-      "wifi_signal": -61
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "5238681b55bc5ca2d9909c86d2e17306d455fa920ccd8159b2d9a0905f1430a9"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:19:16",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.6,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 26,
-      "wifi_signal": -61
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "993df8c6d95bf34895b07461d11bc185ddb8a6407220cfe3032543ba6850f555"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:19:20",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.8,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 11,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "5515a16d8bc2a4ab8e3c9a072d6fb36e501a048ed3f93dd445541e2a07f06e2a"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:19:26",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.6,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -61
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "40b21123b66c8ed8a5eca41b0e56a0d252796dd863f02fbfb1772db04c4c7d90"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:19:30",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.6,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "4643b8568e8076ff40044d6d3a821a78e86dea548727e16d8f276d5acd1445eb"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:19:31",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.8,
-      "humidity": 13,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 12,
-      "wifi_signal": -60
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "17a802ffa20e137c41a3e600293b3c2e027eee984347c70897045480eebb73e9"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:19:36",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.9,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 29,
-      "wifi_signal": -61
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "deedef507be7281dd2023db279a127fe13fe53f52c71544537cb5ba535ff8595"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:19:40",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.1,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 27,
-      "wifi_signal": -61
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "c1c4ee13e7e171bf556e451b02a42dae82eeb0aef732d897e2310831b4470b96"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:19:41",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.5,
-      "humidity": 13,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 24,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "f863cd01461adcf5679b7bb6980777fb10563ad5868fb45d36ce03e2dc5165e1"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:19:46",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.1,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 10,
-      "wifi_signal": -64
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "a99ff5104e3c5013a8a93f1c2fb9d8f4597eebd670fc7ad8d9c9572a1d5aa4da"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:19:50",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.4,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 17,
-      "wifi_signal": -67
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "29428799f3d6dec7be01bf13c48f26bf809591e5cf3043098e56bd040b45ae28"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:19:56",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.7,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 22,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "762c552895dce86509bad10f96817bf4f3554c8238292c66dd7eb3d37c032c8e"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:20:00",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.4,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 14,
-      "wifi_signal": -60
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "f6943c0e6ff26c3c2cf68c22e1ae50a286d22320a45025dd720503b3f26d4441"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:20:01",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.6,
-      "humidity": 13,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 11,
-      "wifi_signal": -58
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "2e4677d441cffe8d54c38312f74d8e875e28bcbd724aac5c9ad5f82ab9c10b5a"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:20:06",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.3,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 24,
-      "wifi_signal": -60
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "849f67e51976747393fcd961f6871232795a7ad3928d361e780bea30fb0473ec"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:20:10",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.2,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 17,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "aa398a20e2a1054f6ffb82de186d4fec8205ed673ee055393fb4459d644de1a4"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:20:11",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.9,
-      "humidity": 13,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 18,
-      "wifi_signal": -58
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "4bacfcff906aff60afabf5b5728f3faa4ced98a53e234dc453845b4c2ab5fcc7"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:20:14",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.6,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 23,
-      "wifi_signal": -60
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "11644bbeedae77e63e1928ab530f0aed03cb00b19a8d5ec6b8ceea0074178419"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:20:20",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.4,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 11,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "44e289d85b1a667db9876b89e49307e2b5a3e2c00b935549e9443d5bbd8e828a"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:20:24",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.2,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 20,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "31c4a2cacfc442a18aa791a3de3dd0cf5bd9aca4f79e0b68f612e1ab58b96efc"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:20:30",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.3,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 27,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "d59ab0351e00d6c90e5da8f17002d715d5ae5cfcc41d429f4ef24d0f86740292"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:20:31",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.4,
-      "humidity": 13,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 17,
-      "wifi_signal": -63
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "db15633321b5e2e825d580cd2cb966b95823b13ace447cfafdbb7eaabf6e550b"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:20:34",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.2,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 20,
-      "wifi_signal": -62
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "c675c80d712d5ee4d02f25d7040805f08ace2a1f4725c77a50e19319ba5e67df"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:20:40",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.5,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 26,
-      "wifi_signal": -61
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "3487e6574884da4538343b82e74046a1ad2a0960aca5c5d632233cdd70bd14d5"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:20:41",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.7,
-      "humidity": 13,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 23,
-      "wifi_signal": -59
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "caa1bca8621765eb84bfd1eafb7e50d6d3ee0bcf062321baed9a24a8502f237e"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:21:39",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.3,
-      "humidity": 13,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 27,
-      "wifi_signal": -61
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "5df15a7f6014ebfdb487d8c39805bc06151ac9949500c55268a9bf7f484fe04e"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:21:39",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.3,
-      "humidity": 13,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 27,
-      "wifi_signal": -60
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "63faf6e1e4a34067dcdb3556049fcdebe47dbfb08c60eee9c6c8bc85a3f73842"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:21:39",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.4,
-      "humidity": 13,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 16,
-      "wifi_signal": -60
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "668ba2c11205ce97bcf6b9f18e92ae91fbc5f8cf76fc996e37f69abec69457ae"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:21:44",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.6,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 15,
-      "wifi_signal": -60
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "d43147b3f9abd5417f3cd56b39e40c26089d0ea5cf245ff5da2229555e86cf2b"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:21:50",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40.1,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 13,
-      "wifi_signal": -61
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "dd82862d75c1c25bb47dccc973a23e60da151b0f0994e100526fd8271df31b88"
-  },
-  {
-    "date": "2026-02-10",
-    "time": "01:21:54",
-    "device_id": "esp8266_env_01",
-    "score": 1,
-    "values": {
-      "temperature": 40,
-      "humidity": 11,
-      "vibration": 0,
-      "battery_level": 100,
-      "cpu_usage": 29,
-      "wifi_signal": -61
-    },
-    "gateway_id": "gateway_001",
-    "batch_hash": "c17702d7b6ddf774f464ecb3fc18c6a905fe54fc4bc78cc75540d836655d80cb"
-  },
-  {
-    "date": "2026-02-10",
     "time": "01:21:59",
     "device_id": "esp8266_env_01",
     "score": 1,
@@ -7998,5 +7438,565 @@
     },
     "gateway_id": "gateway_001",
     "batch_hash": "98d8fa37c7770049ccd3cd2b0257ec452d8890f7cb22c96435de8f3e7caaaaf5"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:21",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.9,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 28,
+      "wifi_signal": -64
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "f1965330a1e661af3aa5d5ee51750e8778917ba425d411225a6cbb0ae928b993"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:25",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 21,
+      "wifi_signal": -65
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "2ba262c8845b8ac61b0abc2120a5a0fe4da90e409b7a31a95b561ba2823d2da6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:29",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.6,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -59
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "02678710faff7348501b7056524f5bd1986546161f6128c529f05d557695da2a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:35",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.7,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -58
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "4139dd1b7ca517c95dc2b6066f496f81e06b488fee5c626515dbace257f79810"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:39",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.3,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -64
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "7d64f5a45002f5999d23277dca009120ad0d148a05a533a00628457d6a2604f1"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:45",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.2,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 21,
+      "wifi_signal": -61
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "d84a195d093f95e58bfd901bb61783d2babb741fbb2ed866cf842384a17bc5e6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:50",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.3,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -61
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "9d17eaaa4056e4c92367f7c8a9f63bd2ffd44d463763ea40b9013f5a3d354b7a"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:57:56",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.6,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 29,
+      "wifi_signal": -60
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "515b796c39a01b2526c996604ac4ce041d363877b79e34570615d3e394210a2b"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:00",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.6,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 28,
+      "wifi_signal": -61
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "7d42234154eca3e4f93eb44acc5f42f9d94adea6af3c2e1f165f3acd406fb550"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:06",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.7,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 15,
+      "wifi_signal": -59
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "7cd66fa5fcb5d44039ae7ffa02b23404c40a01156fa7da5b0bfcadf1ea5b45c0"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:10",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.4,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 28,
+      "wifi_signal": -60
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a952c1b4e3af610147de1eac0d4a825a7d52761fafdf0035dcc3ec64eb1acf63"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:16",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.8,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 23,
+      "wifi_signal": -60
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "e9f5a41a7f1f2b6f1222d17d7b7f8d447adfbab6a2a58b0e0eaea1a9e0a9fa96"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:20",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.2,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 11,
+      "wifi_signal": -60
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "59b27b1cf0a31d90030e7e3e255e8f1525816b1f0875ef16b64d6536b42ffa64"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:26",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 20,
+      "wifi_signal": -60
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "cd053c217a8db3362cff8cc6074db83bb66d3dcf312b4dbddf0eb3a194b460ea"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:30",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.7,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 13,
+      "wifi_signal": -59
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "5fb7acc48cfb435e0d2e27ccf142f07b91323ad768d4ec20e5c353ffa6e27705"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:36",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 27,
+      "wifi_signal": -64
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "659908f929c1c33ea133dbb065ff4b406de11ca72ba9a08a2a58772e2420c7e1"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:40",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.6,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 24,
+      "wifi_signal": -62
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "3b2d599bf943fccb3921755c7ff2d843b0a1202bd19caced2b646e2e39793ec6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:46",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.5,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -60
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "1c7a274f0d00dbf859c6fa34cbf79ec3671b644edcd940c2d13a86e24d0c363d"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:50",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.5,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 28,
+      "wifi_signal": -59
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "762ee6ef9a40151c064257ea348123189bfa9b43214438504f8ead59fefce9e3"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:58:56",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.1,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 26,
+      "wifi_signal": -63
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "2de6bc0cec3d1b7471ef1a9ddec96a5f66ac506258e447f4ac164881adac6807"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:00",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.4,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 21,
+      "wifi_signal": -61
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a7816c9fbea3da7ad7f28820ee04432d0b26b87f0f2f667e8c143050f919ab23"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:06",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.3,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 19,
+      "wifi_signal": -62
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "47761bc00e6708df754d25a17e52295d1a27372a5d57e182f84b9e10fd3d66b6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:10",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -60
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "d74c958d3644252afd5351b18d620c5c0357032d963acdacb8d5d421fa4d7a1b"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:14",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 21,
+      "wifi_signal": -60
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "8dc8d221848226b27ed1770fd1a2ac9b8c7e7f7269705d274fa79efd06bc2bf6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:20",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.7,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 25,
+      "wifi_signal": -59
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a6c553279adf3ed69847395ec4a1fcce112d11e658cbff265fb275006845abdc"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:25",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.4,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 10,
+      "wifi_signal": -60
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "04797d7262d145503fe214c9a305aa3f97595906d5eb8ec29f9548e91f896d53"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:31",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.4,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 12,
+      "wifi_signal": -60
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "b34b251316e8b953029046621aeab931c545a6e2dd71598eae640c10c53db3b6"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:35",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.5,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 14,
+      "wifi_signal": -61
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "8ead0c71344e7f37368edaf309d212889555264abd83d55928a5c132b748792f"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:41",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.1,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 21,
+      "wifi_signal": -60
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a5acc0e621773b23bcca7ef0322d8114efb6a90642f7bde54a54d8a74ad9afb1"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:45",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.8,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 19,
+      "wifi_signal": -60
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "11a2277a4f80d65821e4f6db6c84e9a7902a49f269f5ec42be1a091fbf180040"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:51",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 15,
+      "wifi_signal": -67
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "d45f4f9081a81ad9449b77b8794fec72aeae61531561f928d8dd11f1b8a0dfc9"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "01:59:55",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.8,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 25,
+      "wifi_signal": -59
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "dfe0f2ec54167a7650db07f0b8eb65c9421ec00ff4b59d4690e87f23bc61f495"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:01",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.9,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 21,
+      "wifi_signal": -59
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "a607e6d063d1793708d3e2c6214e623f240b799480400ec2d49d4f87d3a1aa03"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:05",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.3,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 27,
+      "wifi_signal": -59
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "36af6dcd3e01a1ef2ff70781f0dee29d5bc0e9bb98c40c3bbb8a58005cd44bf7"
+  },
+  {
+    "date": "2026-02-10",
+    "time": "02:00:11",
+    "device_id": "esp8266_env_01",
+    "score": 1,
+    "values": {
+      "temperature": 40.6,
+      "humidity": 10,
+      "vibration": 0,
+      "battery_level": 100,
+      "cpu_usage": 22,
+      "wifi_signal": -60
+    },
+    "gateway_id": "gateway_001",
+    "batch_hash": "179480738555bc4fd76a620a1a100b0bb385e9da5035e3986559be56e4659de0"
   }
 ]

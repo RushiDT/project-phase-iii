@@ -4,11 +4,11 @@
 #include <PubSubClient.h>
 
 // WiFi Configuration
-const char *ssid = "YOUR_WIFI_SSID";         // <-- CHANGE THIS
-const char *password = "YOUR_WIFI_PASSWORD"; // <-- CHANGE THIS
+const char *ssid = "thakre_home";    // <-- CHANGE THIS
+const char *password = "rushi@7728"; // <-- CHANGE THIS
 
 // MQTT Configuration
-const char *mqtt_server = "192.168.1.133"; // Local machine's IP
+const char *mqtt_server = "192.168.1.133"; // Gateway PC LAN IP
 const int mqtt_port = 1883;
 const char *device_id = "esp8266_env_01";
 const char *user_id = "user_789";
@@ -18,6 +18,16 @@ const char *topic_data = "iot/devices/esp8266_env_01/data";
 #define DHTPIN D4     // Digital pin connected to the DHT sensor
 #define DHTTYPE DHT11 // DHT 11
 DHT dht(DHTPIN, DHTTYPE);
+
+// BEST PRACTICES:
+// 1. Use a stable 5V power supply for the DHT11 to ensure accuracy.
+// 2. Place the sensor away from heat sources (like the ESP8266 itself) and
+// direct sunlight.
+// 3. Ensure good airflow around the sensor.
+
+// CALIBRATION OFFSETS (Adjust these based on a reference thermometer)
+const float TEMP_OFFSET = -2.0; // Subtract 2.0 degrees C
+const float HUM_OFFSET = 0.0;   // No humidity offset currently
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -61,6 +71,7 @@ void setup() {
   Serial.begin(115200);
   setup_wifi();
   client.setServer(mqtt_server, mqtt_port);
+  client.setBufferSize(512); // Increase buffer for large JSON payloads
   dht.begin();
 }
 
@@ -71,16 +82,21 @@ void loop() {
   client.loop();
 
   unsigned long now = millis();
-  if (now - lastMsg > 5000) { // Every 5 seconds
+  if (now - lastMsg > 2000) { // Read every 2 seconds (Prevents self-heating)
     lastMsg = now;
 
     float h = dht.readHumidity();
     float t = dht.readTemperature();
 
+    // Check if any reads failed and exit early (to try again).
     if (isnan(h) || isnan(t)) {
       Serial.println("Failed to read from DHT sensor!");
       return;
     }
+
+    // Apply Calibration Offsets
+    t += TEMP_OFFSET;
+    h += HUM_OFFSET;
 
     StaticJsonDocument<512> doc;
     doc["device_id"] = device_id;

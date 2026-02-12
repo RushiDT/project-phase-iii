@@ -315,7 +315,7 @@ app.post('/api/control', async (req, res) => {
 
         // A. Send to Gateway Immediately
         try {
-            await axios.post('http://localhost:8090/control', {
+            await axios.post('http://192.168.1.133:8090/control', {
                 device_id,
                 command,
                 command_id: `cmd_${now}_fast`
@@ -370,7 +370,7 @@ app.post('/api/control', async (req, res) => {
             console.log(`[CONTROL] ✓ Approved & Cached. Score: ${blockchainResult.trust_score}`);
 
             // Forward to Gateway
-            await axios.post('http://localhost:8090/control', {
+            await axios.post('http://192.168.1.133:8090/control', {
                 device_id,
                 command,
                 command_id: blockchainResult.command_id
@@ -488,14 +488,47 @@ const executeBlockchainPython = (functionName, args = []) => {
     });
 };
 
+// Blockchain Cache
+let blockchainCache = { data: [], timestamp: 0 };
+const BLOCKCHAIN_CACHE_TTL = 10000; // 10 seconds
+
 // API: Get all blockchain logs
 app.get('/api/blockchain/logs', async (req, res) => {
     try {
+        const now = Date.now();
         const limit = parseInt(req.query.limit) || 100;
+
+        // Serve from cache if fresh
+        if (now - blockchainCache.timestamp < BLOCKCHAIN_CACHE_TTL && blockchainCache.data.length > 0) {
+            return res.json(blockchainCache.data.slice(0, limit));
+        }
+
+        // Fetch fresh if cache expired (and update cache)
+        // Note: To avoid queuing 100 requests at once, we should ideally use a "refreshing" flag, 
+        // but for now, the queue system handles serialization. 
+        // We just need to ensure we don't start a new fetch if one is recent.
+
+        // Optimistic return if cache exists but is slightly stale (to prevent UI blocking)
+        if (blockchainCache.data.length > 0) {
+            // Trigger background update if not too frequent
+            callBlockchainPython('get_all_logs', [limit]).then(logs => {
+                blockchainCache = { data: logs, timestamp: Date.now() };
+            }).catch(e => console.error("BG Blockchain update failed:", e.message));
+
+            return res.json(blockchainCache.data.slice(0, limit));
+        }
+
+        // First time fetch (blocking)
         const logs = await callBlockchainPython('get_all_logs', [limit]);
+        blockchainCache = { data: logs, timestamp: Date.now() };
         res.json(logs);
+
     } catch (error) {
         console.error('[BLOCKCHAIN] Error getting logs:', error.message);
+        // Fallback to cache on error
+        if (blockchainCache.data.length > 0) {
+            return res.json(blockchainCache.data);
+        }
         res.status(500).json({ error: error.message });
     }
 });

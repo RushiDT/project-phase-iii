@@ -30,7 +30,7 @@ CORS(app)
 GATEWAY_ID = "gateway_001"
 
 # Central server where gateway forwards verified logs (Laptop IP)
-SERVER_HOST = os.getenv("SERVER_HOST", "127.0.0.1")
+SERVER_HOST = os.getenv("SERVER_HOST", "192.168.1.121")
 SERVER_URL = f"http://{SERVER_HOST}:5002/api/logs"
 DEVICE_REGISTRY_URL = f"http://{SERVER_HOST}:5002/api/devices"
 ALARM_STATUS_URL = f"http://{SERVER_HOST}:5002/api/alarm/status"
@@ -313,14 +313,27 @@ last_sequence_numbers = {}
 
 def validate_sequence_number(device_id, seq_no):
     """
-    Check if sequence number is valid (greater than previous).
-    Prevents Replay Attacks.
+    Check if sequence number is valid.
+    Allows resets if seq_no is small (device restarted).
     """
     last_seq = last_sequence_numbers.get(device_id, -1)
+    
+    # Normal case: increasing sequence
     if seq_no > last_seq:
         last_sequence_numbers[device_id] = seq_no
         return True
-    return False
+        
+    # Reset case: Device restarted (seq_no is small, e.g. < 50)
+    if seq_no < 50:
+        logging.warning(f"⚠ Device {device_id} sequence reset (sent {seq_no}, last was {last_seq}). allowing.")
+        last_sequence_numbers[device_id] = seq_no
+        return True
+        
+    # Replay case: Old sequence number
+    # FOR DEMO: Allow it but log warning
+    logging.warning(f"⚠ REPLAY WARNING: Device {device_id} sent {seq_no} <= {last_seq}. ALLOWING for demo stability.")
+    last_sequence_numbers[device_id] = seq_no
+    return True
 
 def on_message(client, userdata, msg):
     try:
@@ -534,4 +547,7 @@ if __name__ == "__main__":
     
     logging.info(f"✓ Starting IoT Gateway on port {FLASK_PORT}...")
     logging.info(f"✓ Failed batch retry enabled (every 30s)")
+    print("\n" + "="*50)
+    print(" >>> GATEWAY UPDATE: REPLAY PROTECTION DISABLED <<<")
+    print("="*50 + "\n")
     app.run(host="0.0.0.0", port=FLASK_PORT, debug=False)

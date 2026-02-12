@@ -28,6 +28,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(BASE_DIR, "config.json")
 PREDICTIONS_PATH = os.path.join(BASE_DIR, "anomaly_results.json")
 SERVER_LOGS_PATH = os.path.join(BASE_DIR, "..", "server", "server_logs.jsonl")
+DEVICES_PATH = os.path.join(BASE_DIR, "..", "server", "devices.json")
 
 # Load configuration
 def load_config():
@@ -45,6 +46,19 @@ def load_config():
 
 CONFIG = load_config()
 print(f"[ML] Config loaded: {json.dumps(CONFIG.get('thresholds', {}), indent=2)}")
+
+def load_device_types():
+    """Load device types from server/devices.json."""
+    device_types = {}
+    if os.path.exists(DEVICES_PATH):
+        try:
+            with open(DEVICES_PATH, 'r') as f:
+                devices = json.load(f)
+                for device in devices:
+                    device_types[device.get("id")] = device.get("type", "unknown")
+        except Exception as e:
+            print(f"[ML] Error loading device types: {e}")
+    return device_types
 
 # Prediction history lock
 predictions_lock = threading.Lock()
@@ -79,7 +93,7 @@ def save_prediction(prediction_data):
             print(f"[ML] Error saving prediction: {e}")
 
 # Model instances
-SENSOR_MODEL = None  # Isolation Forest for sensor anomalies
+SENSOR_MODELS = {} # Dictionary of models per device type
 POWER_MODEL = None   # Random Forest for power anomaly classification
 BEHAVIOR_MODEL = None  # Random Forest for behavior prediction
 
@@ -92,8 +106,8 @@ POWER_ANOMALY_TYPES = {
     4: "hardware_issue"
 }
 
-def load_data():
-    """Loads logs from the server storage."""
+def load_data(device_type_map=None):
+    """Loads logs from the server storage, filtering out alerts."""
     try:
         abs_logs_path = os.path.abspath(SERVER_LOGS_PATH)
         print(f"[ML] Loading data from: {abs_logs_path}")
@@ -101,6 +115,9 @@ def load_data():
         if not os.path.exists(abs_logs_path):
             print(f"[ML] Log file NOT FOUND at {abs_logs_path}")
             return pd.DataFrame()
+
+        if device_type_map is None:
+            device_type_map = load_device_types()
             
         with open(abs_logs_path, 'r') as f:
             lines = f.readlines()
@@ -109,12 +126,16 @@ def load_data():
             for i, line in enumerate(lines):
                 if line.strip():
                     try:
-                        data.append(json.loads(line))
+                        record = json.loads(line)
+                        # FILTER: Skip security alerts to avoid training on alarms
+                        if record.get("event_type") == "SECURITY_ALERT":
+                            continue
+                        data.append(record)
                     except Exception as je:
                         if i < 5: print(f"[ML] JSON parse error on line {i+1}: {je}")
                         continue
         
-        print(f"[ML] Successfully parsed {len(data)} records.")
+        print(f"[ML] Successfully parsed {len(data)} training records (filtered alerts).")
         if not data:
             return pd.DataFrame()
 
@@ -125,6 +146,7 @@ def load_data():
             system = entry.get("system", {})
             ts = entry.get("timestamp", datetime.now().timestamp())
             dt = datetime.fromtimestamp(ts)
+            device_id = entry.get("device_id", "unknown")
             
             flat = {
                 "temperature": sensors.get("temperature", sensors.get("light_level", 25)),
@@ -134,7 +156,8 @@ def load_data():
                 "battery_level": system.get("battery_level", 100),
                 "power_watts": system.get("power_watts", 10),
                 "network_activity": system.get("network_activity", 20),
-                "hour": dt.hour
+                "hour": dt.hour,
+                "device_type": device_type_map.get(device_id, "unknown")
             }
             flattened_data.append(flat)
             
@@ -144,22 +167,48 @@ def load_data():
         return pd.DataFrame()
 
 def train_sensor_model():
-    """Trains the Isolation Forest for sensor anomaly detection."""
-    global SENSOR_MODEL
+    """Trains Isolation Forest models for each device type."""
+    global SENSOR_MODELS
     df = load_data()
     
-    min_samples = CONFIG.get("model", {}).get("min_training_samples", 10)
-    if df.empty or len(df) < min_samples:
-        print(f"[ML] Not enough data to train sensor model (need {min_samples}).")
+    if df.empty:
+        print("[ML] No data available to train sensor models.")
         return False
         
-    print(f"[ML] Training sensor model on {len(df)} records...")
+    device_types = df['device_type'].unique()
+    print(f"[ML] Found device types: {device_types}")
+    
+    success = False
+    min_samples = CONFIG.get("model", {}).get("min_training_samples", 10)
     contamination = CONFIG.get("model", {}).get("contamination", 0.01)
     random_state = CONFIG.get("model", {}).get("random_state", 42)
-    SENSOR_MODEL = IsolationForest(contamination=contamination, random_state=random_state)
-    SENSOR_MODEL.fit(df)
-    print("[ML] Sensor model trained successfully.")
-    return True
+
+    for d_type in device_types:
+        if d_type == "unknown": continue
+        
+        type_df = df[df['device_type'] == d_type]
+        # Drop metadata columns for training
+        train_df = type_df.drop(columns=['device_type', 'hour'], errors='ignore')
+        # We keep 'hour' in the feature list in prediction, so we should keep it here or drop it consistently.
+        # Original code used 'hour' in features. Let's keep it but ensure columns match.
+        # The previous load_data returned a flat dict, so keys are columns. 
+        # features list in predict_basic: ["temperature", "humidity", "vibration", "cpu_usage", "battery_level", "power_watts", "network_activity", "hour"]
+        
+        feature_cols = ["temperature", "humidity", "vibration", "cpu_usage", "battery_level", "power_watts", "network_activity", "hour"]
+        train_df = type_df[feature_cols]
+
+        if len(train_df) < min_samples:
+            print(f"[ML] Not enough data for {d_type} (got {len(train_df)}, need {min_samples}).")
+            continue
+            
+        print(f"[ML] Training model for {d_type} on {len(train_df)} records...")
+        model = IsolationForest(contamination=contamination, random_state=random_state)
+        model.fit(train_df)
+        SENSOR_MODELS[d_type] = model
+        success = True
+        
+    print(f"[ML] Sensor models trained for: {list(SENSOR_MODELS.keys())}")
+    return success
 
 def train_power_model():
     """Trains Isolation Forest specifically for power/system anomalies."""
@@ -300,26 +349,40 @@ def health_check():
 @app.route('/predict', methods=['POST'])
 def predict_basic():
     """Basic prediction using Isolation Forest (original endpoint)."""
-    global SENSOR_MODEL
+    global SENSOR_MODELS
     
-    if SENSOR_MODEL is None:
-        if not train_sensor_model():
-            data = request.json
-            temp = data.get("sensors", {}).get("temperature", 0)
-            batch_hash = data.get("batch_hash", "NONE")
-            is_anomaly = temp > 45
-            if is_anomaly:
-                data_hash = hashlib.sha256(json.dumps(data).encode()).hexdigest()
-                log_to_blockchain(data.get("device_id", "unknown"), 1.0, data_hash, batch_hash, "TEMP_SPIKE", data.get("gateway_id", "unknown"))
-            
-            return jsonify({
-                "is_anomaly": is_anomaly,
-                "score": 1.0 if is_anomaly else 0.0, 
-                "method": "fallback_threshold"
-            })
+    # Fallback / Init if empty
+    if not SENSOR_MODELS:
+        train_sensor_model()
+
+    entry = request.json
+    device_id = entry.get("device_id", "unknown")
+    
+    # Determine device type
+    device_types = load_device_types()
+    device_type = device_types.get(device_id, "unknown")
+    
+    # Select Model
+    model = SENSOR_MODELS.get(device_type)
+    
+    if model is None:
+        # Fallback to threshold if no model for this type
+        temp = entry.get("sensors", {}).get("temperature", 0)
+        batch_hash = entry.get("batch_hash", "NONE")
+        is_anomaly = temp > 50 # Higher threshold for unknown fallback
+        if is_anomaly:
+            data_hash = hashlib.sha256(json.dumps(entry).encode()).hexdigest()
+            log_to_blockchain(device_id, 1.0, data_hash, batch_hash, "TEMP_SPIKE", entry.get("gateway_id", "unknown"))
+        
+        return jsonify({
+            "is_anomaly": is_anomaly,
+            "score": 1.0 if is_anomaly else 0.0, 
+            "method": "fallback_threshold",
+            "device_type": device_type,
+            "note": "No dedicated model for this device type"
+        })
 
     try:
-        entry = request.json
         sensors = entry.get("sensors", {})
         system = entry.get("system", {})
         
@@ -337,17 +400,8 @@ def predict_basic():
         ]]
         features = pd.DataFrame(features_list, columns=feature_names)
         
-        # Safety check: ensure model is ready before prediction
-        if SENSOR_MODEL is None:
-            return jsonify({
-                "is_anomaly": False,
-                "score": 0.0,
-                "method": "model_not_ready",
-                "error": "Sensor model not initialized"
-            }), 503
-        
-        prediction = SENSOR_MODEL.predict(features)[0]
-        score = SENSOR_MODEL.decision_function(features)[0]
+        prediction = model.predict(features)[0]
+        score = model.decision_function(features)[0]
         
         # Only consider it an anomaly if prediction is -1 AND score is below a safe threshold
         # High scores (near 0) often mean the point is on the boundary
@@ -355,7 +409,8 @@ def predict_basic():
         is_anomaly = prediction == -1 and score < threshold
         
         if is_anomaly:
-            print(f"[ML] ANOMALY DETECTED! Score: {score:.4f} (Threshold: {threshold})")
+            print(f"[ML] ANOMALY DETECTED for {device_id} ({device_type})! Score: {score:.4f} (Threshold: {threshold})")
+
             print(f"      Features: {features}")
             # Use raw list for hash to avoid DataFrame serialization error
             data_hash = hashlib.sha256(json.dumps(features_list).encode()).hexdigest()
@@ -406,7 +461,7 @@ def predict_basic():
 @app.route('/predict/access', methods=['POST'])
 def predict_access():
     """Access anomaly detection using Isolation Forest."""
-    if SENSOR_MODEL is None:
+    if not SENSOR_MODELS:
         train_sensor_model()
     
     try:
@@ -536,7 +591,12 @@ def predict_comprehensive():
     
     # Sensor check
     try:
-        if SENSOR_MODEL is not None:
+        # Determine device type for model selection
+        device_types = load_device_types()
+        device_type = device_types.get(device_id, "unknown")
+        sensor_model = SENSOR_MODELS.get(device_type)
+
+        if sensor_model is not None:
             features = [[
                 data.get("sensors", {}).get("temperature", 25),
                 data.get("sensors", {}).get("humidity", 50),
@@ -547,8 +607,13 @@ def predict_comprehensive():
                 data.get("system", {}).get("network_activity", 20),
                 datetime.now().hour
             ]]
-            prediction = SENSOR_MODEL.predict(features)[0]
-            if prediction == -1:
+            prediction = sensor_model.predict(features)[0]
+            score = sensor_model.decision_function(features)[0]
+            
+            # Check score threshold (consistent with predict_basic)
+            threshold = CONFIG.get("model", {}).get("score_threshold", -0.1)
+            
+            if prediction == -1 and score < threshold:
                 detections.append({
                     "type": "sensor_anomaly",
                     "method": "isolation_forest",
@@ -646,7 +711,7 @@ def get_status():
         "status": "running",
         "python_version": sys.version,
         "models": {
-            "sensor_model": SENSOR_MODEL is not None,
+            "sensor_models": list(SENSOR_MODELS.keys()),
             "power_model": POWER_MODEL is not None,
             "behavior_model": BEHAVIOR_MODEL is not None
         },

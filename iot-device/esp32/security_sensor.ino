@@ -3,8 +3,8 @@
 #include <WiFi.h>
 
 // WiFi Configuration
-const char *ssid = "YOUR_WIFI_SSID";         // <-- CHANGE THIS
-const char *password = "YOUR_WIFI_PASSWORD"; // <-- CHANGE THIS
+const char *ssid = "thakre_home";    // <-- CHANGE THIS
+const char *password = "rushi@7728"; // <-- CHANGE THIS
 
 // MQTT Configuration
 const char *mqtt_server = "192.168.1.133"; // Gateway PC LAN IP
@@ -93,6 +93,7 @@ void setup() {
   setup_wifi();
   client.setServer(mqtt_server, mqtt_port);
   client.setCallback(callback);
+  client.setBufferSize(512); // Increase buffer for large JSON payloads
 }
 
 void loop() {
@@ -131,9 +132,15 @@ void loop() {
 
     char buffer[512];
     serializeJson(doc, buffer);
-    client.publish(topic_data, buffer);
+    char buffer[512];
+    serializeJson(doc, buffer);
 
-    Serial.print("Published Security Data (ESP32): ");
-    Serial.println(buffer);
+    if (client.publish(topic_data, buffer)) {
+      Serial.print("Published Security Data (ESP32): ");
+      Serial.println(buffer);
+    } else {
+      Serial.print("ERROR: Publish FAILED! State: ");
+      Serial.println(client.state());
+    }
   }
 }

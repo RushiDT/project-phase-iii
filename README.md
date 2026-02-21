@@ -41,5 +41,83 @@ This project implements a multi-layered security framework for IoT devices, usin
 ---
 
 ## 🚀 Quick Start
-- **Server Side**: Run `python start_system.py`
-- **Edge Side**: Run `./start_pi.sh` (on Raspberry Pi)
+- **Server Side (Laptop/PC)**: Run `python start_system.py`
+- **Edge Side (Raspberry Pi)**: Run `bash start_pi.sh`
+
+---
+
+## 🍓 Raspberry Pi 4 — Base Station Deployment
+
+The Raspberry Pi 4 Model B serves as the dedicated **Base Station / Gateway** running the MQTT broker, data validation, and batch forwarding.
+
+### Hardware Requirements
+| Item | Requirement |
+|------|-------------|
+| Board | Raspberry Pi 4 Model B (2GB+ RAM) |
+| Power | Official USB-C 5V/3A power supply |
+| Storage | 16GB+ microSD card (Class 10) |
+| Network | Ethernet recommended (WiFi works) |
+| OS | Raspberry Pi OS (64-bit Lite recommended) |
+
+### First-Time Setup
+
+```bash
+# 1. Clone the repo onto your Pi
+git clone <your-repo-url> ~/iot-security
+cd ~/iot-security
+
+# 2. Run the one-command setup (installs everything)
+bash gateway/setup_pi.sh
+
+# 3. Edit your network configuration
+nano gateway/.env
+#    → Set SERVER_HOST to your laptop/server IP
+#    → Set MQTT credentials
+
+# 4. Start the base station
+bash start_pi.sh
+```
+
+### What Gets Installed
+- **Mosquitto MQTT broker** — runs locally on port 1883 with authentication
+- **Python 3 venv** — isolated environment with gateway dependencies
+- **systemd service** — auto-start on boot (`basestation.service`)
+
+### Network Configuration
+
+On your **laptop** (running `start_system.py`):
+- Select "Remote Gateway" when prompted
+- Enter the Pi's IP address (find it with `hostname -I` on the Pi)
+
+On your **Pi** (`gateway/.env`):
+- Set `SERVER_HOST` to your laptop's IP
+- Set `MQTT_BROKER=localhost`
+
+### Monitoring Endpoints
+| Endpoint | Description |
+|----------|-------------|
+| `http://<pi-ip>:8090/status` | Gateway status, uptime, buffer size |
+| `http://<pi-ip>:8090/pi/health` | CPU temp, RAM, disk, system health |
+
+### Service Management
+```bash
+# Start/stop/restart
+sudo systemctl start basestation
+sudo systemctl stop basestation
+sudo systemctl restart basestation
+
+# View logs
+sudo journalctl -u basestation -f
+
+# Check Mosquitto
+sudo systemctl status mosquitto
+```
+
+### Troubleshooting
+| Issue | Solution |
+|-------|----------|
+| Mosquitto not starting | `sudo journalctl -u mosquitto` for errors |
+| Server unreachable | Check `SERVER_HOST` in `.env`, verify laptop firewall |
+| MQTT auth failed | Re-run `bash gateway/install_mosquitto.sh` |
+| High CPU temp warnings | Ensure proper ventilation or add a heatsink |
+| Gateway won't start | Check `bash gateway/setup_pi.sh` ran successfully |

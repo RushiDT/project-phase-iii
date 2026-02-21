@@ -2,7 +2,7 @@ import requests
 import json
 import time
 
-GATEWAY_IP = "192.168.1.133"
+GATEWAY_IP = "192.168.1.161"
 GATEWAY_PORT = 8090
 DEVICE_ID = "esp32_sec_01"
 

@@ -7,7 +7,7 @@ const char *ssid = "thakre_home";    // <-- CHANGE THIS
 const char *password = "rushi@7728"; // <-- CHANGE THIS
 
 // MQTT Configuration
-const char *mqtt_server = "192.168.1.133"; // Gateway PC LAN IP
+const char *mqtt_server = "192.168.1.161"; // Raspberry Pi Base Station IP
 const int mqtt_port = 1883;
 const char *device_id_base = "esp32_sec_01";
 const char *user_id = "user_456";

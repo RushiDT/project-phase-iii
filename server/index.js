@@ -315,7 +315,7 @@ app.post('/api/control', async (req, res) => {
 
         // A. Send to Gateway Immediately
         try {
-            await axios.post('http://192.168.1.133:8090/control', {
+            await axios.post('http://192.168.1.161:8090/control', {
                 device_id,
                 command,
                 command_id: `cmd_${now}_fast`
@@ -370,7 +370,7 @@ app.post('/api/control', async (req, res) => {
             console.log(`[CONTROL] ✓ Approved & Cached. Score: ${blockchainResult.trust_score}`);
 
             // Forward to Gateway
-            await axios.post('http://192.168.1.133:8090/control', {
+            await axios.post('http://192.168.1.161:8090/control', {
                 device_id,
                 command,
                 command_id: blockchainResult.command_id

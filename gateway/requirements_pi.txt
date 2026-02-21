@@ -1,0 +1,10 @@
+# Raspberry Pi 4 Base Station – Python Dependencies
+# Install with: pip install -r requirements_pi.txt
+
+flask==3.1.*
+flask-cors==5.*
+paho-mqtt==1.6.*
+requests==2.*
+python-dotenv==1.*
+RPi.GPIO==0.7.*
+psutil==6.*

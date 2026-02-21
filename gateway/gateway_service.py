@@ -11,8 +11,23 @@ from datetime import datetime
 from flask_cors import CORS
 from dotenv import load_dotenv
 
+# Pi health monitoring (graceful fallback on non-Pi)
+try:
+    from pi_health_monitor import get_health_report
+    HEALTH_MONITOR_AVAILABLE = True
+except ImportError:
+    HEALTH_MONITOR_AVAILABLE = False
+
 # Load environment variables
 load_dotenv()
+
+# Configure log level from .env
+LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
+logging.basicConfig(level=getattr(logging, LOG_LEVEL, logging.INFO),
+                    format="%(asctime)s - [GATEWAY] - %(message)s")
+
+# Track startup time for uptime calculation
+STARTUP_TIME = time.time()
 
 # Optional Raspberry Pi GPIO support
 try:
@@ -48,7 +63,7 @@ BATCH_SIZE = int(os.getenv("BATCH_SIZE", "50"))
 BATCH_INTERVAL = int(os.getenv("BATCH_INTERVAL", "2"))
 
 # MQTT Broker Config (local LAN IP for hardware accessibility)
-MQTT_BROKER = os.getenv("MQTT_BROKER", "192.168.1.133")
+MQTT_BROKER = os.getenv("MQTT_BROKER", "192.168.1.161")
 MQTT_PORT = 1883
 MQTT_TOPIC = "iot/devices/+/data"
 MQTT_USER = "admin"  # Set to None if no auth
@@ -97,9 +112,8 @@ FAILED_BATCHES_FILE = os.path.join(os.path.dirname(__file__), "failed_batches.js
 failed_batches_lock = threading.Lock()
 
 # =========================
-# LOGGING SETUP
+# LOGGING SETUP (configured above with LOG_LEVEL)
 # =========================
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - [GATEWAY] - %(message)s")
 
 
 # =========================
@@ -463,7 +477,48 @@ def submit_device_data():
 
 @app.route("/status", methods=["GET"])
 def gateway_status():
-    return jsonify({"status": "running", "gateway_id": GATEWAY_ID}), 200
+    uptime_sec = int(time.time() - STARTUP_TIME)
+    hours, remainder = divmod(uptime_sec, 3600)
+    minutes, seconds = divmod(remainder, 60)
+
+    status_data = {
+        "status": "running",
+        "gateway_id": GATEWAY_ID,
+        "uptime": f"{hours}h {minutes}m {seconds}s",
+        "buffer_size": len(data_buffer),
+        "registered_devices": len(ACCESS_REGISTRY),
+        "server_host": SERVER_HOST,
+        "mqtt_broker": MQTT_BROKER,
+    }
+
+    # Add Pi-specific info if available
+    if HEALTH_MONITOR_AVAILABLE:
+        try:
+            health = get_health_report()
+            status_data["pi_model"] = health.get("pi_model", "Unknown")
+            status_data["cpu_temperature_c"] = health.get("cpu_temperature_c")
+        except Exception:
+            pass
+
+    return jsonify(status_data), 200
+
+
+@app.route("/pi/health", methods=["GET"])
+def pi_health():
+    """Raspberry Pi hardware health endpoint."""
+    if not HEALTH_MONITOR_AVAILABLE:
+        return jsonify({
+            "status": "unavailable",
+            "reason": "Pi health monitor not available (non-Pi platform or psutil not installed)"
+        }), 200
+
+    try:
+        report = get_health_report()
+        report["gateway_uptime_s"] = int(time.time() - STARTUP_TIME)
+        report["buffer_size"] = len(data_buffer)
+        return jsonify(report), 200
+    except Exception as e:
+        return jsonify({"status": "error", "reason": str(e)}), 500
 
 @app.route("/api/sync", methods=["POST"])
 def trigger_sync():

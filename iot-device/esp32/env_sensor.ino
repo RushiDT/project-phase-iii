@@ -8,7 +8,7 @@ const char *ssid = "YOUR_WIFI_SSID";         // <-- CHANGE THIS
 const char *password = "YOUR_WIFI_PASSWORD"; // <-- CHANGE THIS
 
 // MQTT Configuration
-const char *mqtt_server = "192.168.1.133"; // Local machine's IP
+const char *mqtt_server = "192.168.1.161"; // Raspberry Pi Base Station IP
 const int mqtt_port = 1883;
 const char *device_id = "esp32_env_01";
 const char *user_id = "user_789";

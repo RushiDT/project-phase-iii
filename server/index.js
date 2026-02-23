@@ -4,8 +4,21 @@ const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const axios = require('axios');
+const http = require('http');
+const { Server } = require('socket.io');
+const rateLimit = require('express-rate-limit');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 
 const app = express();
+const server = http.createServer(app);
+const io = new Server(server, {
+    cors: {
+        origin: "*", // allow dashboard URL
+        methods: ["GET", "POST"]
+    }
+});
+
 const PORT = 5002;
 const LOG_FILE = path.join(__dirname, 'server_logs.json');      // Legacy JSON
 const JSONL_FILE = path.join(__dirname, 'server_logs.jsonl');   // New JSONL format
@@ -27,15 +40,107 @@ let alarmReason = "";
 
 // In-Memory Log Cache (for low-latency dashboard polling)
 let recentLogs = [];
+let cacheInitialized = false;
 const MAX_CACHE_SIZE = 200;
 
 // Trust Score Cache (for instant control)
 let trustScoreCache = {};
 const TRUST_CACHE_TTL = 300000; // 5 minutes (in ms)
 
-// Middleware
+// --- Setup Middlewares & Protection ---
 app.use(cors());
 app.use(bodyParser.json());
+
+// Global API Rate Limiting: max 5000 requests per 1 minute (Allows Gateway)
+const apiLimiter = rateLimit({
+    windowMs: 1 * 60 * 1000,
+    max: 5000,
+    message: { error: "Too many requests from this IP, please try again later" },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+// Apply rate limiter specifically to the API paths
+app.use('/api/', apiLimiter);
+
+// --- JWT Authentication Implementation ---
+const PRIVATE_KEY = fs.existsSync(path.join(__dirname, 'jwt_private.pem')) ? fs.readFileSync(path.join(__dirname, 'jwt_private.pem'), 'utf8') : null;
+const PUBLIC_KEY = fs.existsSync(path.join(__dirname, 'jwt_public.pem')) ? fs.readFileSync(path.join(__dirname, 'jwt_public.pem'), 'utf8') : null;
+
+if (!PRIVATE_KEY || !PUBLIC_KEY) {
+    console.warn("⚠️ [SECURITY WARNING] JWT Keys not found! API is running in INSECURE mode. Run 'node generate_keys.js' to fix.");
+}
+
+// Generate simple hashed mock user for demo
+const MOCK_ADMIN_HASH = bcrypt.hashSync("admin123", 10);
+const MOCK_GATEWAY_HASH = bcrypt.hashSync("gateway_secret", 10);
+
+app.post('/api/login', (req, res) => {
+    const { username, password } = req.body;
+
+    if (!PRIVATE_KEY) return res.status(500).json({ error: "Server missing JWT keys" });
+
+    let role = null;
+    let valid = false;
+
+    if (username === 'admin' && bcrypt.compareSync(password, MOCK_ADMIN_HASH)) {
+        role = 'dashboard_admin';
+        valid = true;
+    } else if (username === 'gateway' && bcrypt.compareSync(password, MOCK_GATEWAY_HASH)) {
+        role = 'gateway_node';
+        valid = true;
+    }
+
+    if (valid) {
+        const token = jwt.sign({ username, role }, PRIVATE_KEY, { algorithm: 'RS256', expiresIn: '12h' });
+        res.json({ token, role });
+    } else {
+        res.status(401).json({ error: "Invalid credentials" });
+    }
+});
+
+const authenticateToken = (req, res, next) => {
+    // Exempt login and health checks
+    if (!PUBLIC_KEY) return next(); // Bypass if missing keys (for local dev)
+    const openPaths = ['/api/login', '/api/health', '/login', '/health', '/api/alerts', '/alerts', '/api/alarm/trigger', '/alarm/trigger'];
+    if (openPaths.includes(req.path) || req.path.endsWith('/unquarantine')) return next();
+
+    // Check auth header
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1]; // Bearer <token>
+
+    if (!token) {
+        console.warn(`[AUTH] Blocked unauthorized request to ${req.path}`);
+        return res.status(401).json({ error: "Access denied. Token missing." });
+    }
+
+    jwt.verify(token, PUBLIC_KEY, { algorithms: ['RS256'] }, (err, user) => {
+        if (err) {
+            console.warn(`[AUTH] Invalid token used for ${req.path}`);
+            return res.status(403).json({ error: "Invalid or expired token" });
+        }
+        req.user = user;
+        next();
+    });
+};
+
+// Global application of token verification
+app.use('/api', authenticateToken);
+
+// --- WebSocket Connection Handler ---
+io.on('connection', (socket) => {
+    console.log(`[WSS] New client connected: ${socket.id}`);
+
+    // Optionally send immediate current state to new clients
+    socket.emit('initial_state', {
+        alarm_active: isAlarmActive,
+        alarm_reason: alarmReason
+    });
+
+    socket.on('disconnect', () => {
+        console.log(`[WSS] Client disconnected: ${socket.id}`);
+    });
+});
+
 
 // Helper to read logs (from JSONL)
 const readLogs = () => {
@@ -69,25 +174,31 @@ const readLogs = () => {
 
 // Helper to append logs (Per-device JSON files + General JSONL)
 const appendLogs = (logs, gatewayId, batchId, batchHash) => {
-    const now = new Date();
-    const dateStr = now.toISOString().split('T')[0];
-    const timeStr = now.toTimeString().split(' ')[0];
+    const dateNow = new Date();
+    const dateStr = dateNow.toISOString().split('T')[0];
+    const timeStr = dateNow.toTimeString().split(' ')[0];
 
     // 1. Original JSONL Append (General Audit) & Cache Update
+    const now = Date.now();
+
     const lines = logs.map(log => {
         const enrichedLog = {
             ...log,
             gateway_id: gatewayId,
             batch_id: batchId,
             batch_hash: batchHash,
-            server_received_at: Date.now()
+            server_received_at: now
         };
 
-        // Update in-memory cache
+        // Always push to live cache — the cacheInitialized flag in GET /api/logs
+        // already prevents stale JSONL data from polluting the dashboard on startup
         recentLogs.push(enrichedLog);
         if (recentLogs.length > MAX_CACHE_SIZE) {
             recentLogs.shift();
         }
+
+        // --- EMIT REAL-TIME WEBSOCKET EVENT ---
+        io.emit('new_log', enrichedLog);
 
         return JSON.stringify(enrichedLog);
     }).join('\n') + '\n';
@@ -158,7 +269,8 @@ app.post('/api/logs', (req, res) => {
         return res.status(400).json({ error: "Invalid batch format" });
     }
 
-    const gatewayId = batch.gateway_id || "unknown";
+    // Identify the gateway. If using JWT, we trust the token identity over the payload.
+    const gatewayId = (req.user && req.user.role === 'gateway_node') ? req.user.username : (batch.gateway_id || "unknown");
     const batchId = batch.batch_id || `batch_${Date.now()}`;
     const batchHash = batch.batch_hash || "NONE";
 
@@ -231,11 +343,17 @@ app.post('/api/alerts', (req, res) => {
     };
     fs.appendFileSync(JSONL_FILE, JSON.stringify(enrichedAlert) + '\n');
 
+    // --- AUTOMATED ALERTING (WEBHOOK) ---
+    sendAlertWebhook(enrichedAlert);
+
     // Update in-memory cache so Dashboard sees it immediately
     recentLogs.push(enrichedAlert);
     if (recentLogs.length > MAX_CACHE_SIZE) {
         recentLogs.shift();
     }
+
+    // --- EMIT REAL-TIME WEBSOCKET EVENT ---
+    io.emit('new_alert', enrichedAlert);
 
     // Log to blockchain as a security threat
     callBlockchainPython('log_event', [
@@ -254,6 +372,24 @@ app.post('/api/alerts', (req, res) => {
     res.json({ status: "alert_received" });
 });
 
+// ==================== WEBHOOK INTEGRATION ====================
+// Used for Discord / Slack / Telegram etc
+const WEBHOOK_URL = process.env.WEBHOOK_URL || "";
+
+const sendAlertWebhook = async (alert) => {
+    if (!WEBHOOK_URL) return; // Silent skip if no webhook configured
+
+    try {
+        const payload = {
+            content: `🚨 **CRITICAL IOT SECURITY ALERT** 🚨\n**Device:** \`${alert.device_id}\`\n**Reason:** ${alert.reason || 'Unknown Anomaly'}\n**Gateway:** \`${alert.gateway_id || 'unknown'}\`\n**Time:** <t:${Math.floor(Date.now() / 1000)}:f>`
+        };
+        await axios.post(WEBHOOK_URL, payload);
+        console.log(`[ALERTING] Webhook dispatched successfully for ${alert.device_id}`);
+    } catch (err) {
+        console.error(`[ALERTING] Failed to dispatch webhook: ${err.message}`);
+    }
+};
+
 // API: Base Station Alarm Control
 app.post('/api/alarm/trigger', (req, res) => {
     const { reason } = req.body;
@@ -262,6 +398,9 @@ app.post('/api/alarm/trigger', (req, res) => {
     console.log('\n🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨');
     console.log(`🚨 BASE STATION ALARM ACTIVE: ${alarmReason} 🚨`);
     console.log('🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨\n');
+
+    io.emit('alarm_state_change', { active: true, reason: alarmReason });
+
     res.json({ status: "alarm_triggered", reason: alarmReason });
 });
 
@@ -269,6 +408,9 @@ app.post('/api/alarm/reset', (req, res) => {
     isAlarmActive = false;
     alarmReason = "";
     console.log('✅ Base Station Alarm Reset.');
+
+    io.emit('alarm_state_change', { active: false, reason: "" });
+
     res.json({ status: "alarm_reset" });
 });
 
@@ -277,14 +419,19 @@ app.get('/api/alarm/status', (req, res) => {
 });
 
 // API: Get Logs (for Frontend/ML)
-// API: Get Logs (for Frontend/ML)
 app.get('/api/logs', (req, res) => {
     // FAST PATH: Serve from memory
     const limit = parseInt(req.query.limit) || 50;
 
-    // If cache is empty (fresh start), try to populate it once
-    if (recentLogs.length === 0) {
-        recentLogs = readLogs().slice(-MAX_CACHE_SIZE);
+    // If cache not initialized (fresh start), seed with only RECENT entries (last 2 min)
+    // Old sessions' data stays in the JSONL file for audit but doesn't pollute the live dashboard
+    if (!cacheInitialized) {
+        cacheInitialized = true;
+        const cutoff = Date.now() - 120000; // 2 minutes ago
+        recentLogs = readLogs()
+            .filter(log => (log.server_received_at || (log.timestamp * 1000)) > cutoff)
+            .slice(-MAX_CACHE_SIZE);
+        console.log(`[SERVER] Cache initialized with ${recentLogs.length} recent entries (filtered from JSONL)`);
     }
 
     const limitedLogs = recentLogs.slice(-limit);
@@ -666,6 +813,96 @@ app.post('/api/devices', async (req, res) => {
     res.json({ status: "success", device: newDevice });
 });
 
+app.post('/api/devices/:deviceId/unquarantine', async (req, res) => {
+    const { deviceId } = req.params;
+
+    if (!fs.existsSync(DEVICES_FILE)) return res.status(404).json({ error: "Registry not found" });
+
+    let devices = JSON.parse(fs.readFileSync(DEVICES_FILE, 'utf8'));
+    let device = devices.find(d => d.id === deviceId);
+
+    if (!device) return res.status(404).json({ error: "Device not found" });
+
+    // Remote local quarantine flag
+    device.quarantined = false;
+    fs.writeFileSync(DEVICES_FILE, JSON.stringify(devices, null, 2));
+
+    // Restore Trust Score on Blockchain (Async, don't block response)
+    try {
+        callBlockchainPython('log_event', [
+            deviceId,
+            1.0,  // Full trust restoration
+            crypto_hash(`UNQUARANTINE_${Date.now()}`),
+            "UNQUARANTINE",
+            "ADMIN_OVERRIDE",
+            "server_admin"
+        ]).catch(() => { });
+
+        // Clear local cache
+        delete trustScoreCache[deviceId];
+
+        // Notify gateway to drop the blacklist (Async)
+        axios.post('http://localhost:8090/api/sync', { reason: "UNQUARANTINE", device_id: deviceId }).catch(() => { });
+
+        res.json({ status: "success", message: `Device ${deviceId} un-quarantined and trust restored.` });
+    } catch (e) {
+        res.status(500).json({ error: "Failed to update internal state: " + e.message });
+    }
+});
+
+// ==================== OTA FIRMWARE ORCHESTRATION ====================
+
+// Serve firmware files securely
+app.get('/api/ota/firmware/:version', (req, res) => {
+    const { version } = req.params;
+    // Basic sanitization
+    const sanitizeVersion = version.replace(/[^a-zA-Z0-9.\-_]/g, '');
+    const filePath = path.join(__dirname, 'firmware', `${sanitizeVersion}`);
+
+    if (fs.existsSync(filePath)) {
+        res.download(filePath);
+    } else {
+        res.status(404).json({ error: "Firmware version not found" });
+    }
+});
+
+// Trigger OTA update for a device
+app.post('/api/devices/:deviceId/update', async (req, res) => {
+    const { deviceId } = req.params;
+    const { version } = req.body;
+
+    if (!version) {
+        return res.status(400).json({ error: "Target firmware version required" });
+    }
+
+    try {
+        console.log(`[OTA] Initiating Firmware Update (${version}) for ${deviceId}`);
+
+        // Ensure command gets to gateway
+        await axios.post('http://localhost:8090/control', {
+            device_id: deviceId,
+            command: `OTA_UPDATE|${version}`,
+            command_id: `ota_${Date.now()}`
+        });
+
+        // Log initiation on blockchain
+        callBlockchainPython('log_event', [
+            deviceId,
+            1.0,
+            crypto_hash(`OTA_UPDATE|${version}`),
+            "OTA_INIT",
+            "FIRMWARE_UPDATE",
+            req.user ? req.user.username : "server_admin"
+        ]).catch(() => { });
+
+        res.json({ status: "ota_initiated", device: deviceId, version });
+
+    } catch (err) {
+        console.error(`[OTA] Failed to send update command to gateway: ${err.message}`);
+        res.status(500).json({ error: "Failed to communicate with gateway" });
+    }
+});
+
 // ==================== SYSTEM HEALTH MONITOR ====================
 
 app.get('/api/health', (req, res) => {
@@ -693,8 +930,61 @@ setInterval(() => {
     });
 }, 5000);
 
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+// ==================== AUTO-QUARANTINE (PHASE 7) ====================
+const QUARANTINE_THRESHOLD = 50;
+
+setInterval(async () => {
+    if (!fs.existsSync(DEVICES_FILE)) return;
+
+    try {
+        let devices = JSON.parse(fs.readFileSync(DEVICES_FILE, 'utf8'));
+        let registryUpdated = false;
+
+        for (let i = 0; i < devices.length; i++) {
+            const dev = devices[i];
+
+            // Fetch live blockchain trust score
+            const score = await callBlockchainPython('get_trust_score', [dev.id]);
+
+            if (score < QUARANTINE_THRESHOLD && !dev.quarantined) {
+                console.log(`\n🛑 [QUARANTINE] Threat Detected! Trust score for ${dev.id} plummeted to ${score}. Initiating auto-isolation...`);
+
+                // 1. Mark as quarantined locally
+                dev.quarantined = true;
+                registryUpdated = true;
+
+                // 2. Transmit kill-switch to device
+                try {
+                    await axios.post('http://localhost:8090/control', {
+                        device_id: dev.id,
+                        command: 'DEVICE_OFF',
+                        command_id: `quarantine_${Date.now()}`
+                    });
+                    console.log(`🛑 [QUARANTINE] Sent DEVICE_OFF kill-switch to ${dev.id}.`);
+                } catch (e) {
+                    console.log(`🛑 [QUARANTINE] Failed to send kill-switch to Gateway: ${e.message}`);
+                }
+
+                // 3. Webhook Alert
+                sendAlertWebhook({
+                    device_id: dev.id,
+                    reason: `AUTO-ISOLATED due to Critical Trust Score (${score}%)`
+                });
+            }
+        }
+
+        if (registryUpdated) {
+            fs.writeFileSync(DEVICES_FILE, JSON.stringify(devices, null, 2));
+            console.log(`[QUARANTINE] Device registry updated with quarantined statuses.`);
+        }
+    } catch (e) {
+        console.error(`[QUARANTINE] Monitor error: ${e.message}`);
+    }
+}, 30000); // Check every 30 seconds
+
+// Use the wrapped HTTP server instead of the raw Express app
+server.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT} (HTTP + WebSockets)`);
     console.log('Blockchain API endpoints:');
     console.log('  GET /api/blockchain/logs - Get all anomaly logs');
     console.log('  GET /api/blockchain/count - Get log count');

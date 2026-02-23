@@ -12,6 +12,8 @@ const char *mqtt_server = "192.168.1.161"; // Raspberry Pi Base Station IP
 const int mqtt_port = 1883;
 const char *device_id = "esp8266_env_01";
 const char *user_id = "user_789";
+const char *mqtt_user = "admin";
+const char *mqtt_pass = "password123";
 const char *topic_data = "iot/devices/esp8266_env_01/data";
 
 // Sensor Configuration
@@ -56,7 +58,7 @@ void setup_wifi() {
 void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
-    if (client.connect(device_id)) {
+    if (client.connect(device_id, mqtt_user, mqtt_pass)) {
       Serial.println("connected");
     } else {
       Serial.print("failed, rc=");

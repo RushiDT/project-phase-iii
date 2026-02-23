@@ -1,0 +1,385 @@
+# IoT Anomaly Detection System — Architecture & Data Flow
+
+## System Overview
+
+A multi-layered IoT security platform that collects sensor data from ESP32/ESP8266 devices, validates and batches it through a gateway, detects anomalies with machine learning, records an immutable audit trail on a blockchain, and visualizes everything on a real-time dashboard.
+
+---
+
+## High-Level Architecture
+
+```mermaid
+graph TB
+    subgraph "Physical Layer"
+        ESP32["🔧 ESP32<br/>Security Sensor"]
+        ESP8266["🌡️ ESP8266<br/>Environment Sensor"]
+        SIM["💻 C++ Simulator<br/>esp32_simulator.cpp"]
+    end
+
+    subgraph "Edge Layer — Raspberry Pi"
+        MQTT["📡 Mosquitto<br/>MQTT Broker (TLS)<br/>Port 8883"]
+        GW["🛡️ Gateway Service<br/>gateway_service.py<br/>Port 8090"]
+    end
+
+    subgraph "Backend Layer — Laptop"
+        SERVER["🖥️ Central Server<br/>index.js (JWT/HTTPS)<br/>Port 5002"]
+        ML["🧠 ML Engine<br/>anomaly_detector.py<br/>Port 5001"]
+        BC["⛓️ Blockchain<br/>DeviceLog.sol<br/>Ganache Port 7545"]
+    end
+
+    subgraph "Presentation Layer"
+        DASH["📊 Dashboard<br/>App.jsx (React+Vite)<br/>Port 5173"]
+    end
+
+    ESP32 -- "MQTT Publish (TLS)<br/>iot/data" --> MQTT
+    ESP8266 -- "MQTT Publish (TLS)<br/>iot/data" --> MQTT
+    SIM -- "MQTT Publish (TLS)<br/>iot/data" --> MQTT
+    MQTT -- "Subscribe<br/>iot/data" --> GW
+    GW -- "HTTPS POST (JWT)<br/>/api/logs (Batch)" --> SERVER
+    GW -- "HTTPS POST (JWT)<br/>/api/alerts" --> SERVER
+    SERVER -- "HTTPS POST<br/>/predict" --> ML
+    SERVER -- "Python CLI<br/>log_event()" --> BC
+    ML -- "Python Import<br/>log_to_blockchain()" --> BC
+    DASH -- "HTTPS GET (JWT)<br/>/api/logs, /api/health" --> SERVER
+    DASH -- "WebSocket (WSS)<br/>Real-time Updates" --> SERVER
+    DASH -- "HTTPS POST (JWT)<br/>/api/control" --> SERVER
+    SERVER -- "HTTPS POST<br/>/control" --> GW
+    GW -- "MQTT Publish (TLS)<br/>iot/control/{id}" --> MQTT
+    MQTT -- "MQTT Subscribe (TLS)<br/>iot/control/{id}" --> ESP32
+```
+
+---
+
+## Data Flow Diagram (DFD)
+
+### Level 0 — Context Diagram
+
+```mermaid
+graph LR
+    DEV["IoT Devices<br/>(ESP32 / ESP8266)"] -- "Sensor Data<br/>(JSON via MQTT)" --> SYS["IoT Anomaly<br/>Detection System"]
+    SYS -- "Control Commands<br/>(ON/OFF via MQTT)" --> DEV
+    USER["Dashboard User"] -- "View Data / Send Commands" --> SYS
+    SYS -- "Real-time Logs,<br/>Alerts, Blockchain Audit" --> USER
+```
+
+### Level 1 — Process Decomposition
+
+```mermaid
+graph TB
+    subgraph "1. Data Ingestion"
+        D1["ESP32 / ESP8266 / Simulator"]
+        D1 -- "JSON payload via MQTT<br/>{device_id, temp, humidity,<br/>cpu_usage, battery, seq_no}" --> P1["1.1 MQTT Broker<br/>(Mosquitto)"]
+        P1 -- "Topic: iot/data" --> P2["1.2 Gateway Service<br/>(on_message callback)"]
+    end
+
+    subgraph "2. Edge Validation"
+        P2 --> P3["2.1 Validate Payload<br/>• Field checks<br/>• Identity verification<br/>• Value range checks<br/>• Sequence number check"]
+        P3 -- "REJECT" --> ALERT["Security Alert<br/>→ POST /api/alerts"]
+        P3 -- "PASS" --> P4["2.2 Buffer & Batch<br/>Accumulate in data_buffer<br/>Flush every 10s"]
+        P4 --> P5["2.3 Smart Automation<br/>Edge rules (temp > 40°C)"]
+    end
+
+    subgraph "3. Central Processing"
+        P4 -- "HTTPS POST /api/logs<br/>(batch of N logs, JWT)" --> P6["3.1 Server Receives Batch<br/>• JWT Validation & Rate Limiting<br/>• Append to JSONL<br/>• Write per-device JSON<br/>• Update heartbeat cache"]
+        P6 --> P7["3.2 Forward to ML Engine<br/>POST /predict for each log"]
+        P6 --> P8["3.3 Log to Blockchain<br/>Batch audit trail"]
+        P6 -- "Live Data Stream" --> WSS["3.4 WebSocket Server<br/>(Socket.io)"]
+    end
+
+    subgraph "4. ML Analysis (with Auto-Retraining)"
+        P7 --> P9["4.1 Sensor Anomaly<br/>(Isolation Forest)"]
+        P7 --> P10["4.2 Power Anomaly<br/>(Isolation Forest)"]
+        P7 --> P11["4.3 Behavior Anomaly<br/>(Rule-based)"]
+        P7 --> CE["4.4 Correlation Engine<br/>Cross-device Analysis"]
+        P9 & P10 & P11 & CE --> P12["4.5 Comprehensive Score<br/>Weighted threat level"]
+        P12 -- "If anomaly detected" --> P13["4.6 Trigger Alarm<br/>POST /api/alarm/trigger"]
+        P12 -- "Log anomaly" --> P14["4.7 Blockchain Audit<br/>log_event()"]
+    end
+
+    subgraph "5. Blockchain Audit"
+        P8 & P14 --> P15["5.1 DeviceLog Contract<br/>• addLog()<br/>• Update Trust Scores"]
+        P15 --> TS["Trust Score Store<br/>deviceTrustScores mapping"]
+    end
+
+    subgraph "6. Dashboard (Real-Time & Analytics)"
+        DASH2["6.1 React Dashboard<br/>(Historical Analytics + WebSockets)"]
+        DASH2 -- "HTTPS GET (JWT)" --> P6
+        WSS -- "WSS Push<br/>Instant Alerts/Data" --> DASH2
+        DASH2 -- "HTTPS GET /api/blockchain/logs" --> P15
+        DASH2 -- "HTTPS POST /api/control (JWT)" --> P16["6.2 Control Flow"]
+    end
+```
+
+### Level 2 — Device Control Flow (Detailed)
+
+```mermaid
+sequenceDiagram
+    participant User as Dashboard User
+    participant Server as Central Server<br/>:5002 (HTTPS/WSS)
+    participant BC as Blockchain<br/>(Ganache :7545)
+    participant GW as Gateway<br/>:8090 (HTTPS)
+    participant Broker as MQTT Broker<br/>:8883 (TLS)
+    participant Device as ESP32
+
+    User->>Server: HTTPS POST /api/control<br/>(JWT: Bearer Token)
+
+    Server-->>Server: Rate Limiting & JWT Auth
+
+    alt Trust Cache Hit (score ≥ 30)
+        Server->>GW: HTTPS POST /control (Instant Fast Path)
+        GW->>Broker: MQTT Publish (TLS) iot/control/{device_id}
+        Broker->>Device: Command payload
+        Server-->>User: WSS Push / ✅ command_forwarded_fast
+        Server->>BC: Async requestControl() + log_event()
+        Note over Server,BC: Background blockchain logging
+    else Cache Miss / Low Trust
+        Server->>BC: requestControl(device_id, user_id, command)
+        BC-->>Server: {approved, trust_score, command_id}
+        alt Approved (trust ≥ 30)
+            Server->>GW: POST /control
+            GW->>Broker: MQTT Publish iot/control/{device_id}
+            Broker->>Device: Command payload
+            Server-->>User: ✅ command_forwarded_verified
+        else Denied
+            Server-->>User: ❌ Trust score too low
+        end
+    end
+```
+
+---
+
+## Model Architecture (ML Engine)
+
+### ML Service Overview
+
+| Component | Model Type | Library | Purpose |
+|---|---|---|---|
+| Sensor Model | **Isolation Forest** (per device type) | scikit-learn | Detect anomalous sensor readings (temp, humidity, packet rate) |
+| Power Model | **Isolation Forest** | scikit-learn | Detect power-related threats (crypto mining, botnet, DDoS) |
+| Behavior Model | **Rule-based** | Custom Python | Detect time-based behavioral anomalies |
+
+### Isolation Forest Pipeline
+
+```mermaid
+graph LR
+    subgraph "Training Phase"
+        RAW["server_logs.jsonl<br/>(Historical Data)"] --> LOAD["load_data()<br/>Filter alerts,<br/>Group by device type"]
+        LOAD --> FE1["Feature Extraction<br/>• temperature<br/>• humidity<br/>• packet_rate"]
+        FE1 --> IF1["IsolationForest<br/>contamination=0.1<br/>n_estimators=100"]
+        IF1 --> SM["SENSOR_MODELS<br/>{device_type: model}"]
+
+        LOAD --> FE2["Feature Extraction<br/>• cpu_usage<br/>• battery_level<br/>• packet_rate"]
+        FE2 --> IF2["IsolationForest<br/>contamination=0.05"]
+        IF2 --> PM["POWER_MODEL"]
+    end
+```
+
+### Prediction Pipeline (Comprehensive Endpoint)
+
+```mermaid
+graph TB
+    INPUT["Incoming Sensor Data<br/>{device_id, temperature,<br/>humidity, cpu_usage,<br/>battery, packet_rate}"]
+
+    INPUT --> S1["1️⃣ Sensor Anomaly<br/>Model: SENSOR_MODELS[type]<br/>Features: temp, humidity, packet_rate<br/>Output: anomaly_score (-1 or 1)"]
+
+    INPUT --> S2["2️⃣ Power Anomaly<br/>Model: POWER_MODEL<br/>Features: cpu, battery, packet_rate<br/>Output: power_anomaly_type<br/>(normal / crypto_mining /<br/>botnet / ddos / hardware)"]
+
+    INPUT --> S3["3️⃣ Behavior Check<br/>Rules: Night activity detection,<br/>Weekend patterns,<br/>Burst frequency analysis<br/>Output: behavior_anomaly flag"]
+
+    S1 & S2 & S3 --> FUSE["Threat Fusion Engine"]
+
+    FUSE --> SCORE["Combined Threat Level<br/>0.0 (safe) → 1.0 (critical)<br/>Weighted average of all detectors"]
+
+    SCORE -- "score > threshold" --> ACTION["🚨 Actions:<br/>1. Log to anomaly_results.json<br/>2. POST /api/alarm/trigger<br/>3. log_to_blockchain()"]
+
+    SCORE -- "score ≤ threshold" --> SAFE["✅ Normal<br/>Log result only"]
+```
+
+### Power Anomaly Classification
+
+```mermaid
+graph LR
+    subgraph "Detection Rules"
+        A["High CPU + Low Battery<br/>+ High Packet Rate"] --> CM["🪙 Crypto Mining"]
+        B["Normal CPU<br/>+ Very High Packet Rate"] --> BN["🤖 Botnet Activity"]
+        C["Very High Packet Rate<br/>+ Abnormal Patterns"] --> DD["💥 DDoS Attack"]
+        D["Low Battery<br/>+ Abnormal CPU"] --> HW["⚙️ Hardware Issue"]
+        E["All Normal"] --> NM["✅ Normal"]
+    end
+```
+
+---
+
+## Blockchain Architecture
+
+### Smart Contract: [DeviceLog.sol](file:///c:/Users/Rushikesh/Desktop/program/Iot%20Device/blockchain/DeviceLog.sol)
+
+```mermaid
+graph TB
+    subgraph "DeviceLog Contract (Solidity 0.8.0)"
+        subgraph "Data Structures"
+            DS1["Device Registry<br/>mapping(string → Device)<br/>{id, type, gatewayId, registeredAt}"]
+            DS2["Trust Scores<br/>mapping(string → uint256)<br/>Range: 0-100"]
+            DS3["Anomaly Logs<br/>Log[] array<br/>{timestamp, deviceId, gatewayId,<br/>anomalyScore, dataHash, batchHash, eventType}"]
+            DS4["Control Commands<br/>ControlCommand[] array<br/>{deviceId, userId, command,<br/>approved, executed, trustAtTime}"]
+        end
+
+        subgraph "Trust Score Engine"
+            T1["SENSOR_DATA / BATCH_RECEIPT<br/>→ Trust +1"] 
+            T2["ANOMALY<br/>→ Trust -10"]
+            T3["SECURITY_ALERT<br/>→ Trust -20"]
+            T4["HEARTBEAT_LOST<br/>→ Trust -5"]
+            T5["MIN_TRUST_SCORE = 30<br/>(for command approval)"]
+        end
+
+        subgraph "Key Functions"
+            F1["registerDevice()"]
+            F2["addLog()"]
+            F3["requestControl()"]
+            F4["confirmExecution()"]
+        end
+    end
+```
+
+### Trust Score Lifecycle
+
+```mermaid
+graph LR
+    REG["Device Registered<br/>Trust = 100"] --> NRM["Normal Operations<br/>Trust slowly recovers<br/>(+1 per batch)"]
+    NRM --> ANM["Anomaly Detected<br/>Trust -= 10"]
+    ANM -- "Score ≥ 30" --> CTRL["Commands Allowed ✅"]
+    ANM -- "Score < 30" --> DENY["Commands Denied ❌"]
+    NRM --> SEC["Security Alert<br/>Trust -= 20"]
+    SEC --> DENY
+    NRM --> HB["Heartbeat Lost<br/>Trust -= 5"]
+```
+
+---
+
+## Network Topology
+
+```mermaid
+graph TB
+    subgraph "Home Network (192.168.1.x)"
+        subgraph "Raspberry Pi (192.168.1.161)"
+            MOSQUITTO["Mosquitto MQTT<br/>:1883"]
+            GATEWAY["Gateway Service<br/>:8090"]
+        end
+
+        subgraph "Laptop (192.168.1.121)"
+            SERVER2["Node.js Server<br/>:5002"]
+            MLENG["ML Engine<br/>:5001"]
+            GANACHE["Ganache Blockchain<br/>:7545"]
+            VITE["Vite Dev Server<br/>:5173"]
+        end
+
+        ESP32_2["ESP32 Device<br/>(WiFi)"]
+        ESP8266_2["ESP8266 Device<br/>(WiFi)"]
+    end
+
+    ESP32_2 -. "MQTT :1883" .-> MOSQUITTO
+    ESP8266_2 -. "MQTT :1883" .-> MOSQUITTO
+    MOSQUITTO --> GATEWAY
+    GATEWAY -- "HTTP :5002" --> SERVER2
+    SERVER2 -- "HTTP :5001" --> MLENG
+    SERVER2 -- "RPC :7545" --> GANACHE
+    MLENG -- "RPC :7545" --> GANACHE
+    VITE -- "HTTP :5002" --> SERVER2
+```
+
+---
+
+## Component File Map
+
+| Layer | Component | Key File | Port | Technology |
+|---|---|---|---|---|
+| Device | ESP32 Security Sensor | [security_sensor.ino](file:///c:/Users/Rushikesh/Desktop/program/Iot%20Device/iot-device/esp32/security_sensor.ino) | — | Arduino/C++ (WiFiClientSecure) |
+| Device | ESP8266 Environment Sensor | [esp8266_env_sensor.ino](file:///c:/Users/Rushikesh/Desktop/program/Iot%20Device/iot-device/esp8266/esp8266_env_sensor.ino) | — | Arduino/C++ (WiFiClientSecure) |
+| Device | C++ Simulator | [esp32_simulator.cpp](file:///c:/Users/Rushikesh/Desktop/program/Iot%20Device/iot-device/device/esp32_simulator.cpp) | — | C++ |
+| Edge | MQTT Broker (TLS) | [mosquitto_pi.conf](file:///c:/Users/Rushikesh/Desktop/program/Iot%20Device/gateway/mosquitto_pi.conf) | 8883 | Mosquitto w/ Certs |
+| Edge | Gateway Service | [gateway_service.py](file:///c:/Users/Rushikesh/Desktop/program/Iot%20Device/gateway/gateway_service.py) | 8090 | Python/Flask (HTTPS) + MQTTS |
+| Backend | Central Server | [index.js](file:///c:/Users/Rushikesh/Desktop/program/Iot%20Device/server/index.js) | 5002 | Node.js/Express (HTTPS, JWT, WS, Rate Limit) |
+| Backend | ML Engine | [anomaly_detector.py](file:///c:/Users/Rushikesh/Desktop/program/Iot%20Device/ml-engine/anomaly_detector.py) | 5001 | Python/Flask + sklearn (Auto-Retraining) |
+| Backend | Smart Contract | [DeviceLog.sol](file:///c:/Users/Rushikesh/Desktop/program/Iot%20Device/blockchain/DeviceLog.sol) | 7545 | Solidity 0.8 / Ganache |
+| Backend | Blockchain API | [deploy_and_interact.py](file:///c:/Users/Rushikesh/Desktop/program/Iot%20Device/blockchain/deploy_and_interact.py) | — | Python/Web3.py |
+| Frontend | Dashboard | [App.jsx](file:///c:/Users/Rushikesh/Desktop/program/Iot%20Device/dashboard/src/App.jsx) | 5173 | React + Vite (WebSockets, Analytics) |
+| Orchestration | System Launcher | [start_system.py](file:///c:/Users/Rushikesh/Desktop/program/Iot%20Device/start_system.py) | — | Python |
+
+---
+
+## Advance System Enhancements
+
+The architecture integrates the following 8 advanced enhancements:
+
+### 1. Security Protocol Upgrades
+* **MQTT TLS Encryption**: `Mosquitto` configured with CA certs and device firmware updated to use `WiFiClientSecure` over Port `8883`. This ensures all local sensor/control traffic is encrypted, preventing packet sniffing.
+* **HTTPS and SSL/TLS everywhere**: Replaced plain HTTP for `Gateway → Server` and `Dashboard → Server` communication with secure HTTPS, shielding against MITM attacks on the local network.
+* **JWT Authentication**: Implemented stateless JSON Web Token checks for `/api/logs` and `/api/control`. Drops unauthorized attempts instantly at the Express router level.
+
+### 2. Network & Server Protection
+* **Rate Limiting & DDoS Protection**: Added Express rate-limiting middleware restricting API requests (e.g., max 100 requests per 15 minutes per IP) to prevent malicious device flooding or DoS attacks from taking down the backend.
+
+### 3. Real-Time Communication
+* **WebSocket Real-Time Updates**: Upgraded from polling (2-5 seconds) to `Socket.IO (WSS)`. The central server pushes active alerts directly to the dashboard yielding zero-latency security notifications and drastically reducing HTTP load.
+
+### 4. Advanced Machine Learning Capabilities
+* **ML Model Auto-Retraining**: Upgraded [anomaly_detector.py](file:///c:/Users/Rushikesh/Desktop/program/Iot%20Device/ml-engine/anomaly_detector.py) to periodically retrain (e.g., via background threads/cron). This enables the Isolation Forests to adapt to seasonal baselines or evolving attack signatures.
+* **Anomaly Correlation Engine**: Added cross-device analysis to the threat fusion layer. Rather than analyzing single devices, the engine groups anomalies. (e.g., 5 devices failing simultaneously = Network Attack, not random failure).
+
+### 5. Advanced Presentation UX
+* **Historical Analytics Dashboard**: Replaced exclusively real-time displays with Chart.js/Recharts time-series data. Users can visualize temperature trends, trust score decay rates, and aggregate anomaly density over the span of days or weeks.
+
+---
+
+## Data Payload Formats
+
+### Device → MQTT (Sensor Data)
+```json
+{
+  "device_id": "ESP32_SIM_01",
+  "sequence_no": 42,
+  "timestamp": 1708700000,
+  "temperature": 28.5,
+  "humidity": 62.3,
+  "packet_rate": 15,
+  "cpu_usage": 45,
+  "battery_level": 78
+}
+```
+
+### Gateway → Server (Batch)
+```json
+{
+  "gateway_id": "gateway_001",
+  "batch_id": "batch_1708700010",
+  "batch_size": 5,
+  "batch_hash": "sha256:abc123...",
+  "logs": [ /* array of validated sensor payloads */ ]
+}
+```
+
+### Server → ML Engine (Predict Request)
+```json
+{
+  "temperature": 28.5,
+  "humidity": 62.3,
+  "packet_rate": 15,
+  "cpu_usage": 45,
+  "battery_level": 78,
+  "device_id": "ESP32_SIM_01"
+}
+```
+
+### ML Engine → Response
+```json
+{
+  "anomaly_score": 0.85,
+  "is_anomaly": true,
+  "threats": {
+    "sensor": { "anomaly": true, "score": -0.3 },
+    "power": { "type": "crypto_mining", "anomaly": true },
+    "behavior": { "anomaly": false }
+  },
+  "threat_level": "HIGH"
+}
+```

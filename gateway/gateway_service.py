@@ -8,8 +8,28 @@ import os
 import paho.mqtt.client as mqtt
 from flask import Flask, request, jsonify
 from datetime import datetime
-from flask_cors import CORS
-from dotenv import load_dotenv
+
+# Optional: flask-cors (not needed on Pi — CORS is for browser requests only)
+try:
+    from flask_cors import CORS
+    HAS_CORS = True
+except ImportError:
+    HAS_CORS = False
+
+# Optional: python-dotenv (falls back to OS env vars / hardcoded defaults)
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
+# Thread references for health monitoring
+gateway_threads = {}
+
+# Flush buffer diagnostics
+last_flush_error = None
+flush_success_count = 0
+flush_fail_count = 0
 
 # Pi health monitoring (graceful fallback on non-Pi)
 try:
@@ -17,9 +37,6 @@ try:
     HEALTH_MONITOR_AVAILABLE = True
 except ImportError:
     HEALTH_MONITOR_AVAILABLE = False
-
-# Load environment variables
-load_dotenv()
 
 # Configure log level from .env
 LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
@@ -37,7 +54,8 @@ except ImportError:
     GPIO_AVAILABLE = False
 
 app = Flask(__name__)
-CORS(app)
+if HAS_CORS:
+    CORS(app)
 
 # =========================
 # CONFIGURATION
@@ -49,6 +67,12 @@ SERVER_HOST = os.getenv("SERVER_HOST", "192.168.1.121")
 SERVER_URL = f"http://{SERVER_HOST}:5002/api/logs"
 DEVICE_REGISTRY_URL = f"http://{SERVER_HOST}:5002/api/devices"
 ALARM_STATUS_URL = f"http://{SERVER_HOST}:5002/api/alarm/status"
+
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+# JWT Auth
+GLOBAL_JWT_TOKEN = None
 
 # GPIO Configuration
 ALARM_GPIO = int(os.getenv("ALARM_GPIO", "17"))
@@ -75,20 +99,46 @@ FLASK_PORT = 8090
 # Access Control Registry (Device ID -> Authorized User IDs)
 # Now dynamically loaded from server
 ACCESS_REGISTRY = {}
+QUARANTINE_REGISTRY = set()
+
+def authenticate_gateway():
+    """Authenticate with central server to get JWT token."""
+    global GLOBAL_JWT_TOKEN
+    login_url = f"http://{SERVER_HOST}:5002/api/login"
+    try:
+        logging.info(f"🔑 Authenticating Gateway via {login_url}...")
+        resp = requests.post(login_url, json={"username":"gateway", "password":"gateway_secret"}, verify=False, timeout=5)
+        if resp.status_code == 200:
+            GLOBAL_JWT_TOKEN = resp.json().get('token')
+            logging.info("✓ Gateway Authenticated Successfully. JWT Token Acquired.")
+        else:
+            logging.error(f"✗ Gateway Authentication Failed! Code HTTP {resp.status_code}")
+    except Exception as e:
+        logging.error(f"✗ Gateway Authentication Failed (Exception): {e}")
+
+def get_auth_headers():
+    if GLOBAL_JWT_TOKEN:
+        return {"Authorization": f"Bearer {GLOBAL_JWT_TOKEN}"}
+    return {}
 
 def sync_device_registry():
     """Fetch authorized devices from the server."""
-    global ACCESS_REGISTRY
+    global ACCESS_REGISTRY, QUARANTINE_REGISTRY
     try:
-        response = requests.get(DEVICE_REGISTRY_URL, timeout=5)
+        response = requests.get(DEVICE_REGISTRY_URL, headers=get_auth_headers(), verify=False, timeout=5)
         if response.status_code == 200:
             devices = response.json()
             new_registry = {}
+            new_quarantine = set()
             for dev in devices:
                 if 'id' in dev and 'user_id' in dev:
                     new_registry[dev['id']] = [dev['user_id']]
+                    if dev.get('quarantined'):
+                        new_quarantine.add(dev['id'])
+                        
             ACCESS_REGISTRY = new_registry
-            logging.info(f"✓ Synced registry: {len(ACCESS_REGISTRY)} devices")
+            QUARANTINE_REGISTRY = new_quarantine
+            logging.info(f"✓ Synced registry: {len(ACCESS_REGISTRY)} devices ({len(QUARANTINE_REGISTRY)} quarantined)")
     except Exception as e:
         logging.warning(f"⚠ Registry sync failed: {e}")
 
@@ -136,6 +186,10 @@ def validate_payload(payload):
     # Access Control - HYBRID: Check local cache first, then server
     base_id = "_".join(device_id.split("_")[:3])  # e.g. esp8266_env_01
     
+    # 🚨 Phase 7: Quarantine Check
+    if base_id in QUARANTINE_REGISTRY or device_id in QUARANTINE_REGISTRY:
+        return False, f"Device {device_id} is QUARANTINED. Dropping payload."
+    
     # Check local cache first (fast path)
     if base_id in ACCESS_REGISTRY or device_id in ACCESS_REGISTRY:
         allowed_users = ACCESS_REGISTRY.get(device_id) or ACCESS_REGISTRY.get(base_id)
@@ -146,7 +200,7 @@ def validate_payload(payload):
         logging.info(f"🔍 Unknown device {device_id}, verifying with server...")
         try:
             verify_url = f"{DEVICE_REGISTRY_URL}/verify/{device_id}/{user_id}"
-            response = requests.get(verify_url, timeout=3)
+            response = requests.get(verify_url, headers=get_auth_headers(), verify=False, timeout=3)
             if response.status_code == 200:
                 result = response.json()
                 if result.get("authorized"):
@@ -244,7 +298,7 @@ def retry_failed_batches():
                     # Remove the failed_at timestamp before sending
                     batch_to_send = {k: v for k, v in batch.items() if k != 'failed_at'}
                     try:
-                        response = requests.post(SERVER_URL, json=batch_to_send, timeout=5)
+                        response = requests.post(SERVER_URL, json=batch_to_send, headers=get_auth_headers(), verify=False, timeout=5)
                         # Explicit type hint and 0:8 slice to satisfy linting
                         b_hash: str = str(batch.get('batch_hash', 'unknown'))
                         batch_hash_short = b_hash[0:8]
@@ -275,39 +329,65 @@ def flush_buffer():
     """Batch and forward verified data to central server."""
     global data_buffer
 
+    global flush_success_count, flush_fail_count, last_flush_error
+
     while True:
         time.sleep(BATCH_INTERVAL)
 
-        with buffer_lock:
-            if not data_buffer:
-                continue
-
-            # Drain as much as possible up to BATCH_SIZE to clear backlog quickly
-            current_batch = data_buffer[:BATCH_SIZE]
-            data_buffer = data_buffer[BATCH_SIZE:]
-
-            batch_string = json.dumps(current_batch, sort_keys=True)
-            batch_hash = hashlib.sha256(batch_string.encode()).hexdigest()
-
-        batch_payload = {
-            "gateway_id": GATEWAY_ID,
-            "batch_id": f"{GATEWAY_ID}_{int(time.time())}_{batch_hash[:8]}",
-            "timestamp": int(time.time()),
-            "batch_size": len(current_batch),
-            "batch_hash": batch_hash,
-            "logs": current_batch
-        }
-
         try:
-            response = requests.post(SERVER_URL, json=batch_payload, timeout=5)
-            if response.status_code == 200:
-                logging.info(f"✓ Forwarded batch ({batch_hash[:8]}) to Server.")
-            else:
-                logging.warning(f"⚠ Server returned {response.status_code}")
+            with buffer_lock:
+                if not data_buffer:
+                    continue
+
+                # Real-time priority: if buffer backlog is too large, 
+                # skip old entries so dashboard stays near real-time
+                MAX_BUFFER_BACKLOG = 100
+                if len(data_buffer) > MAX_BUFFER_BACKLOG:
+                    dropped = len(data_buffer) - BATCH_SIZE
+                    data_buffer = data_buffer[-BATCH_SIZE:]
+                    logging.info(f"⚡ Buffer trimmed: dropped {dropped} old entries to stay real-time")
+
+                current_batch = data_buffer[:BATCH_SIZE]
+                data_buffer = data_buffer[BATCH_SIZE:]
+
+                batch_string = json.dumps(current_batch, sort_keys=True, default=str)
+                batch_hash = hashlib.sha256(batch_string.encode()).hexdigest()
+
+            batch_payload = {
+                "gateway_id": GATEWAY_ID,
+                "batch_id": f"{GATEWAY_ID}_{int(time.time())}_{batch_hash[:8]}",
+                "timestamp": int(time.time()),
+                "batch_size": len(current_batch),
+                "batch_hash": batch_hash,
+                "logs": current_batch
+            }
+
+            try:
+                # Refresh token periodically if unauthorized error occurs
+                response = requests.post(SERVER_URL, json=batch_payload, headers=get_auth_headers(), verify=False, timeout=5)
+                if response.status_code == 401 or response.status_code == 403:
+                     logging.warning(f"⚠ Token expired or invalid. Re-authenticating...")
+                     authenticate_gateway()
+                     response = requests.post(SERVER_URL, json=batch_payload, headers=get_auth_headers(), verify=False, timeout=5)
+                     
+                if response.status_code == 200:
+                    flush_success_count += 1
+                    logging.info(f"✓ Forwarded batch ({batch_hash[:8]}) to Server.")
+                else:
+                    flush_fail_count += 1
+                    last_flush_error = f"HTTP {response.status_code}: {response.text[:200]}"
+                    logging.warning(f"⚠ Server returned {response.status_code}")
+                    save_failed_batch(batch_payload)
+            except Exception as e:
+                flush_fail_count += 1
+                last_flush_error = f"POST exception: {str(e)[:200]}"
+                logging.warning(f"⚠ Server unavailable: {e}")
                 save_failed_batch(batch_payload)
+
         except Exception as e:
-            logging.warning(f"⚠ Server unavailable: {e}")
-            save_failed_batch(batch_payload)
+            flush_fail_count += 1
+            last_flush_error = f"outer exception: {str(e)[:200]}"
+            logging.error(f"✗ flush_buffer error (batch dropped): {e}")
 
 
 # =========================
@@ -320,6 +400,12 @@ def on_connect(client, userdata, flags, rc):
         logging.info(f"✓ Subscribed to: {MQTT_TOPIC}")
     else:
         logging.error(f"✗ MQTT connection failed with code {rc}")
+
+def on_disconnect(client, userdata, rc):
+    if rc != 0:
+        logging.warning(f"⚠ MQTT disconnected unexpectedly (rc={rc}). Paho will auto-reconnect.")
+    else:
+        logging.info("MQTT disconnected cleanly.")
 
 
 # Replay Protection tracking
@@ -370,7 +456,7 @@ def on_message(client, userdata, msg):
                 "gateway_id": GATEWAY_ID
             }
             try:
-                requests.post(f"{SERVER_URL.replace('/logs', '/alerts')}", json=alert_payload, timeout=2)
+                requests.post(f"{SERVER_URL.replace('/logs', '/alerts')}", json=alert_payload, headers=get_auth_headers(), verify=False, timeout=2)
             except Exception as e:
                 logging.error(f"Failed to send replay alert: {e}")
             return
@@ -396,7 +482,7 @@ def on_message(client, userdata, msg):
                 "raw_payload": payload_str[:200]
             }
             try:
-                requests.post(f"{SERVER_URL.replace('/logs', '/alerts')}", json=alert_payload, timeout=2)
+                requests.post(f"{SERVER_URL.replace('/logs', '/alerts')}", json=alert_payload, headers=get_auth_headers(), verify=False, timeout=2)
             except:
                 pass
 
@@ -405,37 +491,51 @@ def on_message(client, userdata, msg):
 
 
 def start_mqtt_listener():
-    """Subscribe to MQTT broker and listen for device data."""
-    client = mqtt.Client()
-    
-    if MQTT_USER and MQTT_PASSWORD:
-        client.username_pw_set(MQTT_USER, MQTT_PASSWORD)
-    
-    # client.tls_set(ca_certs="ca.crt", certfile="client.crt", keyfile="client.key") # For TLS
-    
-    client.on_connect = on_connect
-    client.on_message = on_message
-    
-    try:
-        client.connect(MQTT_BROKER, MQTT_PORT, 60)
-        client.loop_forever()
-    except Exception as e:
-        logging.error(f"MQTT Listener failed: {e}")
+    """Subscribe to MQTT broker with automatic reconnection."""
+    INITIAL_BACKOFF = 1   # seconds
+    MAX_BACKOFF = 60      # cap at 60s
+    backoff = INITIAL_BACKOFF
+
+    while True:
+        try:
+            client = mqtt.Client()
+            
+            if MQTT_USER and MQTT_PASSWORD:
+                client.username_pw_set(MQTT_USER, MQTT_PASSWORD)
+
+            # Let paho handle transient drops internally
+            client.reconnect_delay_set(min_delay=1, max_delay=30)
+
+            client.on_connect = on_connect
+            client.on_disconnect = on_disconnect
+            client.on_message = on_message
+
+            logging.info(f"🔌 Connecting to MQTT broker {MQTT_BROKER}:{MQTT_PORT}...")
+            client.connect(MQTT_BROKER, MQTT_PORT, 60)
+            backoff = INITIAL_BACKOFF  # reset on successful connect
+            client.loop_forever()      # blocks until fatal disconnect
+        except Exception as e:
+            logging.error(f"✗ MQTT Listener failed: {e}. Retrying in {backoff}s...")
+            time.sleep(backoff)
+            backoff = min(backoff * 2, MAX_BACKOFF)
 
 def periodic_registry_sync():
-    """Periodically sync registry from server."""
+    """Periodically sync registry from server (resilient)."""
     while True:
-        sync_device_registry()
-        time.sleep(60) # Every minute
+        try:
+            sync_device_registry()
+        except Exception as e:
+            logging.warning(f"⚠ Registry sync thread error: {e}")
+        time.sleep(60)  # Every minute
 
 def alarm_monitor_thread():
-    """Poll server for alarm status and provide local feedback."""
+    """Poll server for alarm status and provide local feedback (resilient)."""
     logging.info("📢 Base Station local alarm monitor started.")
     last_state = False
     
     while True:
         try:
-            response = requests.get(ALARM_STATUS_URL, timeout=3)
+            response = requests.get(ALARM_STATUS_URL, headers=get_auth_headers(), verify=False, timeout=3)
             if response.status_code == 200:
                 status = response.json()
                 active = status.get("active", False)
@@ -454,10 +554,10 @@ def alarm_monitor_thread():
                         GPIO.output(ALARM_GPIO, GPIO.LOW)
                 
                 last_state = active
-        except Exception as e:
-            pass
+        except Exception:
+            pass  # Server offline — silently retry next cycle
         
-        time.sleep(3) # Check every 3 seconds
+        time.sleep(3)  # Check every 3 seconds
 # =========================
 # FLASK ROUTES
 # =========================
@@ -481,6 +581,11 @@ def gateway_status():
     hours, remainder = divmod(uptime_sec, 3600)
     minutes, seconds = divmod(remainder, 60)
 
+    # Thread health diagnostics
+    thread_status = {}
+    for name, t in gateway_threads.items():
+        thread_status[name] = "alive" if t.is_alive() else "DEAD"
+
     status_data = {
         "status": "running",
         "gateway_id": GATEWAY_ID,
@@ -489,6 +594,10 @@ def gateway_status():
         "registered_devices": len(ACCESS_REGISTRY),
         "server_host": SERVER_HOST,
         "mqtt_broker": MQTT_BROKER,
+        "threads": thread_status,
+        "flush_ok": flush_success_count,
+        "flush_fail": flush_fail_count,
+        "last_flush_error": last_flush_error,
     }
 
     # Add Pi-specific info if available
@@ -540,6 +649,7 @@ def get_mqtt_publisher():
         mqtt_publisher = mqtt.Client()
         if MQTT_USER and MQTT_PASSWORD:
             mqtt_publisher.username_pw_set(MQTT_USER, MQTT_PASSWORD)
+            
         mqtt_publisher.connect(MQTT_BROKER, MQTT_PORT, 60)
         mqtt_publisher.loop_start()
     return mqtt_publisher
@@ -591,18 +701,23 @@ def control_device():
 # MAIN
 # =========================
 if __name__ == "__main__":
-    # Initial sync
+    # Initial Login & Sync
+    authenticate_gateway()
     sync_device_registry()
     
-    threading.Thread(target=flush_buffer, daemon=True).start()
-    threading.Thread(target=retry_failed_batches, daemon=True).start()
-    threading.Thread(target=start_mqtt_listener, daemon=True).start()
-    threading.Thread(target=periodic_registry_sync, daemon=True).start()
-    threading.Thread(target=alarm_monitor_thread, daemon=True).start()
+    gateway_threads['flush_buffer'] = threading.Thread(target=flush_buffer, daemon=True)
+    gateway_threads['retry_failed'] = threading.Thread(target=retry_failed_batches, daemon=True)
+    gateway_threads['mqtt_listener'] = threading.Thread(target=start_mqtt_listener, daemon=True)
+    gateway_threads['registry_sync'] = threading.Thread(target=periodic_registry_sync, daemon=True)
+    gateway_threads['alarm_monitor'] = threading.Thread(target=alarm_monitor_thread, daemon=True)
+    for t in gateway_threads.values():
+        t.start()
     
     logging.info(f"✓ Starting IoT Gateway on port {FLASK_PORT}...")
+    logging.info(f"✓ API Access secured via JWT")
     logging.info(f"✓ Failed batch retry enabled (every 30s)")
     print("\n" + "="*50)
     print(" >>> GATEWAY UPDATE: REPLAY PROTECTION DISABLED <<<")
     print("="*50 + "\n")
+    
     app.run(host="0.0.0.0", port=FLASK_PORT, debug=False)

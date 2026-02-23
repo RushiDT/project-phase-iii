@@ -1,6 +1,8 @@
 #include <ArduinoJson.h>
 #include <ESP8266WiFi.h>
+#include <ESP8266httpUpdate.h>
 #include <PubSubClient.h>
+
 
 // WiFi Configuration
 const char *ssid = "thakre_home";
@@ -11,6 +13,8 @@ const char *mqtt_server = "192.168.1.161"; // Raspberry Pi Base Station IP
 const int mqtt_port = 1883;
 const char *device_id_base = "esp8266_env_01";
 const char *user_id = "user_789";
+const char *mqtt_user = "admin";
+const char *mqtt_pass = "password123";
 const char *topic_data = "iot/devices/esp8266_env_01/data";
 
 char device_id[32]; // Buffer for unique ID
@@ -39,16 +43,47 @@ void callback(char *topic, byte *payload, unsigned int length) {
   Serial.print("Message arrived [");
   Serial.print(topic);
   Serial.print("] ");
-  for (int i = 0; i < length; i++) {
-    Serial.print((char)payload[i]);
+
+  StaticJsonDocument<256> doc;
+  deserializeJson(doc, payload, length);
+  const char *command = doc["command"];
+
+  if (command) {
+    Serial.println(command);
+    if (strncmp(command, "OTA_UPDATE|", 11) == 0) {
+      String version = String(command).substring(11);
+      Serial.print(
+          "→ Remote Command: OTA Firmware Update Initiated! Target Version: ");
+      Serial.println(version);
+
+      String otaUrl = "http://192.168.1.121:5002/api/ota/firmware/" + version;
+      Serial.print("Downloading from: ");
+      Serial.println(otaUrl);
+
+      WiFiClient otaClient;
+      t_httpUpdate_return ret = ESPhttpUpdate.update(otaClient, otaUrl);
+
+      switch (ret) {
+      case HTTP_UPDATE_FAILED:
+        Serial.printf("HTTP_UPDATE_FAILED Error (%d): %s\n",
+                      ESPhttpUpdate.getLastError(),
+                      ESPhttpUpdate.getLastErrorString().c_str());
+        break;
+      case HTTP_UPDATE_NO_UPDATES:
+        Serial.println("HTTP_UPDATE_NO_UPDATES");
+        break;
+      case HTTP_UPDATE_OK:
+        Serial.println("HTTP_UPDATE_OK - Rebooting...");
+        break;
+      }
+    }
   }
-  Serial.println();
 }
 
 void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
-    if (client.connect(device_id)) {
+    if (client.connect(device_id, mqtt_user, mqtt_pass)) {
       Serial.println("connected");
       // Subscribe to control topic
       char control_topic[64];

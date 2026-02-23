@@ -11,6 +11,7 @@
     "type": "esp32",
     "user_id": "user_456",
     "location": "entrance",
-    "status": "active"
+    "status": "active",
+    "quarantined": false
   }
 ]

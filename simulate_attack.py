@@ -52,9 +52,19 @@ def simulate_crypto_mining():
     }
     
     try:
+        # Authenticate first
+        print("Authenticating to get JWT...")
+        login_resp = requests.post("http://localhost:5002/api/login", json={"username": "gateway", "password": "gateway_secret"})
+        if login_resp.status_code != 200:
+            print(f"[X] Authentication failed: {login_resp.text}")
+            return
+            
+        token = login_resp.json().get('token')
+        headers = {"Authorization": f"Bearer {token}"}
+
         # Send to Server
         print("Sending batch to Server...")
-        response = requests.post(SERVER_URL, json=batch_payload, timeout=5)
+        response = requests.post(SERVER_URL, json=batch_payload, headers=headers, timeout=5)
         
         if response.status_code == 200:
             print("[✅] Attack batch accepted by Server!")

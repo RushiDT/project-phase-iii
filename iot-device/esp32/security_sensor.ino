@@ -1,6 +1,8 @@
 #include <ArduinoJson.h>
+#include <HTTPUpdate.h>
 #include <PubSubClient.h>
 #include <WiFi.h>
+
 
 // WiFi Configuration
 const char *ssid = "thakre_home";    // <-- CHANGE THIS
@@ -11,6 +13,8 @@ const char *mqtt_server = "192.168.1.161"; // Raspberry Pi Base Station IP
 const int mqtt_port = 1883;
 const char *device_id_base = "esp32_sec_01";
 const char *user_id = "user_456";
+const char *mqtt_user = "admin";
+const char *mqtt_pass = "password123";
 const char *topic_data = "iot/devices/esp32_sec_01/data";
 
 char device_id[32]; // Buffer for unique ID
@@ -57,13 +61,41 @@ void callback(char *topic, byte *payload, unsigned int length) {
     digitalWrite(LED_PIN, LOW);
     ledManualMode = false;
     Serial.println("→ Remote Command: LED OFF (Manual Off)");
+  } else if (strncmp(command, "OTA_UPDATE|", 11) == 0) {
+    // Expected format: OTA_UPDATE|v2.0.0
+    String version = String(command).substring(11);
+    Serial.print(
+        "→ Remote Command: OTA Firmware Update Initiated! Target Version: ");
+    Serial.println(version);
+
+    // Construct the firmware download URL
+    String otaUrl = "http://192.168.1.121:5002/api/ota/firmware/" + version;
+    Serial.print("Downloading from: ");
+    Serial.println(otaUrl);
+
+    WiFiClient otaClient;
+    t_httpUpdate_return ret = httpUpdate.update(otaClient, otaUrl);
+
+    switch (ret) {
+    case HTTP_UPDATE_FAILED:
+      Serial.printf("HTTP_UPDATE_FAILED Error (%d): %s\n",
+                    httpUpdate.getLastError(),
+                    httpUpdate.getLastErrorString().c_str());
+      break;
+    case HTTP_UPDATE_NO_UPDATES:
+      Serial.println("HTTP_UPDATE_NO_UPDATES");
+      break;
+    case HTTP_UPDATE_OK:
+      Serial.println("HTTP_UPDATE_OK - Rebooting...");
+      break;
+    }
   }
 }
 
 void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
-    if (client.connect(device_id)) {
+    if (client.connect(device_id, mqtt_user, mqtt_pass)) {
       Serial.println("connected");
       // Subscribe to control topic
       char control_topic[64];
@@ -130,8 +162,6 @@ void loop() {
     system["cpu_usage"] = random(5, 15);
     system["wifi_signal"] = WiFi.RSSI();
 
-    char buffer[512];
-    serializeJson(doc, buffer);
     char buffer[512];
     serializeJson(doc, buffer);
 

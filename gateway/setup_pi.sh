@@ -37,7 +37,7 @@ sudo apt-get install -y -qq \
     python3-pip \
     python3-venv \
     python3-dev \
-    libatlas-base-dev \
+    libopenblas-dev \
     mosquitto \
     mosquitto-clients \
     git \

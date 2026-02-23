@@ -100,7 +100,7 @@ def main():
     # 3. Health checks
     print("[3/4] Running health checks...")
     services = [
-        ("Server", "http://localhost:5002/api/logs", check_health("Server", "http://localhost:5002/api/logs")[1]),
+        ("Server", "http://localhost:5002/api/health", check_health("Server", "http://localhost:5002/api/health")[1]),
         ("Gateway", f"http://{gateway_ip}:8090/status", check_health("Gateway", f"http://{gateway_ip}:8090/status")[1]),
         ("ML Engine", "http://localhost:5001/health", check_health("ML Engine", "http://localhost:5001/health")[1]),
         ("Dashboard", "http://localhost:5173", check_health("Dashboard", "http://localhost:5173")[1]),

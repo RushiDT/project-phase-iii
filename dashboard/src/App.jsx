@@ -1,13 +1,22 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
 import axios from 'axios'
+import { io } from 'socket.io-client'
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell, AreaChart, Area } from 'recharts'
-import { Lightbulb, Thermometer, Droplets, Bell, Power, Activity, Plus, Settings, Wifi, Shield, Lock, Fingerprint, Database, AlertCircle, Heart } from 'lucide-react'
+import { Lightbulb, Thermometer, Droplets, Bell, Power, Activity, Plus, Settings, Wifi, Shield, Lock, Fingerprint, Database, AlertCircle, Heart, UploadCloud, Download } from 'lucide-react'
 import './App.css'
 
 const API_URL = 'http://localhost:5002/api'
+const SOCKET_URL = 'http://localhost:5002'
+
+// Initialize socket exactly once
+let socket = io(SOCKET_URL, {
+  reconnectionDelayMax: 10000,
+  autoConnect: false // Connect manually after getting token
+});
 
 function App() {
   const [activeTab, setActiveTab] = useState('esp32')
+  const [token, setToken] = useState(localStorage.getItem('jwt_token') || null)
   const [logs, setLogs] = useState([])
   const [blockchainLogs, setBlockchainLogs] = useState([])
   const [loading, setLoading] = useState(true)
@@ -33,13 +42,95 @@ function App() {
   // Ref to track last command time to prevent UI flickering (telemetry vs optimistic state)
   const lastCommandRef = useRef(0);
 
-  // Fetch data periodically
+  // --- WebSocket Real-Time Integration ---
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const config = { timeout: 4000 };
+    socket.on('initial_state', (state) => {
+      setAlarmStatus({ active: state.alarm_active, reason: state.alarm_reason });
+    });
 
-        // Parallel fetching
+    socket.on('new_log', (newLog) => {
+      setLogs((prevLogs) => {
+        // Keep logs sorted and bound to prevent massive memory usage
+        const updated = [newLog, ...prevLogs].sort((a, b) => b.timestamp - a.timestamp);
+        return updated.slice(0, 500);
+      });
+
+      // Update Device States dynamically when new data arrives via WS
+      const now = Date.now();
+      const COMMAND_LOCKOUT_MS = 10000;
+
+      if (newLog.device_id?.startsWith('esp32') && newLog.sensors && (now - lastCommandRef.current > COMMAND_LOCKOUT_MS)) {
+        setEsp32State(prev => {
+          let updatedMotion = prev.motionEvents;
+          if (newLog.sensors.motion) {
+            updatedMotion = [{ time: new Date(newLog.timestamp * 1000).toLocaleTimeString(), timestamp: newLog.timestamp }, ...updatedMotion].slice(0, 20);
+          }
+          return {
+            ...prev,
+            light: newLog.sensors.light_state !== undefined ? newLog.sensors.light_state : prev.light,
+            motionEvents: updatedMotion,
+            power: newLog.system?.power_watts || prev.power,
+            network: newLog.system?.network_activity || prev.network,
+            cpu: newLog.system?.cpu_usage || prev.cpu,
+            deviceOn: true
+          }
+        });
+      }
+
+      if (newLog.device_id?.startsWith('esp8266') && newLog.sensors) {
+        setEsp8266State(prev => ({
+          ...prev,
+          temp: newLog.sensors.temperature || prev.temp,
+          humidity: newLog.sensors.humidity || prev.humidity,
+          alarm: newLog.sensors.alarm_enabled !== undefined ? newLog.sensors.alarm_enabled : prev.alarm,
+          vibration: newLog.sensors.vibration || prev.vibration,
+          power: newLog.system?.power_watts || prev.power,
+          network: newLog.system?.network_activity || prev.network,
+          cpu: newLog.system?.cpu_usage || prev.cpu,
+          deviceOn: true
+        }));
+      }
+    });
+
+    socket.on('new_alert', (newAlert) => {
+      setLogs(prev => [newAlert, ...prev].sort((a, b) => b.timestamp - a.timestamp).slice(0, 500));
+    });
+
+    socket.on('alarm_state_change', (state) => {
+      setAlarmStatus({ active: state.active, reason: state.reason });
+    });
+
+    return () => {
+      socket.off('initial_state');
+      socket.off('new_log');
+      socket.off('new_alert');
+      socket.off('alarm_state_change');
+    };
+  }, []);
+
+  // Initial Fetch (No more aggressive polling thanks to WebSockets)
+  useEffect(() => {
+    let cancelled = false;
+
+    const fetchInitialData = async () => {
+      try {
+        // --- 1. Authenticaton Phase ---
+        let currentToken = localStorage.getItem('jwt_token');
+        if (!currentToken) {
+          const authRes = await axios.post(`${API_URL}/login`, { username: 'admin', password: 'admin123' });
+          currentToken = authRes.data.token;
+          localStorage.setItem('jwt_token', currentToken);
+          setToken(currentToken);
+        }
+
+        // Configure global Axios token
+        axios.defaults.headers.common['Authorization'] = `Bearer ${currentToken}`;
+
+        // Configure socket token and connect
+        socket.auth = { token: currentToken };
+        if (!socket.connected) socket.connect();
+
+        // --- 2. Data Fetch Phase ---
         const results = await Promise.allSettled([
           axios.get(`${API_URL}/logs`),
           axios.get(`${API_URL}/devices`),
@@ -50,39 +141,24 @@ function App() {
 
         const [logsRes, devRes, bcRes, healthRes, alarmRes] = results;
 
-        // Logs (Critical)
         const data = logsRes.status === 'fulfilled' && Array.isArray(logsRes.value.data) ? logsRes.value.data : [];
         const sortedData = data.sort((a, b) => b.timestamp - a.timestamp);
-        setLogs(sortedData);
+        if (!cancelled) setLogs(sortedData);
 
-        // Blockchain Logs (Non-critical)
-        setBlockchainLogs(bcRes.status === 'fulfilled' && Array.isArray(bcRes.value.data) ? bcRes.value.data : []);
+        if (!cancelled) setBlockchainLogs(bcRes.status === 'fulfilled' && Array.isArray(bcRes.value.data) ? bcRes.value.data : []);
+        if (!cancelled) setSystemHealth(healthRes.status === 'fulfilled' && Array.isArray(healthRes.value.data) ? healthRes.value.data : []);
+        if (alarmRes.status === 'fulfilled' && !cancelled) setAlarmStatus(alarmRes.value.data);
 
-        // Health (Non-critical)
-        setSystemHealth(healthRes.status === 'fulfilled' && Array.isArray(healthRes.value.data) ? healthRes.value.data : []);
-
-        // Alarm Status (Critical)
-        if (alarmRes.status === 'fulfilled') {
-          setAlarmStatus(alarmRes.value.data);
-        }
-
-        // Devices (Critical - Fallback to logs if registry fails or is empty)
         let deviceList = [];
         if (devRes.status === 'fulfilled' && Array.isArray(devRes.value.data) && devRes.value.data.length > 0) {
           deviceList = devRes.value.data;
         } else {
-          // Auto-discovery from logs if registry is unreachable
           const uniqueIds = [...new Set(sortedData.map(l => l.device_id).filter(id => id))];
           deviceList = uniqueIds.map(id => ({
-            id,
-            type: id.includes('esp8266') ? 'esp8266' : 'esp32',
-            status: 'discovered'
+            id, type: id.includes('esp8266') ? 'esp8266' : 'esp32', status: 'discovered'
           }));
-          if (deviceList.length > 0) console.log("⚠️ Registry failed, auto-discovered devices:", deviceList);
         }
-        setDevices(deviceList);
 
-        // Ensure core demo devices are present even if API/Logs fail (Robustness Fix)
         const coreDevices = [
           { id: 'esp32_sec_01', type: 'esp32', status: 'active', location: 'entrance' },
           { id: 'esp8266_env_01', type: 'esp8266', status: 'active', location: 'balcony' }
@@ -90,81 +166,78 @@ function App() {
 
         coreDevices.forEach(coreDev => {
           if (!deviceList.find(d => d.id === coreDev.id)) {
-            console.warn(`⚠️ Injecting fallback device: ${coreDev.id}`);
             deviceList.push(coreDev);
           }
         });
 
-        setDevices(deviceList);
-        setLoading(false);
-
-        // Update device states from latest logs
-        const esp32Log = sortedData.find(l => l.device_id === 'esp32_sec_01' || l.device_id?.startsWith('esp32'));
-        const esp8266Log = sortedData.find(l => l.device_id === 'esp8266_env_01' || l.device_id?.startsWith('esp8266'));
-
-        // Update from logs ONLY if we haven't sent a command recently (3s debounce)
-        const now = Date.now();
-        const COMMAND_LOCKOUT_MS = 3000;
-
-        if (esp32Log?.sensors && (now - lastCommandRef.current > COMMAND_LOCKOUT_MS)) {
-          const motionLogs = sortedData
-            .filter(l => (l.device_id === 'esp32_sec_01' || l.device_id?.startsWith('esp32')) && l.sensors?.motion)
-            .slice(0, 20)
-            .map(l => ({
-              time: new Date(l.timestamp * 1000).toLocaleTimeString(),
-              timestamp: l.timestamp
-            }));
-
-          setEsp32State(prev => ({
-            ...prev,
-            light: esp32Log.sensors.light_state || false,
-            motionEvents: motionLogs,
-            power: esp32Log.system?.power_watts || 0,
-            network: esp32Log.system?.network_activity || 0,
-            cpu: esp32Log.system?.cpu_usage || 0,
-            deviceOn: true
-          }));
-        }
-
-        if (esp8266Log?.sensors) {
-          setEsp8266State(prev => ({
-            ...prev,
-            temp: esp8266Log.sensors.temperature || 25,
-            humidity: esp8266Log.sensors.humidity || 50,
-            alarm: esp8266Log.sensors.alarm_enabled || false,
-            vibration: esp8266Log.sensors.vibration || 0,
-            power: esp8266Log.system?.power_watts || 0,
-            network: esp8266Log.system?.network_activity || 0,
-            cpu: esp8266Log.system?.cpu_usage || 0,
-            deviceOn: true
-          }));
-        }
-
-        // Fetch Trust Scores (non-blocking)
-        const scores = {};
-        for (const dev of deviceList) {
-          try {
-            const trustRes = await axios.get(`${API_URL}/blockchain/trust/${dev.id}`, { timeout: 2000 });
-            scores[dev.id] = trustRes.data.trust_score;
-          } catch (e) {
-            scores[dev.id] = 'N/A';
-          }
-        }
-        setTrustScores(prev => ({ ...prev, ...scores }));
-
+        if (!cancelled) setDevices(deviceList);
+        if (!cancelled) setLoading(false);
       } catch (e) {
-        console.error('Fetch error:', e);
-        setLoading(false);
+        console.error('Initial fetch error:', e);
+        // If 403/401, token might be expired. Clear it.
+        if (e.response && (e.response.status === 401 || e.response.status === 403)) {
+          localStorage.removeItem('jwt_token');
+          setToken(null);
+        }
+        if (!cancelled) setLoading(false);
       }
     }
 
-    fetchData()
-    const interval = setInterval(fetchData, 1000)
-    return () => clearInterval(interval)
+    fetchInitialData()
+    return () => { cancelled = true; }
   }, [])
+
+  // Secondary Slow Polling for Health/Blockchain (which doesn't stream yet)
+  useEffect(() => {
+    const fetchSecondary = async () => {
+      try {
+        const hRes = await axios.get(`${API_URL}/health`);
+        setSystemHealth(hRes.data);
+        const bRes = await axios.get(`${API_URL}/blockchain/logs`);
+        setBlockchainLogs(bRes.data);
+        const dRes = await axios.get(`${API_URL}/devices`);
+        setDevices(prev => {
+          // Merge arrays prioritizing new fetch
+          const fetchedIds = dRes.data.map(d => d.id);
+          const preserved = prev.filter(d => !fetchedIds.includes(d.id));
+          return [...preserved, ...dRes.data];
+        });
+      } catch (e) { }
+    }
+    const secInterval = setInterval(fetchSecondary, 10000);
+    return () => clearInterval(secInterval);
+  }, []);
+
+  // Fetch trust scores on a separate, slower interval (every 30s — scores rarely change)
+  useEffect(() => {
+    const fetchTrustScores = async () => {
+      if (devices.length === 0) return;
+      const scores = {};
+      for (const dev of devices) {
+        try {
+          const trustRes = await axios.get(`${API_URL}/blockchain/trust/${dev.id}`, { timeout: 3000 });
+          scores[dev.id] = trustRes.data.trust_score;
+        } catch (e) {
+          scores[dev.id] = 'N/A';
+        }
+      }
+      setTrustScores(prev => ({ ...prev, ...scores }));
+    };
+
+    fetchTrustScores();
+    const trustInterval = setInterval(fetchTrustScores, 30000);
+    return () => clearInterval(trustInterval);
+  }, [devices.length])
 
   // Send control command
   const sendCommand = async (deviceId, command) => {
+    // Phase 7: Guard against commanding quarantined devices
+    const target = devices.find(d => d.id === deviceId);
+    if (target && target.quarantined) {
+      alert(`⚠️ ERROR: Device ${deviceId} is currently QUARANTINED due to suspected compromise. Revive it via the Device Manager first.`);
+      return;
+    }
+
     try {
       console.log(`[DASHBOARD] Sending ${command} to ${deviceId}...`);
       const response = await axios.post(`${API_URL}/control`, { device_id: deviceId, command })
@@ -269,6 +342,46 @@ function App() {
     return Object.entries(counts).map(([time, count]) => ({ time, count })).slice(-10)
   }, [logs])
 
+  // --- Historical Analytics Aggregation ---
+  const historicalMetrics = useMemo(() => {
+    if (!logs.length) return [];
+
+    // Group logs by Day (or hour if not enough days) to show trends
+    const grouped = {};
+
+    logs.forEach(log => {
+      if (!log.timestamp) return;
+      const date = new Date(log.timestamp * 1000);
+      // Grouping by Date string (e.g., "Feb 23")
+      const dayKey = `${date.toLocaleString('default', { month: 'short' })} ${date.getDate()}`;
+
+      if (!grouped[dayKey]) {
+        grouped[dayKey] = { day: dayKey, avgTemp: 0, avgHum: 0, avgPower: 0, count: 0, anomalies: 0 };
+      }
+
+      grouped[dayKey].count += 1;
+
+      if (log.sensors) {
+        if (log.sensors.temperature) grouped[dayKey].avgTemp += log.sensors.temperature;
+        if (log.sensors.humidity) grouped[dayKey].avgHum += log.sensors.humidity;
+      }
+      if (log.system?.power_watts) grouped[dayKey].avgPower += log.system.power_watts;
+
+      if (log.anomaly_score < -0.1 || log.event_type === "SECURITY_ALERT") {
+        grouped[dayKey].anomalies += 1;
+      }
+    });
+
+    // Calculate Averages and convert to array
+    return Object.values(grouped).map(group => ({
+      day: group.day,
+      temp: group.count > 0 ? (group.avgTemp / group.count).toFixed(1) : 0,
+      humidity: group.count > 0 ? (group.avgHum / group.count).toFixed(1) : 0,
+      power: group.count > 0 ? (group.avgPower / group.count).toFixed(1) : 0,
+      anomalies: group.anomalies
+    })).reverse(); // Latest data last for chart progression
+  }, [logs]);
+
   // Security Events Feed
   const securityEvents = useMemo(() => {
     return logs
@@ -297,6 +410,89 @@ function App() {
       console.error('Alarm reset error:', e)
     }
   }
+
+  // Phase 6: Trigger OTA Update
+  const triggerOtaUpdate = async (deviceId, version = 'v2.0.0') => {
+    if (!window.confirm(`Are you sure you want to push Firmware ${version} to ${deviceId}? This will reboot the module.`)) return;
+
+    try {
+      console.log(`[OTA] Requesting Update to ${version} for ${deviceId}`);
+      await axios.post(`${API_URL}/devices/${deviceId}/update`, { version });
+      alert(`OTA Update Initiated! Device ${deviceId} is downloading ${version}...`);
+    } catch (e) {
+      alert(`OTA Request Failed: ${e.response?.data?.error || e.message}`);
+    }
+  };
+
+  // Phase 7: Un-Quarantine Device
+  const unquarantineDevice = async (deviceId) => {
+    if (!window.confirm(`SECURITY WARNING: Are you sure you want to revive ${deviceId}? This will reset its ML trust score to 100% and restore network access.`)) return;
+
+    try {
+      await axios.post(`${API_URL}/devices/${deviceId}/unquarantine`);
+      alert(`✅ Device ${deviceId} trust restored. Re-joining network...`);
+      // It will auto-refresh via fetchSecondary loop
+    } catch (e) {
+      alert(`Failed to un-quarantine: ${e.response?.data?.error || e.message}`);
+    }
+  };
+
+  // Phase 8: Export Data functionality
+  const downloadAsJSON = () => {
+    const dataStr = JSON.stringify(logs, null, 2);
+    const blob = new Blob([dataStr], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `iot_security_logs_${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  const downloadAsCSV = () => {
+    if (logs.length === 0) return;
+
+    // Flatten the objects for CSV
+    const flattenedLogs = logs.map(log => {
+      return {
+        timestamp: new Date(log.timestamp * 1000).toISOString(),
+        device_id: log.device_id,
+        user_id: log.user_id || 'system',
+        anomaly_score: log.anomaly_score !== undefined ? log.anomaly_score : 'N/A',
+        event_type: log.event_type || 'TELEMETRY',
+
+        // Sensors (handling varying fields)
+        s_temperature: log.sensors?.temperature !== undefined ? log.sensors.temperature : '',
+        s_humidity: log.sensors?.humidity !== undefined ? log.sensors.humidity : '',
+        s_motion: log.sensors?.motion !== undefined ? log.sensors.motion : '',
+        s_light: log.sensors?.light_state !== undefined ? log.sensors.light_state : '',
+        s_vibration: log.sensors?.vibration !== undefined ? log.sensors.vibration : '',
+
+        // System
+        sys_power: log.system?.power_watts !== undefined ? log.system.power_watts : '',
+        sys_cpu: log.system?.cpu_usage !== undefined ? log.system.cpu_usage : '',
+        sys_network: log.system?.network_activity !== undefined ? log.system.network_activity : ''
+      };
+    });
+
+    const headers = Object.keys(flattenedLogs[0]);
+    const csvContent = [
+      headers.join(','),
+      ...flattenedLogs.map(row => headers.map(fieldName => JSON.stringify(row[fieldName] ?? '')).join(','))
+    ].join('\n');
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `iot_telemetry_export_${new Date().toISOString().split('T')[0]}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
 
   if (loading) {
     return <div className="loading">Loading IoT Dashboard...</div>
@@ -357,6 +553,9 @@ function App() {
         </button>
         <button className={`tab ${activeTab === 'esp8266' ? 'active' : ''}`} onClick={() => setActiveTab('esp8266')}>
           <Thermometer size={18} /> ESP8266 Temp & Humidity
+        </button>
+        <button className={`tab ${activeTab === 'analytics' ? 'active' : ''}`} onClick={() => setActiveTab('analytics')}>
+          <Activity size={18} /> Historical Analytics
         </button>
         <button className={`tab ${activeTab === 'security' ? 'active' : ''}`} onClick={() => setActiveTab('security')}>
           <Shield size={18} /> Security & Blockchain
@@ -609,27 +808,110 @@ function App() {
                   {devices.map((d, i) => {
                     const health = systemHealth.find(h => h.device_id === d.id);
                     return (
-                      <div key={i} className="inventory-item">
-                        <div className="inv-icon"><Wifi size={18} /></div>
+                      <div key={i} className={`inventory-item ${d.quarantined ? 'quarantined-item' : ''}`}>
+                        <div className="inv-icon">
+                          {d.quarantined ? <Shield size={18} color="#ef4444" /> : <Wifi size={18} />}
+                        </div>
                         <div className="inv-info-box">
-                          <div className="inv-name">{d.id}</div>
+                          <div className="inv-name">
+                            {d.id} {d.quarantined && <span className="quarantine-badge">QUARANTINED</span>}
+                          </div>
                           <div className="inv-meta">
-                            {d.type.toUpperCase()} • {d.location}
+                            {d.type.toUpperCase()} • {d.location || 'unassigned'}
                           </div>
                         </div>
                         <div className="inv-trust-box">
                           <div className="trust-label">Trust Score</div>
-                          <div className={`trust-value ${trustScores[d.id] < 50 ? 'low' : 'high'}`}>
-                            {trustScores[d.id] || 100}
+                          <div className={`trust-value ${trustScores[d.id] < 50 || d.quarantined ? 'low' : 'high'}`}>
+                            {d.quarantined ? 'BLOCKED' : (trustScores[d.id] || 100)}
                           </div>
                         </div>
                         <div className={`inv-status ${health?.status || 'offline'}`}>
                           {health?.status ? health.status.toUpperCase() : 'OFFLINE'}
                         </div>
+                        <div className="inv-actions">
+                          {d.quarantined ? (
+                            <button className="btn btn-small btn-danger" onClick={() => unquarantineDevice(d.id)}>
+                              <Shield size={14} style={{ marginRight: '5px' }} /> Un-Quarantine (Revive)
+                            </button>
+                          ) : (
+                            <button className="btn btn-small btn-primary ota-btn" onClick={() => triggerOtaUpdate(d.id, "v2.0.0")}>
+                              <UploadCloud size={14} style={{ marginRight: '5px' }} /> Update (v2.0)
+                            </button>
+                          )}
+                        </div>
                       </div>
                     );
                   })}
                 </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Analytics Tab */}
+        {activeTab === 'analytics' && (
+          <div className="tab-content">
+            <div className="section-header">
+              <h2><Activity size={24} className="icon-blue" /> Network-Wide Historical Analytics</h2>
+              <p>Aggregated daily telemetry mapping environmental factors against system power usage and anomalies.</p>
+            </div>
+
+            <div className="card full-width premium-chart">
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3>Macro-Ecosystem Trends</h3>
+                <div className="export-controls">
+                  <button className="btn btn-secondary btn-small" onClick={downloadAsCSV} style={{ marginRight: '10px' }}>
+                    <Download size={14} style={{ marginRight: '5px' }} /> Export CSV
+                  </button>
+                  <button className="btn btn-secondary btn-small" onClick={downloadAsJSON}>
+                    <Database size={14} style={{ marginRight: '5px' }} /> Export JSON
+                  </button>
+                </div>
+              </div>
+              <div className="chart-container" style={{ height: '400px', marginTop: '20px' }}>
+                {historicalMetrics.length > 0 ? (
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart data={historicalMetrics} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#2a2a35" />
+                      <XAxis dataKey="day" stroke="#8892b0" />
+                      <YAxis yAxisId="left" stroke="#3b82f6" label={{ value: 'Temp/Humidity', angle: -90, position: 'insideLeft', fill: '#8892b0' }} />
+                      <YAxis yAxisId="right" orientation="right" stroke="#f59e0b" label={{ value: 'System Power (W)', angle: 90, position: 'insideRight', fill: '#8892b0' }} />
+
+                      <Tooltip
+                        contentStyle={{ backgroundColor: '#112240', border: '1px solid #233554', borderRadius: '8px', color: '#ccd6f6' }}
+                        itemStyle={{ color: '#e6f1ff' }}
+                      />
+                      <Legend verticalAlign="top" height={36} />
+
+                      <Line yAxisId="left" type="monotone" dataKey="temp" name="Avg Temperature (°C)" stroke="#ef4444" strokeWidth={3} dot={{ r: 4 }} activeDot={{ r: 6 }} />
+                      <Line yAxisId="left" type="monotone" dataKey="humidity" name="Avg Humidity (%)" stroke="#3b82f6" strokeWidth={3} />
+                      <Line yAxisId="right" type="monotone" dataKey="power" name="Avg Node Power (W)" stroke="#f59e0b" strokeWidth={2} strokeDasharray="5 5" />
+
+                      {/* Plot Anomalies as a bar graph underneath the lines */}
+                      <Bar yAxisId="right" dataKey="anomalies" name="Detected Threats" fill="#8b5cf6" opacity={0.6} radius={[4, 4, 0, 0]} barSize={20} />
+                    </LineChart>
+                  </ResponsiveContainer>
+                ) : (
+                  <div className="no-data-display" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', color: '#8892b0' }}>
+                    Accumulating historical data from blockchain logs...
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="grid-3col">
+              <div className="card stat-card">
+                <div className="stat-value">{logs.length}</div>
+                <div className="stat-label">Total Logs Analyzed</div>
+              </div>
+              <div className="card stat-card">
+                <div className="stat-value">{historicalMetrics.reduce((acc, curr) => acc + curr.anomalies, 0)}</div>
+                <div className="stat-label">Total Threats Detected</div>
+              </div>
+              <div className="card stat-card">
+                <div className="stat-value">{devices.length}</div>
+                <div className="stat-label">Active Endpoints</div>
               </div>
             </div>
           </div>

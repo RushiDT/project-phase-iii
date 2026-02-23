@@ -63,6 +63,43 @@ def load_device_types():
 # Prediction history lock
 predictions_lock = threading.Lock()
 
+# Correlation Engine state
+RECENT_ANOMALIES = []
+CORRELATION_WINDOW_SEC = 300 # 5 minutes
+CORRELATION_THRESHOLD = 3    # At least 3 anomalies from different devices
+
+def get_recent_anomalies():
+    """Returns anomalies within the correlation window and purges old ones."""
+    global RECENT_ANOMALIES
+    now = time.time()
+    with predictions_lock:
+        RECENT_ANOMALIES = [a for a in RECENT_ANOMALIES if now - a['timestamp'] <= CORRELATION_WINDOW_SEC]
+        return RECENT_ANOMALIES
+
+def add_anomaly_to_correlation(device_id, threat_type, confidence):
+    """Adds a new anomaly to the sliding correlation window."""
+    with predictions_lock:
+        RECENT_ANOMALIES.append({
+            'device_id': device_id,
+            'threat_type': threat_type,
+            'confidence': confidence,
+            'timestamp': time.time()
+        })
+
+def check_network_correlation():
+    """Detects multi-device, distributed attacks."""
+    anomalies = get_recent_anomalies()
+    
+    # Count unique devices reporting anomalies
+    unique_devices = set([a['device_id'] for a in anomalies])
+    
+    if len(unique_devices) >= CORRELATION_THRESHOLD:
+        print(f"[ML-CORRELATION] 🚨 CRITICAL: Distributed attack detected across {len(unique_devices)} devices!")
+        return True, len(unique_devices), list(unique_devices)
+    
+    return False, len(unique_devices), []
+
+
 def save_prediction(prediction_data):
     """Save prediction to anomaly_results.json."""
     if not CONFIG.get("logging", {}).get("save_predictions", True):
@@ -661,10 +698,24 @@ def predict_comprehensive():
         first_detection = detections[0]
         main_threat = str(first_detection.get("type", "unknown"))
         
+        # Add to local correlation engine
+        add_anomaly_to_correlation(device_id, main_threat, max_confidence)
+        
+        # Check for Distributed Network-Wide Attack
+        is_distributed_attack, affected_count, affected_devices = check_network_correlation()
+        
+        if is_distributed_attack:
+            main_threat = "NETWORK_WIDE_ATTACK"
+            max_confidence = 0.99
+            results["overall_threat_level"] = "critical"
+            results["network_attack"] = True
+            results["affected_devices"] = affected_devices
+            print(f"[ML] 🚨 NETWORK-WIDE ATTACK DETECTED! Affected: {affected_devices}")
+
         # Log to blockchain
         data_hash = hashlib.sha256(json.dumps(data).encode()).hexdigest()
         batch_hash = data.get("batch_hash", "NONE")
-        log_to_blockchain(device_id, max_confidence, data_hash, batch_hash, main_threat.upper(), data.get("gateway_id", "unknown"))
+        log_to_blockchain(device_id if not is_distributed_attack else "ALL_NETWORK", max_confidence, data_hash, batch_hash, main_threat.upper(), data.get("gateway_id", "unknown"))
         
         # Save detailed prediction locally
         save_prediction({
@@ -683,9 +734,9 @@ def predict_comprehensive():
             server_host = os.getenv("SERVER_HOST", "localhost")
             # 1. Send Alert
             alert_payload = {
-                "device_id": device_id,
+                "device_id": device_id if not is_distributed_attack else "GLOBAL_NETWORK",
                 "event_type": "SECURITY_ALERT",
-                "reason": f"{main_threat} (Conf: {max_confidence:.2f})",
+                "reason": f"DISTRIBUTED ATTACK ({affected_count} Devs)" if is_distributed_attack else f"{main_threat} (Conf: {max_confidence:.2f})",
                 "anomaly_score": float(max_confidence),
                 "timestamp": int(datetime.now().timestamp()),
                 "batch_hash": batch_hash,
@@ -695,8 +746,9 @@ def predict_comprehensive():
 
             # 2. Trigger Alarm if Critical
             if max_confidence > 0.8:
+                alarm_reason = f"CRITICAL: DISTRIBUTED {main_threat} DETECTED ACROSS NETWORK!" if is_distributed_attack else f"CRITICAL: {main_threat} detected!"
                 requests.post(f"http://{server_host}:5002/api/alarm/trigger", 
-                             json={"reason": f"CRITICAL: {main_threat} detected!"}, 
+                             json={"reason": alarm_reason}, 
                              timeout=1)
 
         except Exception as e:
@@ -734,6 +786,26 @@ def get_status():
     })
 
 
+# ==================== AUTO-RETRAINING ENGINE ====================
+
+def auto_retrain_worker():
+    """Background thread that retrains models periodically (e.g., every hour)"""
+    # Wait for initial data to accumulate before first retraining
+    time.sleep(600) # 10 minutes delay for first auto-retrain
+    
+    while True:
+        try:
+            print(f"[{datetime.now().isoformat()}] [ML-AUTO] Starting periodic model retraining...")
+            sensor_ok = train_sensor_model()
+            power_ok = train_power_model()
+            behavior_ok = train_behavior_model()
+            print(f"[{datetime.now().isoformat()}] [ML-AUTO] Retraining complete. Status: Sensor={sensor_ok}, Power={power_ok}, Behavior={behavior_ok}")
+        except Exception as e:
+            print(f"[ML-AUTO] Error during auto-retraining: {e}")
+        
+        # Sleep for 1 hour (3600 seconds)
+        time.sleep(3600)
+
 if __name__ == '__main__':
     print("=" * 50)
     print("Enhanced ML Anomaly Detection Service")
@@ -744,6 +816,11 @@ if __name__ == '__main__':
     train_sensor_model()
     train_power_model()
     train_behavior_model()
+    
+    # Start auto-retraining background thread
+    retrain_thread = threading.Thread(target=auto_retrain_worker, daemon=True)
+    retrain_thread.start()
+    print("  [OK] Auto-Retraining Engine (Background Thread)")
     
     print("\nThreat Detection Available:")
     print("  [OK] Sensor anomaly (Isolation Forest)")

@@ -372,7 +372,8 @@ def flush_buffer():
                      
                 if response.status_code == 200:
                     flush_success_count += 1
-                    logging.info(f"✓ Forwarded batch ({batch_hash[:8]}) to Server.")
+                    batch_hash_short: str = batch_hash[0:8]
+                    logging.info(f"✓ Forwarded batch ({batch_hash_short}) to Server.")
                 else:
                     flush_fail_count += 1
                     last_flush_error = f"HTTP {response.status_code}: {response.text[:200]}"
